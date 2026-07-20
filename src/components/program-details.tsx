@@ -63,18 +63,23 @@ export function ProgramDetails() {
               </Reveal>
             );
           })}
-        </div>
 
-        <Reveal delay={0.2} className="mt-6">
-          <GlassCard className="flex items-start gap-4 border border-cyan-400/20 bg-cyan-400/[0.04] p-6 dark:border-cyan-400/20 dark:bg-cyan-400/[0.04]">
-            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 text-white shadow-md shadow-cyan-500/20">
-              <FlaskConical size={19} />
-            </span>
-            <p className="text-sm leading-relaxed text-slate-700 dark:text-slate-300">
-              {colabNotebooksPoint}
-            </p>
-          </GlassCard>
-        </Reveal>
+          <Reveal delay={(programDetails.length % 3) * 0.06}>
+            <GlassCard className="flex h-full items-start gap-4 border border-slate-900/10 bg-white/70 p-6 dark:border-white/10 dark:bg-white/[0.03]">
+              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-violet-600 text-white shadow-md shadow-violet-600/20">
+                <FlaskConical size={19} />
+              </span>
+              <span>
+                <span className="block text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
+                  Colab Notebooks
+                </span>
+                <span className="mt-1 block text-sm font-medium leading-relaxed text-slate-700 dark:text-slate-300">
+                  {colabNotebooksPoint}
+                </span>
+              </span>
+            </GlassCard>
+          </Reveal>
+        </div>
       </div>
     </section>
   );
