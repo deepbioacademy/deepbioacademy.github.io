@@ -274,13 +274,13 @@ export const programDetails: ProgramDetail[] = [
   { label: "Assignments", value: "Weekly" },
   { label: "Projects", value: "Hands-on" },
   { label: "Certificate", value: "Yes" },
+  { label: "Fee", value: "10,200 BDT / month" },
+  { label: "Payment Deadline", value: "5th of every month" },
   {
     label: "Google Colab Pro",
     value: "Included",
     note: "~10 USD + VAT cost / participant",
   },
-  { label: "Fee", value: "10,200 BDT / month" },
-  { label: "Payment Deadline", value: "5th of every month" },
 ];
 
 export type Instructor = {
