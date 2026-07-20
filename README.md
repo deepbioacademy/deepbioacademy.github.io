@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# DeepBio Academy — NextGen Drug Discovery with AI
+
+Marketing site for DeepBio Academy's "NextGen Drug Discovery with AI" program — a live online course covering cheminformatics, structural bioinformatics, molecular docking, molecular dynamics, and AI/deep learning for computational drug discovery.
+
+Live at: https://deepbioacademy.github.io
+
+## Tech Stack
+
+- [Next.js 16](https://nextjs.org) (App Router, Turbopack, static export)
+- React 19 + TypeScript
+- Tailwind CSS 4
+- Framer Motion
+- lucide-react (icons)
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+  app/            # App Router entry (layout, page, metadata)
+  components/     # Page sections and UI primitives
+  lib/data.ts     # All site content (copy, stats, modules, FAQ, team, etc.)
+```
 
-## Learn More
+Content changes (copy, program details, team bios, FAQ) mostly live in `src/lib/data.ts` rather than the components themselves.
 
-To learn more about Next.js, take a look at the following resources:
+## Build
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run build
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+`next.config.ts` sets `output: "export"`, so `npm run build` produces a static site in `out/`.
 
-## Deploy on Vercel
+## Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Deployment to GitHub Pages is automated via `.github/workflows/deploy.yml`: every push to `main` builds the static export and publishes it through GitHub Actions. No manual deploy step is required.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Scripts
+
+| Command         | Description                        |
+| --------------- | ----------------------------------- |
+| `npm run dev`   | Start the local dev server          |
+| `npm run build` | Build the static production export  |
+| `npm run start` | Serve the production build locally  |
+| `npm run lint`  | Run ESLint                          |
