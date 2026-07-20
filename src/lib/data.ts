@@ -348,11 +348,6 @@ export const instructors: Instructor[] = [
     photo: "/team/pritom.jpg",
   },
   {
-    name: "Lamia Hasan Barsha",
-    role: "Computational Drug Discovery",
-    photo: "/team/barsha.jpg",
-  },
-  {
     name: "Naem Islam Abhi",
     role: "scRNA-seq Disease Drug Discovery",
     photo: "/team/abhi.jpg",
