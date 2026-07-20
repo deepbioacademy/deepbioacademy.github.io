@@ -339,17 +339,17 @@ export const instructors: Instructor[] = [
   },
   {
     name: "Musab Shahriar",
-    role: "Pharmacy Graduate & CADD Expert",
+    role: "Computational Drug Discovery",
     photo: "/team/musab.jpg",
   },
   {
     name: "Pritom Kundu",
-    role: "Pharmacy Graduate & CADD Expert",
+    role: "AI-driven Drug Discovery",
     photo: "/team/pritom.jpg",
   },
   {
     name: "Lamia Hasan Barsha",
-    role: "Pharmacy Graduate & CADD Expert",
+    role: "Computational Drug Discovery",
     photo: "/team/barsha.jpg",
   },
   {
