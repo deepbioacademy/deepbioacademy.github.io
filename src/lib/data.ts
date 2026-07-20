@@ -281,6 +281,11 @@ export const programDetails: ProgramDetail[] = [
     value: "Included",
     note: "~10 USD + VAT cost / participant",
   },
+  {
+    label: "Colab Notebooks",
+    value: "Every Session",
+    note: "Research-grade & reproducible",
+  },
 ];
 
 export type Instructor = {
@@ -333,9 +338,6 @@ export const instructors: Instructor[] = [
     photo: "/team/abhi.jpg",
   },
 ];
-
-export const colabNotebooksPoint =
-  "Research-grade, reproducible Google Colab notebooks provided for every session — participants can reproduce results end-to-end or reuse them directly in their own research and work.";
 
 export type FaqItem = {
   question: string;

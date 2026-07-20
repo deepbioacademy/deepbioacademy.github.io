@@ -10,7 +10,7 @@ import {
   Wallet,
   Wrench,
 } from "lucide-react";
-import { colabNotebooksPoint, programDetails } from "@/lib/data";
+import { programDetails } from "@/lib/data";
 import { SectionHeading } from "./ui/section-heading";
 import { Reveal } from "./ui/reveal";
 import { GlassCard } from "./ui/glass-card";
@@ -26,6 +26,7 @@ const icons: Record<string, typeof Calendar> = {
   "Google Colab Pro": Cloud,
   Fee: Wallet,
   "Payment Deadline": CreditCard,
+  "Colab Notebooks": FlaskConical,
 };
 
 export function ProgramDetails() {
@@ -63,22 +64,6 @@ export function ProgramDetails() {
               </Reveal>
             );
           })}
-
-          <Reveal delay={(programDetails.length % 3) * 0.06}>
-            <GlassCard className="flex h-full items-start gap-4 border border-slate-900/10 bg-white/70 p-6 dark:border-white/10 dark:bg-white/[0.03]">
-              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-violet-600 text-white shadow-md shadow-violet-600/20">
-                <FlaskConical size={19} />
-              </span>
-              <span>
-                <span className="block text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
-                  Colab Notebooks
-                </span>
-                <span className="mt-1 block text-sm font-medium leading-relaxed text-slate-700 dark:text-slate-300">
-                  {colabNotebooksPoint}
-                </span>
-              </span>
-            </GlassCard>
-          </Reveal>
         </div>
       </div>
     </section>
