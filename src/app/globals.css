@@ -42,9 +42,14 @@ body {
 /* Glassmorphism utility */
 .glass {
   background: color-mix(in srgb, white 5%, transparent);
+  border: 1px solid color-mix(in srgb, white 10%, transparent);
+}
+
+/* Backdrop blur is expensive to paint on every scroll/animation frame —
+   only opt in where a card sits over busy, non-solid background art. */
+.glass-blur {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid color-mix(in srgb, white 10%, transparent);
 }
 
 :root:not(.dark) .glass {
@@ -120,6 +125,60 @@ body {
   to {
     stroke-dashoffset: -1000;
   }
+}
+
+@keyframes dash-reverse {
+  to {
+    stroke-dashoffset: 1000;
+  }
+}
+
+@keyframes molecule-pulse {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.3);
+  }
+}
+
+@keyframes link-fade {
+  0%,
+  100% {
+    opacity: 0.15;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes particle-float {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translateY(-30px);
+    opacity: 0.8;
+  }
+}
+
+.molecule-node {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation-name: molecule-pulse;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.molecule-link {
+  animation-name: link-fade;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {

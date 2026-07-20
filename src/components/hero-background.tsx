@@ -1,7 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
-
 const molecules = [
   { cx: 12, cy: 18, r: 3 },
   { cx: 28, cy: 10, r: 2 },
@@ -75,30 +71,28 @@ export function HeroBackground() {
           const p1 = molecules[a];
           const p2 = molecules[b];
           return (
-            <motion.line
+            <line
               key={`${a}-${b}-${i}`}
+              className="molecule-link"
               x1={p1.cx}
               y1={p1.cy}
               x2={p2.cx}
               y2={p2.cy}
               stroke="url(#linkGrad)"
               strokeWidth={0.15}
-              initial={{ opacity: 0.15 }}
-              animate={{ opacity: [0.15, 0.5, 0.15] }}
-              transition={{ duration: 4 + (i % 3), repeat: Infinity, delay: i * 0.2 }}
+              style={{ animationDuration: `${4 + (i % 3)}s`, animationDelay: `${i * 0.2}s` }}
             />
           );
         })}
         {molecules.map((m, i) => (
-          <motion.circle
+          <circle
             key={i}
+            className="molecule-node"
             cx={m.cx}
             cy={m.cy}
             r={m.r * 0.35}
             fill={i % 3 === 0 ? "#06B6D4" : i % 3 === 1 ? "#7C3AED" : "#2563EB"}
-            initial={{ opacity: 0.5 }}
-            animate={{ opacity: [0.5, 1, 0.5], scale: [1, 1.3, 1] }}
-            transition={{ duration: 3 + (i % 4), repeat: Infinity, delay: i * 0.15 }}
+            style={{ animationDuration: `${3 + (i % 4)}s`, animationDelay: `${i * 0.15}s` }}
           />
         ))}
       </svg>
@@ -138,29 +132,25 @@ export function HeroBackground() {
         viewBox="0 0 1000 600"
         fill="none"
       >
-        <motion.path
+        <path
           d="M -50 300 C 150 100, 300 500, 500 300 S 850 100, 1050 300"
           stroke="#06B6D4"
           strokeWidth={2}
           strokeDasharray="12 10"
-          initial={{ strokeDashoffset: 0 }}
-          animate={{ strokeDashoffset: -1000 }}
-          transition={{ duration: 24, repeat: Infinity, ease: "linear" }}
+          style={{ animation: "dash 24s linear infinite" }}
         />
-        <motion.path
+        <path
           d="M -50 340 C 150 140, 300 540, 500 340 S 850 140, 1050 340"
           stroke="#7C3AED"
           strokeWidth={2}
           strokeDasharray="12 10"
-          initial={{ strokeDashoffset: 0 }}
-          animate={{ strokeDashoffset: 1000 }}
-          transition={{ duration: 28, repeat: Infinity, ease: "linear" }}
+          style={{ animation: "dash-reverse 28s linear infinite" }}
         />
       </svg>
 
       {/* Floating particles */}
       {particles.map((p) => (
-        <motion.span
+        <span
           key={p.id}
           className="absolute rounded-full bg-cyan-300/70"
           style={{
@@ -168,13 +158,8 @@ export function HeroBackground() {
             top: `${p.y}%`,
             width: p.size,
             height: p.size,
-          }}
-          animate={{ y: [0, -30, 0], opacity: [0.2, 0.8, 0.2] }}
-          transition={{
-            duration: p.duration,
-            repeat: Infinity,
-            delay: p.delay,
-            ease: "easeInOut",
+            animation: `particle-float ${p.duration}s ease-in-out infinite`,
+            animationDelay: `${p.delay}s`,
           }}
         />
       ))}

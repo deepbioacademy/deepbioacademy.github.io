@@ -70,7 +70,7 @@ export function Hero() {
             </a>
             <a
               href="#modules"
-              className="glass inline-flex w-full items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold text-white transition-all hover:scale-[1.03] active:scale-95 sm:w-auto"
+              className="glass glass-blur inline-flex w-full items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold text-white transition-all hover:scale-[1.03] active:scale-95 sm:w-auto"
             >
               <Download size={16} />
               Download Brochure
@@ -89,6 +89,7 @@ export function Hero() {
             return (
               <GlassCard
                 key={stat.label}
+                blur
                 className="flex flex-col items-center justify-center gap-1 px-3 py-5 text-center hover:-translate-y-1 hover:border-cyan-400/30"
                 style={{ transitionDelay: `${i * 30}ms` }}
               >

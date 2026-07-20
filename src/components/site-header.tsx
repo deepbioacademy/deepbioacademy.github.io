@@ -29,7 +29,7 @@ export function SiteHeader() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "glass border-b border-slate-900/5 py-3 shadow-[0_4px_30px_rgba(15,23,42,0.06)] dark:border-white/5"
+          ? "glass glass-blur border-b border-slate-900/5 py-3 shadow-[0_4px_30px_rgba(15,23,42,0.06)] dark:border-white/5"
           : "border-b border-transparent py-5"
       }`}
     >
@@ -91,7 +91,7 @@ export function SiteHeader() {
             transition={{ duration: 0.25, ease: "easeInOut" }}
             className="overflow-hidden lg:hidden"
           >
-            <nav className="glass mx-4 mb-4 flex flex-col gap-1 rounded-2xl p-3">
+            <nav className="glass glass-blur mx-4 mb-4 flex flex-col gap-1 rounded-2xl p-3">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
