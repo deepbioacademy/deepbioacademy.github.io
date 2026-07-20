@@ -288,14 +288,29 @@ export type Instructor = {
   role: string;
   photo: string;
   lead?: boolean;
+  stats?: Stat[];
+  bio?: string[];
+  quote?: string;
 };
 
 export const instructors: Instructor[] = [
   {
     name: "Md. Jubayer Hossain",
-    role: "Program Lead",
+    role: "Founder & CEO, DeepBio Ltd",
     photo: "/team/jubayer.jpg",
     lead: true,
+    stats: [
+      { value: "5+", label: "Years of Research Experience" },
+      { value: "5+", label: "Years of Mentoring Experience" },
+      { value: "3K+", label: "Students Trained Since 2020" },
+      { value: "20+", label: "Publications" },
+    ],
+    bio: [
+      "Md. Jubayer Hossain is a bioinformatician and computational biologist with five years of experience spanning both active research and teaching. Since 2020, he has trained over 3,000 students — from complete beginners to graduate researchers — in the practical skills required to work with real biological data.",
+      "As Founder & CEO of DeepBio Ltd, Jubayer combines research rigor with a structured approach to education. His teaching is grounded in what he does daily: designing and running computational analyses on real datasets. Every student in this program works directly with him — not a TA, not a substitute — toward a concrete, submittable research output.",
+    ],
+    quote:
+      "My role is to accelerate your journey from question to discovery. You bring the curiosity; I bring the roadmap, the tools, and the accountability to ensure you succeed.",
   },
   {
     name: "Musab Shahriar",

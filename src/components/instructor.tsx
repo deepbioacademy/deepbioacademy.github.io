@@ -1,32 +1,16 @@
 import Image from "next/image";
-import { Award, BookOpen, Briefcase, GraduationCap } from "lucide-react";
+import { Quote } from "lucide-react";
 import { instructors } from "@/lib/data";
 import { SectionHeading } from "./ui/section-heading";
 import { Reveal } from "./ui/reveal";
 import { GlassCard } from "./ui/glass-card";
+import { Counter } from "./ui/counter";
 
-const highlights = [
-  {
-    icon: GraduationCap,
-    title: "Research Background",
-    body: "Research experience in computational chemistry and structural bioinformatics, with a focus on AI-driven molecular modeling and drug design.",
-  },
-  {
-    icon: BookOpen,
-    title: "Publications",
-    body: "Contributions to peer-reviewed work in cheminformatics, molecular dynamics, and machine learning for drug discovery.",
-  },
-  {
-    icon: Award,
-    title: "Teaching Experience",
-    body: "Years of experience mentoring students and early-career researchers in computational biology, bioinformatics, and applied AI.",
-  },
-  {
-    icon: Briefcase,
-    title: "Industry Experience",
-    body: "Hands-on experience applying computational drug discovery pipelines in pharmaceutical and biotech research settings.",
-  },
-];
+function parseStat(value: string) {
+  const match = value.match(/^(\d+)(\+?)$/);
+  if (!match) return null;
+  return { number: parseInt(match[1], 10), suffix: match[2] };
+}
 
 export function Instructor() {
   const lead = instructors.find((i) => i.lead) ?? instructors[0];
@@ -59,30 +43,59 @@ export function Instructor() {
               <p className="mt-1 text-sm font-medium text-violet-600 dark:text-cyan-300">
                 {lead.role}
               </p>
-              <p className="mt-4 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
-                Leading the design and delivery of the program, dedicated to training the
-                next generation of computational and AI-driven drug discovery scientists
-                through rigorous, hands-on live instruction.
-              </p>
+
+              {lead.stats ? (
+                <div className="mt-6 grid w-full grid-cols-2 gap-3 border-t border-slate-900/10 pt-6 dark:border-white/10">
+                  {lead.stats.map((stat) => {
+                    const parsed = parseStat(stat.value);
+                    return (
+                      <div key={stat.label} className="flex flex-col items-center">
+                        <span className="text-xl font-extrabold text-slate-900 dark:text-white">
+                          {parsed ? (
+                            <Counter value={parsed.number} suffix={parsed.suffix} />
+                          ) : (
+                            stat.value
+                          )}
+                        </span>
+                        <span className="mt-0.5 text-[11px] font-medium leading-tight text-slate-500 dark:text-slate-400">
+                          {stat.label}
+                        </span>
+                      </div>
+                    );
+                  })}
+                </div>
+              ) : null}
             </GlassCard>
           </Reveal>
 
-          <div className="grid gap-5 sm:grid-cols-2">
-            {highlights.map((h, i) => (
-              <Reveal key={h.title} delay={i * 0.08}>
-                <GlassCard className="h-full border border-slate-900/10 bg-white/70 p-6 dark:border-white/10 dark:bg-white/[0.03]">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-slate-900/5 text-violet-600 dark:bg-white/5 dark:text-cyan-300">
-                    <h.icon size={18} />
-                  </span>
-                  <h4 className="mt-4 text-sm font-bold text-slate-900 dark:text-white">
-                    {h.title}
-                  </h4>
-                  <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
-                    {h.body}
+          <div className="flex flex-col gap-5">
+            {lead.bio ? (
+              <Reveal delay={0.08}>
+                <GlassCard className="border border-slate-900/10 bg-white/70 p-7 dark:border-white/10 dark:bg-white/[0.03]">
+                  {lead.bio.map((paragraph, i) => (
+                    <p
+                      key={i}
+                      className={`text-sm leading-relaxed text-slate-600 dark:text-slate-400 ${
+                        i > 0 ? "mt-4" : ""
+                      }`}
+                    >
+                      {paragraph}
+                    </p>
+                  ))}
+                </GlassCard>
+              </Reveal>
+            ) : null}
+
+            {lead.quote ? (
+              <Reveal delay={0.14}>
+                <GlassCard className="flex gap-4 border border-cyan-400/20 bg-cyan-400/[0.04] p-7 dark:border-cyan-400/20 dark:bg-cyan-400/[0.04]">
+                  <Quote className="h-6 w-6 shrink-0 text-cyan-500 dark:text-cyan-300" strokeWidth={2.2} />
+                  <p className="text-sm font-medium italic leading-relaxed text-slate-700 dark:text-slate-300">
+                    {lead.quote}
                   </p>
                 </GlassCard>
               </Reveal>
-            ))}
+            ) : null}
           </div>
         </div>
 
