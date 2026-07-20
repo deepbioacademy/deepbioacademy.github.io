@@ -1,6 +1,7 @@
 import {
   Award,
   Calendar,
+  ClipboardCheck,
   Clock,
   Cloud,
   CreditCard,
@@ -27,6 +28,7 @@ const icons: Record<string, typeof Calendar> = {
   Fee: Wallet,
   "Payment Deadline": CreditCard,
   "Colab Notebooks": FlaskConical,
+  "Enrollment Process": ClipboardCheck,
 };
 
 export function ProgramDetails() {

@@ -286,6 +286,11 @@ export const programDetails: ProgramDetail[] = [
     value: "Every Session",
     note: "Research-grade & reproducible",
   },
+  {
+    label: "Enrollment Process",
+    value: "Pre-Register → Q&A Call → Enroll",
+    note: "No payment for pre-registration & first 2 sessions",
+  },
 ];
 
 export type Instructor = {
