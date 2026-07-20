@@ -354,7 +354,7 @@ export const instructors: Instructor[] = [
   },
   {
     name: "Naem Islam Abhi",
-    role: "Pharmacy Graduate & CADD Expert",
+    role: "scRNA-seq Disease Drug Discovery",
     photo: "/team/abhi.jpg",
   },
 ];
