@@ -45,11 +45,17 @@ export function Instructor() {
               <p className="mt-1 text-sm font-medium text-violet-600 dark:text-cyan-300">
                 {lead.role}
               </p>
-              <p className="mt-4 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
-                Leading the design and delivery of the program, dedicated to training the
-                next generation of computational and AI-driven drug discovery scientists
-                through rigorous, hands-on live instruction.
-              </p>
+              {lead.bio ? (
+                <p className="mt-4 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+                  {lead.bio}
+                </p>
+              ) : null}
+              {lead.quote ? (
+                <p className="mt-4 flex items-start gap-2 text-left text-xs font-medium italic leading-relaxed text-slate-500 dark:text-slate-400">
+                  <Quote className="h-4 w-4 shrink-0 text-violet-500 dark:text-cyan-300" strokeWidth={2.2} />
+                  {lead.quote}
+                </p>
+              ) : null}
             </GlassCard>
           </Reveal>
 
@@ -70,8 +76,11 @@ export function Instructor() {
                         stat.value
                       )}
                     </h4>
-                    <p className="mt-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+                    <p className="mt-1 text-sm font-semibold text-slate-800 dark:text-slate-200">
                       {stat.label}
+                    </p>
+                    <p className="mt-1 text-xs leading-relaxed text-slate-500 dark:text-slate-400">
+                      {stat.description}
                     </p>
                   </GlassCard>
                 </Reveal>
@@ -79,34 +88,6 @@ export function Instructor() {
             })}
           </div>
         </div>
-
-        {lead.bio ? (
-          <Reveal delay={0.2} className="mt-8">
-            <GlassCard className="border border-slate-900/10 bg-white/70 p-7 dark:border-white/10 dark:bg-white/[0.03]">
-              {lead.bio.map((paragraph, i) => (
-                <p
-                  key={i}
-                  className={`text-sm leading-relaxed text-slate-600 dark:text-slate-400 ${
-                    i > 0 ? "mt-4" : ""
-                  }`}
-                >
-                  {paragraph}
-                </p>
-              ))}
-            </GlassCard>
-          </Reveal>
-        ) : null}
-
-        {lead.quote ? (
-          <Reveal delay={0.26} className="mt-5">
-            <GlassCard className="flex gap-4 border border-cyan-400/20 bg-cyan-400/[0.04] p-7 dark:border-cyan-400/20 dark:bg-cyan-400/[0.04]">
-              <Quote className="h-6 w-6 shrink-0 text-cyan-500 dark:text-cyan-300" strokeWidth={2.2} />
-              <p className="text-sm font-medium italic leading-relaxed text-slate-700 dark:text-slate-300">
-                {lead.quote}
-              </p>
-            </GlassCard>
-          </Reveal>
-        ) : null}
 
         <Reveal delay={0.15} className="mt-14">
           <h3 className="text-center text-sm font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">
