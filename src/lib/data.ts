@@ -71,7 +71,7 @@ export const stats: Stat[] = [
   { value: "36", label: "Live Sessions" },
   { value: "72+", label: "Hours Live Training" },
   { value: "20+", label: "Professional Tools" },
-  { value: "Colab Pro", label: "Included" },
+  { value: "Colab", label: "Cloud GPU" },
   { value: "1", label: "Capstone Project" },
   { value: "Yes", label: "Certificate" },
 ];
@@ -90,7 +90,7 @@ export const modules: Module[] = [
       "Python for scientific computing",
       "Drug discovery pipeline overview",
       "Biology & chemistry primer for computation",
-      "Working in Google Colab Pro",
+      "Working in Google Colab",
     ],
   },
   {
@@ -211,7 +211,7 @@ export const projects: Project[] = [
 
 export const techStack: string[] = [
   "Python",
-  "Google Colab Pro",
+  "Google Colab",
   "NumPy",
   "Pandas",
   "Matplotlib",
@@ -270,16 +270,16 @@ export const programDetails: ProgramDetail[] = [
   { label: "Duration", value: "3 Months" },
   { label: "Schedule", value: "3 Classes per Week" },
   { label: "Time", value: "9 PM – 11 PM (Bangladesh Time)" },
-  { label: "Mode", value: "Live Online" },
+  { label: "Mode", value: "Live on Zoom" },
   { label: "Assignments", value: "Weekly" },
   { label: "Projects", value: "Hands-on" },
   { label: "Certificate", value: "Yes" },
   { label: "Fee", value: "10,200 BDT / month" },
   { label: "Payment Deadline", value: "5th of every month" },
   {
-    label: "Google Colab Pro",
-    value: "Included",
-    note: "~10 USD + VAT cost / participant",
+    label: "Google Colab",
+    value: "Free Tier",
+    note: "No paid subscription needed",
   },
   {
     label: "Colab Notebooks",
@@ -348,6 +348,11 @@ export const instructors: Instructor[] = [
     photo: "/team/pritom.jpg",
   },
   {
+    name: "Lamia Hasan Barsha",
+    role: "Computational Drug Discovery",
+    photo: "/team/barsha.jpg",
+  },
+  {
     name: "Naem Islam Abhi",
     role: "scRNA-seq Disease Drug Discovery",
     photo: "/team/abhi.jpg",
@@ -361,6 +366,11 @@ export type FaqItem = {
 
 export const faqItems: FaqItem[] = [
   {
+    question: "Does pre-registration cost anything?",
+    answer:
+      "No. Pre-registration is completely free — no payment is collected at this stage. You simply fill in the pre-registration form, join the live Q&A session where we walk through the curriculum and answer your questions, and only then decide whether to enrol and pay.",
+  },
+  {
     question: "Do I need a programming or biology background to join?",
     answer:
       "No prior computational background is required. The program starts with Python foundations and a biology/chemistry primer before progressing into advanced cheminformatics, structural bioinformatics, and AI topics.",
@@ -368,7 +378,7 @@ export const faqItems: FaqItem[] = [
   {
     question: "What equipment do I need?",
     answer:
-      "A laptop with a stable internet connection is enough. All heavy computation runs in the cloud through the included Google Colab Pro subscription — no local GPU required.",
+      "A laptop with a stable internet connection is enough. All heavy computation runs in the cloud on Google Colab, which is free to use — no local GPU and no paid subscription required.",
   },
   {
     question: "Are the classes live or pre-recorded?",
@@ -388,7 +398,7 @@ export const faqItems: FaqItem[] = [
   {
     question: "How is the fee structured?",
     answer:
-      "The program fee is 10,200 BDT per month for 3 months, due by the 5th of each month. Google Colab Pro access is included at no extra cost.",
+      "The program fee is 10,200 BDT per month for 3 months, due by the 5th of each month. There are no hidden costs — every session runs on Google Colab, which is free to use.",
   },
   {
     question: "Is this program suitable for working professionals?",
@@ -396,6 +406,12 @@ export const faqItems: FaqItem[] = [
       "Yes. Classes run in the evening (9 PM – 11 PM Bangladesh Time), three days a week, designed to fit around full-time work or study schedules.",
   },
 ];
+
+/** Google Form for the free pre-registration round (no payment collected). */
+export const preRegisterUrl = "https://forms.gle/5aekYtmDXmLh4ePp7";
+
+export const preRegisterNote =
+  "No payment required to pre-register — you only decide after the live Q&A session.";
 
 export const navLinks = [
   { href: "#program", label: "Program" },

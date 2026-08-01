@@ -14,9 +14,17 @@ export function Certificate() {
 
         <Reveal delay={0.1} className="mt-16">
           <div className="relative mx-auto max-w-3xl rounded-2xl bg-gradient-to-br from-blue-600 via-violet-600 to-cyan-500 p-[3px] shadow-2xl shadow-violet-600/20">
-            <div className="relative overflow-hidden rounded-[15px] bg-white p-8 dark:bg-slate-950 sm:p-14">
-              <div className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-violet-600/10 blur-3xl" />
-              <div className="pointer-events-none absolute -bottom-16 -left-16 h-56 w-56 rounded-full bg-cyan-500/10 blur-3xl" />
+            <div className="relative overflow-clip rounded-[15px] bg-white p-8 dark:bg-slate-950 sm:p-14">
+              {/* Gradient washes rather than blurred circles — same look, no filter pass. */}
+              <div
+                className="pointer-events-none absolute inset-0"
+                style={{
+                  backgroundImage: [
+                    "radial-gradient(18rem 18rem at 100% 0%, rgba(124, 58, 237, 0.1), transparent 70%)",
+                    "radial-gradient(18rem 18rem at 0% 100%, rgba(6, 182, 212, 0.1), transparent 70%)",
+                  ].join(","),
+                }}
+              />
               <div className="pointer-events-none absolute inset-4 rounded-lg border border-slate-900/10 dark:border-white/10 sm:inset-6" />
 
               <div className="relative flex flex-col items-center text-center">

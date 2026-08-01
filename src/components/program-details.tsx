@@ -24,7 +24,7 @@ const icons: Record<string, typeof Calendar> = {
   Assignments: Wrench,
   Projects: Wrench,
   Certificate: Award,
-  "Google Colab Pro": Cloud,
+  "Google Colab": Cloud,
   Fee: Wallet,
   "Payment Deadline": CreditCard,
   "Colab Notebooks": FlaskConical,

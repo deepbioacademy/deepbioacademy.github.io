@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
 import { roadmapStages } from "@/lib/data";
 import { SectionHeading } from "./ui/section-heading";
@@ -56,28 +55,21 @@ export function Roadmap() {
               </div>
             </div>
 
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={active}
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -12 }}
-                transition={{ duration: 0.3 }}
-                className="mt-10"
-              >
-                <GlassCard className="mx-auto max-w-2xl border-slate-900/10 bg-slate-900/[0.03] px-8 py-6 text-center dark:border-white/10 dark:bg-white/5">
-                  <span className="text-xs font-bold uppercase tracking-widest text-violet-600 dark:text-cyan-300">
-                    Stage {active + 1} of {roadmapStages.length}
-                  </span>
-                  <h3 className="mt-2 text-xl font-bold text-slate-900 dark:text-white">
-                    {roadmapStages[active].title}
-                  </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
-                    {roadmapStages[active].description}
-                  </p>
-                </GlassCard>
-              </motion.div>
-            </AnimatePresence>
+            {/* Remounting on `active` replays the CSS entrance — no animation
+                library, and nothing runs between clicks. */}
+            <div key={active} className="anim-fade-up-fast mt-10">
+              <GlassCard className="mx-auto max-w-2xl border-slate-900/10 bg-slate-900/[0.03] px-8 py-6 text-center dark:border-white/10 dark:bg-white/5">
+                <span className="text-xs font-bold uppercase tracking-widest text-violet-600 dark:text-cyan-300">
+                  Stage {active + 1} of {roadmapStages.length}
+                </span>
+                <h3 className="mt-2 text-xl font-bold text-slate-900 dark:text-white">
+                  {roadmapStages[active].title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+                  {roadmapStages[active].description}
+                </p>
+              </GlassCard>
+            </div>
           </div>
 
           {/* Mobile / tablet vertical roadmap */}
@@ -89,6 +81,7 @@ export function Roadmap() {
                   key={stage.id}
                   type="button"
                   onClick={() => setActive(isActive ? -1 : i)}
+                  aria-expanded={isActive}
                   className="text-left"
                 >
                   <GlassCard
@@ -116,18 +109,15 @@ export function Roadmap() {
                         className={`shrink-0 text-slate-400 transition-transform ${isActive ? "rotate-90" : ""}`}
                       />
                     </div>
-                    <AnimatePresence>
-                      {isActive ? (
-                        <motion.p
-                          initial={{ opacity: 0, height: 0 }}
-                          animate={{ opacity: 1, height: "auto" }}
-                          exit={{ opacity: 0, height: 0 }}
-                          className="overflow-hidden pl-13 text-sm leading-relaxed text-slate-600 dark:text-slate-400"
-                        >
-                          <span className="mt-3 block">{stage.description}</span>
-                        </motion.p>
-                      ) : null}
-                    </AnimatePresence>
+                    <div
+                      className={`grid overflow-clip pl-13 transition-[grid-template-rows,opacity] duration-300 ease-in-out ${
+                        isActive ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                      }`}
+                    >
+                      <p className="min-h-0 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+                        <span className="mt-3 block">{stage.description}</span>
+                      </p>
+                    </div>
                   </GlassCard>
                 </button>
               );

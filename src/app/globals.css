@@ -5,18 +5,15 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-jakarta);
-  --animate-float: float 8s ease-in-out infinite;
-  --animate-float-slow: float 14s ease-in-out infinite;
-  --animate-spin-slow: spin 40s linear infinite;
-  --animate-spin-slower: spin 90s linear infinite;
-  --animate-pulse-slow: pulse-slow 6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   --animate-marquee: marquee 32s linear infinite;
-  --animate-dash: dash 6s linear infinite;
 }
 
 :root {
   --background: #ffffff;
   --foreground: #0f172a;
+  /* Lets height/block-size transition to and from `auto` (used by the
+     <details> accordions) without measuring anything in JS. */
+  interpolate-size: allow-keywords;
 }
 
 .dark {
@@ -52,7 +49,15 @@ body {
   -webkit-backdrop-filter: blur(20px);
 }
 
-:root:not(.dark) .glass {
+/* Cards that always sit on a dark surface (the hero) must keep the dark glass
+   treatment in light mode too — their text is hard-coded white. */
+:root:not(.dark) .glass-on-dark {
+  background: color-mix(in srgb, white 5%, transparent);
+  border: 1px solid color-mix(in srgb, white 10%, transparent);
+  box-shadow: none;
+}
+
+:root:not(.dark) .glass:not(.glass-on-dark) {
   background: color-mix(in srgb, white 70%, transparent);
   border: 1px solid color-mix(in srgb, #0f172a 8%, transparent);
   box-shadow: 0 8px 32px rgba(15, 23, 42, 0.06);
@@ -60,7 +65,6 @@ body {
 
 .text-gradient {
   background: linear-gradient(90deg, #2563eb, #7c3aed, #06b6d4);
-  background-size: 200% auto;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -78,40 +82,6 @@ body {
   border-radius: 999px;
 }
 
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0px) translateX(0px);
-  }
-  50% {
-    transform: translateY(-22px) translateX(10px);
-  }
-}
-
-@keyframes gradient-shift {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-@keyframes pulse-slow {
-  0%,
-  100% {
-    opacity: 0.5;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.85;
-    transform: scale(1.08);
-  }
-}
-
 @keyframes marquee {
   0% {
     transform: translateX(0);
@@ -121,64 +91,81 @@ body {
   }
 }
 
-@keyframes dash {
-  to {
-    stroke-dashoffset: -1000;
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translate3d(0, var(--fade-up-y, 1.75rem), 0);
   }
-}
-
-@keyframes dash-reverse {
   to {
-    stroke-dashoffset: 1000;
+    opacity: 1;
+    transform: none;
   }
 }
 
 @keyframes molecule-pulse {
   0%,
   100% {
-    opacity: 0.5;
-    transform: scale(1);
+    opacity: 0.45;
   }
   50% {
     opacity: 1;
-    transform: scale(1.3);
   }
 }
 
-@keyframes link-fade {
-  0%,
-  100% {
-    opacity: 0.15;
-  }
-  50% {
-    opacity: 0.5;
-  }
-}
-
-@keyframes particle-float {
-  0%,
-  100% {
-    transform: translateY(0);
-    opacity: 0.2;
-  }
-  50% {
-    transform: translateY(-30px);
-    opacity: 0.8;
-  }
-}
-
+/* Opacity-only: stays on the compositor instead of forcing an SVG re-raster. */
 .molecule-node {
-  transform-box: fill-box;
-  transform-origin: center;
   animation-name: molecule-pulse;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
 }
 
-.molecule-link {
-  animation-name: link-fade;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
+@media (prefers-reduced-motion: no-preference) {
+  /* Time-based entrance for above-the-fold content. */
+  .anim-fade-up {
+    animation: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .anim-fade-up-fast {
+    --fade-up-y: 0.75rem;
+    animation: fade-up 0.3s ease-out both;
+  }
+
+  /* <details> open/close without JS measurement. Falls back to an instant
+     open in engines without ::details-content. */
+  details::details-content {
+    block-size: 0;
+    overflow: clip;
+    transition:
+      block-size 0.3s ease,
+      content-visibility 0.3s allow-discrete;
+  }
+
+  details[open]::details-content {
+    block-size: auto;
+  }
+}
+
+/* Scroll reveal with zero JavaScript: no IntersectionObserver, no React state,
+   no per-frame work on the main thread. Engines without scroll-driven
+   animations simply render the content in its final state. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      animation: fade-up linear both;
+      animation-timeline: view();
+      animation-range: entry calc(0% + var(--reveal-offset, 0%)) cover
+        calc(30% + var(--reveal-offset, 0%));
+    }
+  }
+}
+
+details > summary {
+  list-style: none;
+  cursor: pointer;
+}
+
+details > summary::-webkit-details-marker {
+  display: none;
 }
 
 @media (prefers-reduced-motion: reduce) {

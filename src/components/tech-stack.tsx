@@ -26,7 +26,9 @@ function Row({ reverse = false }: { reverse?: boolean }) {
 
 export function TechStack() {
   return (
-    <section id="tools" className="relative overflow-hidden bg-white py-24 dark:bg-slate-950 sm:py-32">
+    // `overflow-x-clip`, not `overflow-hidden`: hidden would make this section a
+    // scroll container, which breaks the `view()` timelines used by <Reveal>.
+    <section id="tools" className="relative overflow-x-clip bg-white py-24 dark:bg-slate-950 sm:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Software & Technologies"

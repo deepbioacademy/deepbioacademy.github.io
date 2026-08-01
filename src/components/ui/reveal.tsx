@@ -1,37 +1,31 @@
-"use client";
-
-import { motion, type Variants } from "framer-motion";
-import type { ReactNode } from "react";
+import clsx from "clsx";
+import type { CSSProperties, ReactNode } from "react";
 
 type RevealProps = {
   children: ReactNode;
   className?: string;
+  /** Seconds of visual stagger, translated into a scroll-range offset. */
   delay?: number;
   y?: number;
-  once?: boolean;
 };
 
-const variants: Variants = {
-  hidden: { opacity: 0, y: 28 },
-  visible: { opacity: 1, y: 0 },
-};
+/**
+ * Scroll-triggered fade-up built entirely on CSS scroll-driven animations, so
+ * it ships no client JavaScript and never runs on the main thread. Browsers
+ * without `animation-timeline: view()` render the children as-is.
+ *
+ * Note: `view()` resolves against the nearest scroll container, so ancestors
+ * must not use `overflow: hidden` (use `overflow: clip` instead).
+ */
+export function Reveal({ children, className, delay = 0, y = 28 }: RevealProps) {
+  const style = {
+    "--reveal-offset": `${Math.round(delay * 500) / 10}%`,
+    "--fade-up-y": `${y}px`,
+  } as CSSProperties;
 
-export function Reveal({ children, className, delay = 0, y = 28, once = true }: RevealProps) {
   return (
-    <motion.div
-      className={className}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once, margin: "-80px" }}
-      variants={{
-        hidden: { opacity: 0, y },
-        visible: { opacity: 1, y: 0 },
-      }}
-      transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] }}
-    >
+    <div className={clsx("reveal", className)} style={style}>
       {children}
-    </motion.div>
+    </div>
   );
 }
-
-export { variants as revealVariants };
