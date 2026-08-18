@@ -5,7 +5,6 @@ import { ChevronRight } from "lucide-react";
 import { roadmapStages } from "@/lib/data";
 import { SectionHeading } from "./ui/section-heading";
 import { Reveal } from "./ui/reveal";
-import { GlassCard } from "./ui/glass-card";
 
 export function Roadmap() {
   const [active, setActive] = useState(0);
@@ -23,20 +22,20 @@ export function Roadmap() {
           {/* Desktop horizontal roadmap */}
           <div className="hidden lg:block">
             <div className="relative">
-              <div className="absolute left-0 right-0 top-6 h-0.5 bg-gradient-to-r from-blue-600 via-violet-600 to-cyan-500" />
+              <div className="absolute left-0 right-0 top-6 h-0.5 bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-500" />
               <div className="relative grid grid-cols-9 gap-2">
                 {roadmapStages.map((stage, i) => (
                   <button
                     key={stage.id}
                     type="button"
                     onClick={() => setActive(i)}
-                    className="group flex flex-col items-center text-center"
+                    className="group flex flex-col items-center text-center cursor-pointer"
                   >
                     <span
-                      className={`relative z-10 flex h-12 w-12 items-center justify-center rounded-full border-2 text-sm font-bold transition-all duration-300 ${
+                      className={`relative z-10 flex h-12 w-12 items-center justify-center rounded-full border-2 text-sm font-bold transition-all duration-200 ${
                         active === i
-                          ? "scale-110 border-cyan-400 bg-gradient-to-br from-blue-600 to-violet-600 text-white shadow-lg shadow-violet-600/40"
-                          : "border-slate-300 bg-white text-slate-500 group-hover:border-violet-400 group-hover:text-violet-600 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-400"
+                          ? "scale-110 border-blue-600 bg-blue-600 text-white shadow-lg shadow-blue-600/30"
+                          : "border-slate-300 bg-white text-slate-600 group-hover:border-blue-500 group-hover:text-blue-600 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-400"
                       }`}
                     >
                       {i + 1}
@@ -55,11 +54,9 @@ export function Roadmap() {
               </div>
             </div>
 
-            {/* Remounting on `active` replays the CSS entrance — no animation
-                library, and nothing runs between clicks. */}
             <div key={active} className="anim-fade-up-fast mt-10">
-              <GlassCard className="mx-auto max-w-2xl border-slate-900/10 bg-slate-900/[0.03] px-8 py-6 text-center dark:border-white/10 dark:bg-white/5">
-                <span className="text-xs font-bold uppercase tracking-widest text-violet-600 dark:text-cyan-300">
+              <div className="mx-auto max-w-2xl rounded-2xl border border-slate-200 bg-slate-50/70 px-8 py-6 text-center shadow-sm dark:border-slate-800 dark:bg-slate-900/60">
+                <span className="text-xs font-bold uppercase tracking-widest text-blue-600 dark:text-sky-400">
                   Stage {active + 1} of {roadmapStages.length}
                 </span>
                 <h3 className="mt-2 text-xl font-bold text-slate-900 dark:text-white">
@@ -68,7 +65,7 @@ export function Roadmap() {
                 <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
                   {roadmapStages[active].description}
                 </p>
-              </GlassCard>
+              </div>
             </div>
           </div>
 
@@ -82,21 +79,21 @@ export function Roadmap() {
                   type="button"
                   onClick={() => setActive(isActive ? -1 : i)}
                   aria-expanded={isActive}
-                  className="text-left"
+                  className="text-left cursor-pointer"
                 >
-                  <GlassCard
-                    className={`border px-5 py-4 transition-colors ${
+                  <div
+                    className={`rounded-2xl border px-5 py-4 transition-colors ${
                       isActive
-                        ? "border-violet-500/40 bg-violet-500/5"
-                        : "border-slate-900/10 dark:border-white/10"
+                        ? "border-blue-500 bg-blue-50/60 dark:border-blue-500/40 dark:bg-blue-950/20"
+                        : "border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900/50"
                     }`}
                   >
                     <div className="flex items-center gap-4">
                       <span
                         className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-sm font-bold ${
                           isActive
-                            ? "bg-gradient-to-br from-blue-600 to-violet-600 text-white"
-                            : "bg-slate-900/5 text-slate-600 dark:bg-white/10 dark:text-slate-300"
+                            ? "bg-blue-600 text-white"
+                            : "bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300"
                         }`}
                       >
                         {i + 1}
@@ -118,7 +115,7 @@ export function Roadmap() {
                         <span className="mt-3 block">{stage.description}</span>
                       </p>
                     </div>
-                  </GlassCard>
+                  </div>
                 </button>
               );
             })}

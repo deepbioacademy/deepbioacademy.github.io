@@ -9,15 +9,13 @@
 }
 
 :root {
-  --background: #ffffff;
+  --background: #f8fafc;
   --foreground: #0f172a;
-  /* Lets height/block-size transition to and from `auto` (used by the
-     <details> accordions) without measuring anything in JS. */
   interpolate-size: allow-keywords;
 }
 
 .dark {
-  --background: #0f172a;
+  --background: #0b1317;
   --foreground: #f8fafc;
 }
 
@@ -32,54 +30,33 @@ body {
 }
 
 ::selection {
-  background-color: #7c3aed;
+  background-color: #0d9488;
   color: #ffffff;
 }
 
-/* Glassmorphism utility */
-.glass {
-  background: color-mix(in srgb, white 5%, transparent);
-  border: 1px solid color-mix(in srgb, white 10%, transparent);
+.card-hover {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Backdrop blur is expensive to paint on every scroll/animation frame —
-   only opt in where a card sits over busy, non-solid background art. */
-.glass-blur {
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-}
-
-/* Cards that always sit on a dark surface (the hero) must keep the dark glass
-   treatment in light mode too — their text is hard-coded white. */
-:root:not(.dark) .glass-on-dark {
-  background: color-mix(in srgb, white 5%, transparent);
-  border: 1px solid color-mix(in srgb, white 10%, transparent);
-  box-shadow: none;
-}
-
-:root:not(.dark) .glass:not(.glass-on-dark) {
-  background: color-mix(in srgb, white 70%, transparent);
-  border: 1px solid color-mix(in srgb, #0f172a 8%, transparent);
-  box-shadow: 0 8px 32px rgba(15, 23, 42, 0.06);
-}
-
-.text-gradient {
-  background: linear-gradient(90deg, #2563eb, #7c3aed, #06b6d4);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+.card-hover:hover {
+  transform: translateY(-2px);
+  border-color: #99f6e4;
+  box-shadow: 0 10px 25px -5px rgba(13, 148, 136, 0.08);
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: #f1f5f9;
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #2563eb, #7c3aed);
+  background: #cbd5e1;
   border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
 }
 
 @keyframes marquee {
@@ -94,7 +71,7 @@ body {
 @keyframes fade-up {
   from {
     opacity: 0;
-    transform: translate3d(0, var(--fade-up-y, 1.75rem), 0);
+    transform: translate3d(0, var(--fade-up-y, 1rem), 0);
   }
   to {
     opacity: 1;
@@ -102,60 +79,14 @@ body {
   }
 }
 
-@keyframes molecule-pulse {
-  0%,
-  100% {
-    opacity: 0.45;
-  }
-  50% {
-    opacity: 1;
-  }
-}
-
-/* Opacity-only: stays on the compositor instead of forcing an SVG re-raster. */
-.molecule-node {
-  animation-name: molecule-pulse;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-}
-
 @media (prefers-reduced-motion: no-preference) {
-  /* Time-based entrance for above-the-fold content. */
   .anim-fade-up {
-    animation: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation: fade-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
   }
 
   .anim-fade-up-fast {
-    --fade-up-y: 0.75rem;
-    animation: fade-up 0.3s ease-out both;
-  }
-
-  /* <details> open/close without JS measurement. Falls back to an instant
-     open in engines without ::details-content. */
-  details::details-content {
-    block-size: 0;
-    overflow: clip;
-    transition:
-      block-size 0.3s ease,
-      content-visibility 0.3s allow-discrete;
-  }
-
-  details[open]::details-content {
-    block-size: auto;
-  }
-}
-
-/* Scroll reveal with zero JavaScript: no IntersectionObserver, no React state,
-   no per-frame work on the main thread. Engines without scroll-driven
-   animations simply render the content in its final state. */
-@supports (animation-timeline: view()) {
-  @media (prefers-reduced-motion: no-preference) {
-    .reveal {
-      animation: fade-up linear both;
-      animation-timeline: view();
-      animation-range: entry calc(0% + var(--reveal-offset, 0%)) cover
-        calc(30% + var(--reveal-offset, 0%));
-    }
+    --fade-up-y: 0.5rem;
+    animation: fade-up 0.2s ease-out both;
   }
 }
 

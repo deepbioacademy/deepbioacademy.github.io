@@ -1,51 +1,61 @@
-import { ArrowRight } from "lucide-react";
-import { Reveal } from "./ui/reveal";
-import { preRegisterNote, preRegisterUrl } from "@/lib/data";
+import { ArrowRight, CheckCircle2, Mail, Sparkles } from "lucide-react";
+import { contactEmail, preRegisterUrl } from "@/lib/data";
 
 export function FinalCta() {
   return (
-    <section className="relative overflow-clip bg-slate-950 py-24 sm:py-32">
-      <div className="absolute inset-0">
-        {/* Radial gradient instead of a 40rem circle under blur(130px), which
-            the compositor has to rasterise and blur on its own layer. */}
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage:
-              "radial-gradient(46rem 34rem at 50% 50%, rgba(88, 80, 236, 0.3), rgba(6, 182, 212, 0.12) 45%, transparent 70%)",
-          }}
-        />
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:48px_48px]" />
-      </div>
+    <section className="py-16 sm:py-24 bg-white border-b border-slate-200/80">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-gradient-to-br from-slate-950 via-teal-950/80 to-slate-950 rounded-2xl sm:rounded-3xl p-6 sm:p-12 text-white shadow-xl relative overflow-hidden">
+          <div className="relative z-10 max-w-3xl space-y-5">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-teal-500/20 border border-teal-400/30 text-teal-300 text-xs font-bold">
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>Ready to Step into In Silico Therapeutics?</span>
+            </div>
 
-      <div className="relative mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-        <Reveal>
-          <h2 className="text-3xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl">
-            Become the Next Generation
-            <br />
-            <span className="text-gradient">Drug Discovery Scientist.</span>
-          </h2>
-        </Reveal>
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.15]">
+              Become the Next Generation Drug Discovery Scientist
+            </h2>
 
-        <Reveal delay={0.1}>
-          <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-slate-400">
-            Seats for the live cohort are limited. Apply today and start building your
-            computational drug discovery portfolio in three months.
-          </p>
-        </Reveal>
+            <p className="text-slate-300 text-xs sm:text-base font-normal leading-relaxed max-w-2xl">
+              Whether you are an undergraduate student in pharmacy/biotech, a graduate researcher, or an AI engineer, our 3-month live mentorship equips you with reproducible, submittable computational research pipelines.
+            </p>
 
-        <Reveal delay={0.2} className="mt-10">
-          <a
-            href={preRegisterUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-600 to-violet-600 px-8 py-4 text-sm font-semibold text-white shadow-xl shadow-violet-600/30 transition-all hover:scale-105 hover:shadow-violet-600/50 active:scale-95 sm:text-base"
-          >
-            Pre-Register Free
-            <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
-          </a>
-          <p className="mt-4 text-xs font-medium text-slate-400 sm:text-sm">{preRegisterNote}</p>
-        </Reveal>
+            <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+              <a
+                href={preRegisterUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-3.5 rounded-xl bg-teal-600 hover:bg-teal-700 active:bg-teal-800 text-white font-semibold text-xs sm:text-sm shadow-md shadow-teal-600/25 transition-all cursor-pointer flex items-center justify-center gap-2 group"
+              >
+                <span>Pre-Register Free for Live Cohort</span>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+              </a>
+
+              <a
+                href={`mailto:${contactEmail}`}
+                className="px-5 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold text-xs sm:text-sm border border-slate-700 transition-all flex items-center justify-center gap-2"
+              >
+                <Mail className="w-4 h-4 text-teal-400" />
+                <span>Contact Mentorship Team</span>
+              </a>
+            </div>
+
+            <div className="pt-2 text-xs text-slate-400 flex flex-wrap items-center gap-x-5 gap-y-1.5 font-medium">
+              <span className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                100% Free Pre-Registration
+              </span>
+              <span className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                First 2 live Zoom sessions free trial
+              </span>
+              <span className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                Google Colab Free Tier (No GPU purchase required)
+              </span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -1,83 +1,77 @@
 import { Award, Dna, ShieldCheck } from "lucide-react";
-import { SectionHeading } from "./ui/section-heading";
-import { Reveal } from "./ui/reveal";
 
 export function Certificate() {
   return (
-    <section className="relative bg-white py-24 dark:bg-slate-950 sm:py-32">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeading
-          eyebrow="Certificate"
-          title="Earn a certificate that proves what you can build"
-          description="Complete the program and capstone project to receive an official DeepBio Academy certificate of completion."
-        />
+    <section className="py-16 sm:py-24 bg-white border-b border-slate-200/80">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-teal-50 border border-teal-100 text-teal-800 text-xs font-bold uppercase tracking-wider mb-3">
+            <Award className="w-3.5 h-3.5" />
+            <span>Official Credential</span>
+          </div>
 
-        <Reveal delay={0.1} className="mt-16">
-          <div className="relative mx-auto max-w-3xl rounded-2xl bg-gradient-to-br from-blue-600 via-violet-600 to-cyan-500 p-[3px] shadow-2xl shadow-violet-600/20">
-            <div className="relative overflow-clip rounded-[15px] bg-white p-8 dark:bg-slate-950 sm:p-14">
-              {/* Gradient washes rather than blurred circles — same look, no filter pass. */}
-              <div
-                className="pointer-events-none absolute inset-0"
-                style={{
-                  backgroundImage: [
-                    "radial-gradient(18rem 18rem at 100% 0%, rgba(124, 58, 237, 0.1), transparent 70%)",
-                    "radial-gradient(18rem 18rem at 0% 100%, rgba(6, 182, 212, 0.1), transparent 70%)",
-                  ].join(","),
-                }}
-              />
-              <div className="pointer-events-none absolute inset-4 rounded-lg border border-slate-900/10 dark:border-white/10 sm:inset-6" />
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+            Earn an Official Verified Certificate
+          </h2>
 
-              <div className="relative flex flex-col items-center text-center">
-                <span className="flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-blue-600 to-violet-600 text-white shadow-lg shadow-violet-600/25">
-                  <Dna size={26} />
+          <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal mt-2">
+            Complete the live sessions and capstone project to receive an official DeepBio Academy certificate of completion with verifiable digital credentials.
+          </p>
+        </div>
+
+        <div className="relative mx-auto max-w-3xl rounded-3xl border border-slate-200/90 bg-gradient-to-b from-teal-50/40 via-white to-slate-50 p-2 sm:p-3 shadow-md">
+          <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-8 sm:p-12 text-center shadow-xs">
+            <div className="pointer-events-none absolute inset-4 rounded-xl border border-slate-100 sm:inset-6" />
+
+            <div className="relative flex flex-col items-center">
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-teal-600 text-white shadow-md shadow-teal-600/20">
+                <Dna className="w-7 h-7" />
+              </div>
+
+              <p className="mt-4 text-xs font-extrabold uppercase tracking-[0.25em] text-slate-400">
+                DeepBio Academy
+              </p>
+
+              <h3 className="mt-3 text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+                Certificate of Completion
+              </h3>
+
+              <p className="mt-2 text-xs sm:text-sm text-slate-500">
+                This certifies that
+              </p>
+
+              <p className="mt-1 text-xl sm:text-2xl font-extrabold text-teal-700">
+                Your Name Here
+              </p>
+
+              <p className="mx-auto mt-4 max-w-md text-xs sm:text-sm leading-relaxed text-slate-600 font-normal">
+                has successfully completed the{" "}
+                <span className="font-bold text-slate-900">
+                  NextGen Drug Discovery with AI
+                </span>{" "}
+                program, covering cheminformatics, structural bioinformatics, AutoDock Vina,
+                GROMACS molecular dynamics, and Graph Neural Networks.
+              </p>
+
+              <div className="mt-8 flex w-full items-center justify-between border-t border-slate-100 pt-6">
+                <div className="text-left">
+                  <p className="text-[10px] uppercase tracking-wider text-slate-400 font-bold">Issued</p>
+                  <p className="text-xs font-bold text-slate-800">Upon Completion</p>
+                </div>
+
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 border border-emerald-200 px-3 py-1 text-xs font-bold text-emerald-700">
+                  <ShieldCheck className="w-4 h-4" />
+                  Verified Digital ID
                 </span>
-                <p className="mt-4 text-xs font-bold uppercase tracking-[0.3em] text-slate-500 dark:text-slate-400">
-                  DeepBio Academy
-                </p>
-                <h3 className="mt-5 text-2xl font-bold text-slate-900 dark:text-white sm:text-3xl">
-                  Certificate of Completion
-                </h3>
-                <p className="mt-4 text-sm text-slate-500 dark:text-slate-400">
-                  This certifies that
-                </p>
-                <p className="mt-2 text-xl font-semibold text-transparent bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text sm:text-2xl">
-                  Your Name Here
-                </p>
-                <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-slate-600 dark:text-slate-400">
-                  has successfully completed the{" "}
-                  <span className="font-semibold text-slate-900 dark:text-white">
-                    NextGen Drug Discovery with AI
-                  </span>{" "}
-                  program, covering cheminformatics, structural bioinformatics, molecular
-                  dynamics, and AI for drug discovery.
-                </p>
 
-                <div className="mt-8 flex w-full items-center justify-between border-t border-slate-900/10 pt-6 dark:border-white/10">
-                  <div className="text-left">
-                    <p className="text-[11px] uppercase tracking-wide text-slate-400">Issued</p>
-                    <p className="text-sm font-semibold text-slate-800 dark:text-slate-200">
-                      Upon Completion
-                    </p>
-                  </div>
-                  <span className="flex items-center gap-1.5 rounded-full bg-cyan-500/10 px-3 py-1.5 text-xs font-semibold text-cyan-600 dark:text-cyan-300">
-                    <ShieldCheck size={14} />
-                    Verified
-                  </span>
-                  <div className="text-right">
-                    <p className="text-[11px] uppercase tracking-wide text-slate-400">Signed</p>
-                    <p className="text-sm font-semibold text-slate-800 dark:text-slate-200">
-                      Lead Instructor
-                    </p>
-                  </div>
+                <div className="text-right">
+                  <p className="text-[10px] uppercase tracking-wider text-slate-400 font-bold">Signed</p>
+                  <p className="text-xs font-bold text-slate-800">Lead Instructor</p>
                 </div>
               </div>
             </div>
           </div>
-          <div className="mt-6 flex items-center justify-center gap-2 text-sm text-slate-500 dark:text-slate-400">
-            <Award size={16} className="text-violet-600 dark:text-cyan-300" />
-            Illustrative preview — final certificate design provided at graduation.
-          </div>
-        </Reveal>
+        </div>
       </div>
     </section>
   );

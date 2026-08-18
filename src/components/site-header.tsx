@@ -1,25 +1,12 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Dna, Menu, X } from "lucide-react";
+import { ChevronRight, Dna, Menu, X } from "lucide-react";
 import { navLinks, preRegisterUrl } from "@/lib/data";
-import { ThemeToggle } from "@/components/theme-toggle";
 
 export function SiteHeader() {
-  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const sentinelRef = useRef<HTMLDivElement>(null);
-
-  // An IntersectionObserver on a sentinel at the top of the document costs
-  // nothing while scrolling, unlike a scroll listener that runs every frame.
-  useEffect(() => {
-    const el = sentinelRef.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(([entry]) => setScrolled(!entry.isIntersecting));
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -29,100 +16,97 @@ export function SiteHeader() {
   }, [open]);
 
   return (
-    <>
-      <div ref={sentinelRef} aria-hidden="true" className="absolute top-0 left-0 h-3 w-px" />
-
-      <header
-        className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-          scrolled
-            ? "glass glass-blur border-b border-slate-900/5 py-3 shadow-[0_4px_30px_rgba(15,23,42,0.06)] dark:border-white/5"
-            : "border-b border-transparent py-5"
-        }`}
-      >
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-          <Link href="#top" className="flex items-center gap-2.5 font-bold tracking-tight">
-            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 via-violet-600 to-cyan-500 text-white shadow-lg shadow-violet-600/20">
-              <Dna size={18} strokeWidth={2.4} />
+    <header className="sticky top-0 z-50 transition-all duration-200 bg-white/95 backdrop-blur-md border-b border-slate-100 py-3 sm:py-3.5">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between">
+          {/* Logo Lockup */}
+          <Link
+            href="#top"
+            className="flex items-center gap-3 cursor-pointer group text-left focus:outline-none"
+            aria-label="DeepBio Academy - NextGen Drug Discovery"
+          >
+            <span className="flex h-10 w-10 sm:h-11 sm:w-11 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-teal-600 via-cyan-600 to-blue-600 text-white shadow-md shadow-teal-600/20 transition-transform duration-200 group-hover:scale-105">
+              <Dna className="w-5 h-5 sm:w-6 sm:h-6" strokeWidth={2.4} />
             </span>
-            <span className="hidden text-sm leading-tight sm:block">
-              <span className="block text-slate-900 dark:text-white">DeepBio Academy</span>
-              <span className="block text-[11px] font-medium text-slate-500 dark:text-slate-400">
+            <span className="leading-tight">
+              <span className="block text-base sm:text-lg font-bold tracking-tight text-slate-900 group-hover:text-teal-700 transition-colors">
+                DeepBio Academy
+              </span>
+              <span className="block text-xs sm:text-[13px] font-medium text-slate-500">
                 NextGen Drug Discovery
               </span>
             </span>
           </Link>
 
-          <nav className="hidden items-center gap-1 lg:flex">
+          <nav className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="rounded-full px-4 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-slate-900/5 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-white/5 dark:hover:text-white"
+                className="px-3.5 py-2 rounded-lg text-sm font-semibold text-slate-600 hover:text-teal-700 hover:bg-teal-50/60 transition-colors cursor-pointer"
               >
                 {link.label}
               </a>
             ))}
           </nav>
 
-          <div className="hidden items-center gap-3 lg:flex">
-            <ThemeToggle />
+          <div className="hidden md:flex items-center gap-2.5">
             <a
               href={preRegisterUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative inline-flex items-center gap-1.5 overflow-clip rounded-full bg-gradient-to-r from-blue-600 to-violet-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-violet-600/25 transition-transform hover:scale-[1.03] active:scale-95"
+              className="px-5 py-2.5 rounded-xl bg-teal-600 hover:bg-teal-700 active:bg-teal-800 text-white font-semibold text-xs sm:text-sm shadow-sm shadow-teal-600/20 hover:shadow-md transition-all cursor-pointer flex items-center gap-1.5"
             >
-              Pre-Register Free
+              <span>Pre-Register Free</span>
+              <ChevronRight className="w-4 h-4" />
             </a>
           </div>
 
           <div className="flex items-center gap-2 lg:hidden">
-            <ThemeToggle />
             <button
               type="button"
-              aria-label={open ? "Close menu" : "Open menu"}
-              aria-expanded={open}
+              className="p-2.5 rounded-xl border border-slate-200 text-slate-700 hover:bg-slate-50 transition-colors focus:outline-hidden focus:ring-2 focus:ring-teal-500/20"
+              aria-label="Toggle Navigation Menu"
               onClick={() => setOpen((v) => !v)}
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-900/10 text-slate-700 dark:border-white/10 dark:text-slate-200"
             >
-              {open ? <X size={18} /> : <Menu size={18} />}
+              {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
         </div>
+      </div>
 
-        {/* Height animated with grid-template-rows so the browser interpolates
-            it natively instead of a JS animation loop measuring the panel. */}
-        <div
-          inert={!open}
-          className={`grid overflow-clip transition-[grid-template-rows,opacity] duration-300 ease-in-out lg:hidden ${
-            open ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
-          }`}
-        >
-          <div className="min-h-0">
-            <nav className="glass glass-blur mx-4 mb-4 flex flex-col gap-1 rounded-2xl p-3">
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setOpen(false)}
-                  className="rounded-xl px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-900/5 dark:text-slate-200 dark:hover:bg-white/5"
-                >
-                  {link.label}
-                </a>
-              ))}
+      {/* Mobile Drawer */}
+      <div
+        inert={!open}
+        className={`grid overflow-clip transition-[grid-template-rows,opacity] duration-300 ease-in-out lg:hidden ${
+          open ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+        }`}
+      >
+        <div className="min-h-0">
+          <nav className="mx-4 mb-3 mt-3 flex flex-col gap-1 rounded-2xl border border-slate-200 bg-white p-3 shadow-xl">
+            {navLinks.map((link) => (
               <a
-                href={preRegisterUrl}
-                target="_blank"
-                rel="noopener noreferrer"
+                key={link.href}
+                href={link.href}
                 onClick={() => setOpen(false)}
-                className="mt-1 rounded-xl bg-gradient-to-r from-blue-600 to-violet-600 px-4 py-3 text-center text-sm font-semibold text-white"
+                className="rounded-xl px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-teal-50 hover:text-teal-700"
               >
-                Pre-Register Free
+                {link.label}
               </a>
-            </nav>
-          </div>
+            ))}
+            <a
+              href={preRegisterUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setOpen(false)}
+              className="mt-1 rounded-xl bg-teal-600 px-4 py-3 text-center text-sm font-semibold text-white hover:bg-teal-700 flex items-center justify-center gap-1.5"
+            >
+              <span>Pre-Register Free</span>
+              <ChevronRight className="w-4 h-4" />
+            </a>
+          </nav>
         </div>
-      </header>
-    </>
+      </div>
+    </header>
   );
 }

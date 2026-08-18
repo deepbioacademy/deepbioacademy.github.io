@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Dna, Mail } from "lucide-react";
-import { navLinks } from "@/lib/data";
+import { contactEmail, navLinks } from "@/lib/data";
 
 function FacebookIcon() {
   return (
@@ -18,75 +18,59 @@ function LinkedInIcon() {
   );
 }
 
-const footerLinks = {
-  Company: [
-    { label: "About", href: "#program" },
-    { label: "Programs", href: "#modules" },
-    { label: "Faculty", href: "#instructor" },
-    { label: "Contact", href: "mailto:hello@deepbio.academy" },
-  ],
-  Legal: [
-    { label: "Privacy Policy", href: "#" },
-    { label: "Terms of Service", href: "#" },
-  ],
-};
+function GitHubIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width={16} height={16} fill="currentColor" aria-hidden="true">
+      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+    </svg>
+  );
+}
+
+function YouTubeIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width={16} height={16} fill="currentColor" aria-hidden="true">
+      <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+    </svg>
+  );
+}
 
 export function SiteFooter() {
   return (
-    <footer className="relative border-t border-slate-900/10 bg-white py-16 dark:border-white/10 dark:bg-slate-950">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
-          <div className="sm:col-span-2 lg:col-span-1">
-            <Link href="#top" className="flex items-center gap-2.5 font-bold tracking-tight">
-              <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 via-violet-600 to-cyan-500 text-white">
-                <Dna size={18} strokeWidth={2.4} />
+    <footer className="bg-slate-950 text-slate-400 pt-12 sm:pt-16 pb-12 border-t border-slate-900">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10 pb-10 sm:pb-12 border-b border-slate-800/80">
+          {/* Brand & Mission */}
+          <div className="lg:col-span-6 space-y-4">
+            <Link
+              href="#top"
+              className="flex items-center gap-3 cursor-pointer group text-left focus:outline-none"
+              aria-label="DeepBio Academy - NextGen Drug Discovery"
+            >
+              <span className="flex h-10 w-10 sm:h-11 sm:w-11 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-teal-600 via-cyan-600 to-blue-600 text-white shadow-md shadow-teal-600/20 transition-transform duration-200 group-hover:scale-105">
+                <Dna className="w-5 h-5 sm:w-6 sm:h-6" strokeWidth={2.4} />
               </span>
-              <span className="text-slate-900 dark:text-white">DeepBio Academy</span>
+              <span className="leading-tight">
+                <span className="block text-base sm:text-lg font-bold tracking-tight text-white group-hover:text-teal-400 transition-colors">
+                  DeepBio Academy
+                </span>
+                <span className="block text-xs sm:text-[13px] font-medium text-slate-400">
+                  NextGen Drug Discovery
+                </span>
+              </span>
             </Link>
-            <p className="mt-4 max-w-xs text-sm leading-relaxed text-slate-500 dark:text-slate-400">
-              Training the next generation of computational and AI-driven drug discovery
-              scientists.
+
+            <p className="text-xs sm:text-sm text-slate-400 font-normal leading-relaxed max-w-md">
+              Training the next generation of computational and AI-driven drug discovery scientists through live hands-on mentorship, reproducible cloud notebooks, and research-grade pipelines.
             </p>
-            <div className="mt-5 flex gap-3">
-              <a
-                href="https://www.facebook.com/deepbioacademy"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook"
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-900/10 text-slate-600 transition-colors hover:border-blue-600/40 hover:text-blue-600 dark:border-white/10 dark:text-slate-300"
-              >
-                <FacebookIcon />
-              </a>
-              <a
-                href="https://www.linkedin.com/company/deepbioacademy/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-900/10 text-slate-600 transition-colors hover:border-blue-600/40 hover:text-blue-600 dark:border-white/10 dark:text-slate-300"
-              >
-                <LinkedInIcon />
-              </a>
-              <a
-                href="mailto:hello@deepbio.academy"
-                aria-label="Email"
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-900/10 text-slate-600 transition-colors hover:border-blue-600/40 hover:text-blue-600 dark:border-white/10 dark:text-slate-300"
-              >
-                <Mail size={16} />
-              </a>
-            </div>
           </div>
 
-          <div>
-            <h4 className="text-xs font-bold uppercase tracking-widest text-slate-400">
-              Explore
-            </h4>
-            <ul className="mt-4 flex flex-col gap-3">
+          {/* Navigation */}
+          <div className="lg:col-span-3 space-y-3">
+            <h4 className="text-xs font-bold text-slate-200 uppercase tracking-wider">Navigation</h4>
+            <ul className="space-y-2 text-xs sm:text-sm font-medium">
               {navLinks.map((link) => (
                 <li key={link.href}>
-                  <a
-                    href={link.href}
-                    className="text-sm text-slate-600 transition-colors hover:text-blue-600 dark:text-slate-400 dark:hover:text-cyan-300"
-                  >
+                  <a href={link.href} className="hover:text-white transition-colors cursor-pointer py-1 block">
                     {link.label}
                   </a>
                 </li>
@@ -94,46 +78,74 @@ export function SiteFooter() {
             </ul>
           </div>
 
-          <div>
-            <h4 className="text-xs font-bold uppercase tracking-widest text-slate-400">
-              Company
-            </h4>
-            <ul className="mt-4 flex flex-col gap-3">
-              {footerLinks.Company.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-sm text-slate-600 transition-colors hover:text-blue-600 dark:text-slate-400 dark:hover:text-cyan-300"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/* Contact & Social */}
+          <div className="lg:col-span-3 space-y-4">
+            <h4 className="text-xs font-bold text-slate-200 uppercase tracking-wider">Get in Touch</h4>
+            <div className="space-y-3 text-xs">
+              <a
+                href={`mailto:${contactEmail}`}
+                className="inline-flex items-center gap-2 text-slate-300 hover:text-white transition-colors font-medium break-all py-1"
+              >
+                <Mail className="w-4 h-4 text-teal-400 flex-shrink-0" />
+                <span>{contactEmail}</span>
+              </a>
 
-          <div>
-            <h4 className="text-xs font-bold uppercase tracking-widest text-slate-400">
-              Legal
-            </h4>
-            <ul className="mt-4 flex flex-col gap-3">
-              {footerLinks.Legal.map((link) => (
-                <li key={link.label}>
+              <div className="pt-1">
+                <p className="text-[11px] text-slate-500 font-medium mb-2.5 uppercase tracking-wider">
+                  Community &amp; Social
+                </p>
+                <div className="flex items-center gap-2 flex-wrap">
                   <a
-                    href={link.href}
-                    className="text-sm text-slate-600 transition-colors hover:text-blue-600 dark:text-slate-400 dark:hover:text-cyan-300"
+                    href="https://facebook.com/deepbioacademy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Facebook"
+                    className="w-9 h-9 sm:w-8 sm:h-8 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 flex items-center justify-center transition-all hover:text-blue-400 hover:bg-blue-500/10"
                   >
-                    {link.label}
+                    <FacebookIcon />
                   </a>
-                </li>
-              ))}
-            </ul>
+                  <a
+                    href="https://linkedin.com/company/deepbioacademy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn"
+                    className="w-9 h-9 sm:w-8 sm:h-8 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 flex items-center justify-center transition-all hover:text-sky-400 hover:bg-sky-500/10"
+                  >
+                    <LinkedInIcon />
+                  </a>
+                  <a
+                    href="https://github.com/hossainlab"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="GitHub"
+                    className="w-9 h-9 sm:w-8 sm:h-8 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 flex items-center justify-center transition-all hover:text-white hover:bg-white/10"
+                  >
+                    <GitHubIcon />
+                  </a>
+                  <a
+                    href="https://youtube.com/@hossainlab"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="YouTube"
+                    className="w-9 h-9 sm:w-8 sm:h-8 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 flex items-center justify-center transition-all hover:text-red-400 hover:bg-red-500/10"
+                  >
+                    <YouTubeIcon />
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-slate-900/10 pt-8 text-xs text-slate-500 dark:border-white/10 dark:text-slate-500 sm:flex-row">
+        {/* Bottom Bar */}
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 text-center sm:text-left">
           <p>© {new Date().getFullYear()} DeepBio Academy. All rights reserved.</p>
-          <p>NextGen Drug Discovery with AI</p>
+          <div className="flex items-center gap-1.5 text-slate-400 flex-wrap justify-center">
+            <span>Powered by</span>
+            <span className="text-slate-200 font-semibold">DeepBio Limited</span>
+            <span>•</span>
+            <span className="text-slate-200 font-semibold">NextGen Drug Discovery</span>
+          </div>
         </div>
       </div>
     </footer>

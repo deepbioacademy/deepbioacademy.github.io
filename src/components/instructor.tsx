@@ -1,122 +1,126 @@
 import Image from "next/image";
-import { BookOpen, FlaskConical, GraduationCap, Quote, Users } from "lucide-react";
-import { instructors } from "@/lib/data";
-import { SectionHeading } from "./ui/section-heading";
-import { Reveal } from "./ui/reveal";
-import { GlassCard } from "./ui/glass-card";
-import { Counter } from "./ui/counter";
-
-const statIcons = [FlaskConical, Users, GraduationCap, BookOpen];
-
-function parseStat(value: string) {
-  const match = value.match(/^(\d+)(\+?)$/);
-  if (!match) return null;
-  return { number: parseInt(match[1], 10), suffix: match[2] };
-}
+import { Users, CheckCircle2, Award, Sparkles, BookOpen, ArrowRight } from "lucide-react";
+import { instructors, preRegisterUrl } from "@/lib/data";
 
 export function Instructor() {
-  const lead = instructors.find((i) => i.lead) ?? instructors[0];
-  const team = instructors.filter((i) => !i.lead);
-
   return (
-    <section id="instructor" className="relative bg-slate-50 py-24 dark:bg-slate-900/40 sm:py-32">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeading
-          eyebrow="Meet the Team"
-          title="Learn from a computational drug discovery team"
-          description="A program lead and a team of pharmacy graduates and CADD experts guiding every session."
-        />
-
-        <div className="mt-16 grid gap-8 lg:grid-cols-[minmax(0,320px)_1fr] lg:gap-12">
-          <Reveal>
-            <GlassCard className="flex flex-col items-center border border-slate-900/10 bg-white/70 p-8 text-center dark:border-white/10 dark:bg-white/[0.03]">
-              <div className="relative h-32 w-32 overflow-hidden rounded-full ring-4 ring-white shadow-xl shadow-violet-600/20 dark:ring-slate-900">
-                <Image
-                  src={lead.photo}
-                  alt={lead.name}
-                  fill
-                  sizes="128px"
-                  className="object-cover"
-                />
-              </div>
-              <h3 className="mt-5 text-xl font-bold text-slate-900 dark:text-white">
-                {lead.name}
-              </h3>
-              <p className="mt-1 text-sm font-medium text-violet-600 dark:text-cyan-300">
-                {lead.role}
-              </p>
-              {lead.bio ? (
-                <p className="mt-4 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
-                  {lead.bio}
-                </p>
-              ) : null}
-              {lead.quote ? (
-                <p className="mt-4 flex items-start gap-2 text-left text-xs font-medium italic leading-relaxed text-slate-500 dark:text-slate-400">
-                  <Quote className="h-4 w-4 shrink-0 text-violet-500 dark:text-cyan-300" strokeWidth={2.2} />
-                  {lead.quote}
-                </p>
-              ) : null}
-            </GlassCard>
-          </Reveal>
-
-          <div className="grid gap-5 sm:grid-cols-2">
-            {(lead.stats ?? []).map((stat, i) => {
-              const Icon = statIcons[i % statIcons.length];
-              const parsed = parseStat(stat.value);
-              return (
-                <Reveal key={stat.label} delay={i * 0.08}>
-                  <GlassCard className="h-full border border-slate-900/10 bg-white/70 p-6 dark:border-white/10 dark:bg-white/[0.03]">
-                    <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-slate-900/5 text-violet-600 dark:bg-white/5 dark:text-cyan-300">
-                      <Icon size={18} />
-                    </span>
-                    <h4 className="mt-4 text-lg font-bold text-slate-900 dark:text-white">
-                      {parsed ? (
-                        <Counter value={parsed.number} suffix={parsed.suffix} />
-                      ) : (
-                        stat.value
-                      )}
-                    </h4>
-                    <p className="mt-1 text-sm font-semibold text-slate-800 dark:text-slate-200">
-                      {stat.label}
-                    </p>
-                    <p className="mt-1 text-xs leading-relaxed text-slate-500 dark:text-slate-400">
-                      {stat.description}
-                    </p>
-                  </GlassCard>
-                </Reveal>
-              );
-            })}
+    <section id="faculty" className="py-16 sm:py-24 bg-white border-b border-slate-200/80">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+        {/* Section Header */}
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+          <div className="space-y-2">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-teal-50 border border-teal-100 text-teal-800 text-xs font-bold uppercase tracking-wider">
+              <Users className="w-3.5 h-3.5 text-teal-600" />
+              <span>Program Leadership &amp; Faculty</span>
+            </div>
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+              Featured Leadership &amp; Mentors
+            </h2>
+            <p className="text-slate-600 text-xs sm:text-base font-normal leading-relaxed max-w-2xl">
+              Learn directly from experienced bioinformaticians, computational chemists, and AI researchers guiding every live session.
+            </p>
           </div>
+
+          <a
+            href={preRegisterUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-teal-700 hover:text-teal-800 self-start sm:self-auto cursor-pointer"
+          >
+            <span>Pre-Register with Mentors</span>
+            <ArrowRight className="w-4 h-4" />
+          </a>
         </div>
 
-        <Reveal delay={0.15} className="mt-14">
-          <h3 className="text-center text-sm font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">
-            Instructors
-          </h3>
-        </Reveal>
+        {/* Mentor Cards Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 sm:gap-6">
+          {instructors.map((member) => (
+            <div
+              key={member.name}
+              className="bg-white rounded-2xl border border-slate-200/85 shadow-xs hover:shadow-lg hover:shadow-slate-900/5 hover:border-teal-300 transition-all duration-300 flex flex-col justify-between overflow-hidden group p-3 sm:p-3.5"
+            >
+              {/* Photo Area */}
+              <div className="relative w-full h-52 sm:h-56 rounded-xl overflow-hidden bg-slate-100 ring-1 ring-slate-900/5 shadow-inner">
+                <Image
+                  src={member.photo}
+                  alt={member.name}
+                  fill
+                  loading="lazy"
+                  quality={85}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
+                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500 ease-out"
+                />
+              </div>
 
-        <div className="mt-8 flex flex-wrap justify-center gap-5">
-          {team.map((member, i) => (
-            <Reveal key={member.name} delay={(i % 5) * 0.06} className="w-[calc(50%-0.625rem)] sm:w-[calc(33.333%-0.834rem)] lg:w-[calc(25%-0.938rem)]">
-              <GlassCard className="flex h-full flex-col items-center gap-3 border border-slate-900/10 bg-white/70 px-4 py-7 text-center transition-all hover:-translate-y-1 hover:border-violet-500/30 dark:border-white/10 dark:bg-white/[0.03]">
-                <div className="relative h-20 w-20 overflow-hidden rounded-full ring-2 ring-white shadow-md dark:ring-slate-900">
-                  <Image
-                    src={member.photo}
-                    alt={member.name}
-                    fill
-                    sizes="80px"
-                    className="object-cover"
-                  />
+              {/* Bio & Details */}
+              <div className="pt-3 px-1 space-y-1.5 flex-1 flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center justify-between gap-1.5">
+                    <h4 className="text-base font-bold text-slate-900 group-hover:text-teal-700 transition-colors tracking-tight">
+                      {member.name}
+                    </h4>
+                    <div
+                      className="w-4 h-4 rounded-full bg-teal-50 text-teal-700 flex items-center justify-center flex-shrink-0"
+                      title="Verified Instructor"
+                    >
+                      <CheckCircle2 className="w-3.5 h-3.5" />
+                    </div>
+                  </div>
+                  <p className="text-xs font-semibold text-teal-700">{member.role}</p>
+                  <p className="text-[11px] font-medium text-slate-500">{member.organization}</p>
+                  <p className="text-xs text-slate-600 font-normal leading-relaxed mt-1 line-clamp-2">
+                    {member.specialty}
+                  </p>
                 </div>
-                <span className="text-sm font-semibold leading-tight text-slate-900 dark:text-white">
-                  {member.name}
-                </span>
-                <span className="text-xs leading-tight text-slate-500 dark:text-slate-400">
-                  {member.role}
-                </span>
-              </GlassCard>
-            </Reveal>
+              </div>
+            </div>
           ))}
+        </div>
+
+        {/* Lead Mentor Metrics & Quote Banner */}
+        <div className="bg-slate-50 rounded-2xl sm:rounded-3xl p-6 sm:p-10 border border-slate-200/90 shadow-xs space-y-8">
+          <div className="text-center max-w-2xl mx-auto space-y-2">
+            <h3 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">
+              Direct Mentorship · Research Rigor
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-600 font-normal">
+              Every student works directly with the lead instructor on live coding, weekly assignments, and publication-grade capstone projects.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            <div className="space-y-2 p-4 rounded-xl bg-white border border-slate-200/80 shadow-xs text-center">
+              <div className="w-10 h-10 rounded-lg bg-teal-50 text-teal-700 flex items-center justify-center mx-auto">
+                <BookOpen className="w-5 h-5" />
+              </div>
+              <h4 className="text-lg font-extrabold text-slate-900">5+ Years</h4>
+              <p className="text-xs text-slate-600 font-medium">Research in CADD &amp; Cheminformatics</p>
+            </div>
+
+            <div className="space-y-2 p-4 rounded-xl bg-white border border-slate-200/80 shadow-xs text-center">
+              <div className="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center mx-auto">
+                <Users className="w-5 h-5" />
+              </div>
+              <h4 className="text-lg font-extrabold text-slate-900">3,000+</h4>
+              <p className="text-xs text-slate-600 font-medium">Students &amp; Researchers Trained</p>
+            </div>
+
+            <div className="space-y-2 p-4 rounded-xl bg-white border border-slate-200/80 shadow-xs text-center">
+              <div className="w-10 h-10 rounded-lg bg-cyan-50 text-cyan-700 flex items-center justify-center mx-auto">
+                <Award className="w-5 h-5" />
+              </div>
+              <h4 className="text-lg font-extrabold text-slate-900">20+</h4>
+              <p className="text-xs text-slate-600 font-medium">Peer-Reviewed Scientific Publications</p>
+            </div>
+
+            <div className="space-y-2 p-4 rounded-xl bg-white border border-slate-200/80 shadow-xs text-center">
+              <div className="w-10 h-10 rounded-lg bg-amber-50 text-amber-700 flex items-center justify-center mx-auto">
+                <Sparkles className="w-5 h-5" />
+              </div>
+              <h4 className="text-lg font-extrabold text-slate-900">RA Pathway</h4>
+              <p className="text-xs text-slate-600 font-medium">Direct Lab Recruitment for High Performers</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>

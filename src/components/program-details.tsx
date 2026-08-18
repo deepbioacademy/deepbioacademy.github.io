@@ -10,11 +10,9 @@ import {
   ListChecks,
   Wallet,
   Wrench,
+  Sparkles,
 } from "lucide-react";
 import { programDetails } from "@/lib/data";
-import { SectionHeading } from "./ui/section-heading";
-import { Reveal } from "./ui/reveal";
-import { GlassCard } from "./ui/glass-card";
 
 const icons: Record<string, typeof Calendar> = {
   Duration: Calendar,
@@ -22,48 +20,59 @@ const icons: Record<string, typeof Calendar> = {
   Time: Clock,
   Mode: Laptop,
   Assignments: Wrench,
-  Projects: Wrench,
+  Capstone: Sparkles,
   Certificate: Award,
   "Google Colab": Cloud,
   Fee: Wallet,
-  "Payment Deadline": CreditCard,
+  "Payment Due": CreditCard,
   "Colab Notebooks": FlaskConical,
   "Enrollment Process": ClipboardCheck,
 };
 
 export function ProgramDetails() {
   return (
-    <section className="relative bg-white py-24 dark:bg-slate-950 sm:py-32">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <SectionHeading
-          eyebrow="Program Details"
-          title="Everything you need to know"
-        />
+    <section className="py-16 sm:py-20 bg-slate-50/70 border-b border-slate-200/80">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-teal-50 border border-teal-100 text-teal-800 text-xs font-bold uppercase tracking-wider mb-3">
+            <Calendar className="w-3.5 h-3.5" />
+            <span>Cohort Logistics &amp; Investment</span>
+          </div>
 
-        <div className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {programDetails.map((detail, i) => {
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+            Program Structure &amp; Schedule
+          </h2>
+
+          <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal mt-2">
+            Transparent month-to-month fee. Zero hardware setup costs.
+          </p>
+        </div>
+
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {programDetails.map((detail) => {
             const Icon = icons[detail.label] ?? Calendar;
             return (
-              <Reveal key={detail.label} delay={(i % 3) * 0.06}>
-                <GlassCard className="flex h-full items-start gap-4 border border-slate-900/10 bg-white/70 p-6 dark:border-white/10 dark:bg-white/[0.03]">
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-violet-600 text-white shadow-md shadow-violet-600/20">
-                    <Icon size={19} />
+              <div
+                key={detail.label}
+                className="flex items-start gap-4 rounded-2xl border border-slate-200/90 bg-white p-6 shadow-xs hover:shadow-md hover:border-teal-300 transition-all"
+              >
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-teal-50 text-teal-700">
+                  <Icon className="w-5 h-5" />
+                </div>
+                <div>
+                  <span className="block text-xs font-bold uppercase tracking-wider text-slate-500">
+                    {detail.label}
                   </span>
-                  <span>
-                    <span className="block text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
-                      {detail.label}
-                    </span>
-                    <span className="mt-1 block text-base font-bold text-slate-900 dark:text-white">
-                      {detail.value}
-                    </span>
-                    {detail.note ? (
-                      <span className="mt-0.5 block text-xs font-medium text-slate-500 dark:text-slate-400">
-                        {detail.note}
-                      </span>
-                    ) : null}
+                  <span className="mt-1 block text-base font-extrabold text-slate-900">
+                    {detail.value}
                   </span>
-                </GlassCard>
-              </Reveal>
+                  {detail.note ? (
+                    <span className="mt-0.5 block text-xs font-normal text-slate-500">
+                      {detail.note}
+                    </span>
+                  ) : null}
+                </div>
+              </div>
             );
           })}
         </div>

@@ -1,36 +1,41 @@
-import { Plus } from "lucide-react";
+import { ChevronDown, HelpCircle } from "lucide-react";
 import { faqItems } from "@/lib/data";
-import { SectionHeading } from "./ui/section-heading";
-import { Reveal } from "./ui/reveal";
 
 export function Faq() {
   return (
-    <section id="faq" className="relative bg-slate-50 py-24 dark:bg-slate-900/40 sm:py-32">
-      <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-        <SectionHeading eyebrow="FAQ" title="Frequently asked questions" />
+    <section id="faq" className="py-16 sm:py-20 bg-slate-50/60 border-b border-slate-200/80">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-teal-50 border border-teal-100 text-teal-800 text-xs font-bold uppercase tracking-wider mb-3">
+            <HelpCircle className="w-3.5 h-3.5 text-teal-600" />
+            <span>Frequently Asked Questions</span>
+          </div>
 
-        <div className="mt-14 flex flex-col gap-3">
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
+            Everything You Need to Know
+          </h2>
+
+          <p className="text-slate-600 text-sm sm:text-base font-normal leading-relaxed">
+            Clear answers regarding pre-registration, software requirements, schedule, and certification.
+          </p>
+        </div>
+
+        <div className="space-y-3">
           {faqItems.map((item, i) => (
-            <Reveal key={item.question} delay={i * 0.04}>
-              {/* Native exclusive accordion — no state, no hydration. */}
-              <details
-                name="faq"
-                open={i === 0}
-                className="group glass rounded-2xl border border-slate-900/10 transition-colors open:border-blue-600/30 open:bg-blue-600/[0.03] dark:border-white/10 dark:open:border-cyan-400/20"
-              >
-                <summary className="flex w-full items-center gap-4 px-6 py-5 text-left">
-                  <span className="flex-1 text-sm font-semibold text-slate-900 sm:text-base dark:text-white">
-                    {item.question}
-                  </span>
-                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-slate-900/5 text-slate-600 transition-transform duration-300 group-open:rotate-45 group-open:bg-gradient-to-br group-open:from-blue-600 group-open:to-violet-600 group-open:text-white dark:bg-white/10 dark:text-slate-300">
-                    <Plus size={15} />
-                  </span>
-                </summary>
-                <p className="px-6 pb-5 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
-                  {item.answer}
-                </p>
-              </details>
-            </Reveal>
+            <details
+              key={item.question}
+              name="faq"
+              open={i === 0}
+              className="border border-slate-200/90 rounded-2xl bg-white overflow-hidden shadow-xs transition-all group"
+            >
+              <summary className="w-full p-5 text-left flex items-center justify-between gap-4 font-bold text-slate-900 hover:bg-slate-50/80 transition-colors cursor-pointer">
+                <span className="text-sm sm:text-base leading-snug">{item.question}</span>
+                <ChevronDown className="w-5 h-5 text-slate-400 flex-shrink-0 transition-transform group-open:rotate-180 group-open:text-teal-700" />
+              </summary>
+              <div className="px-5 pb-5 pt-1 border-t border-slate-100 text-slate-600 text-xs sm:text-sm leading-relaxed font-normal bg-slate-50/50">
+                {item.answer}
+              </div>
+            </details>
           ))}
         </div>
       </div>
