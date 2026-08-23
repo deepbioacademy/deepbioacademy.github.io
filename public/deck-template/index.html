@@ -12,8 +12,8 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css" id="theme">
   <style>
     :root {
-      --db-primary:   #0284c7; /* Cyan-Blue */
-      --db-secondary: #38bdf8; /* Sky */
+      --db-primary:   #0d9488; /* Teal-600 */
+      --db-secondary: #2dd4bf; /* Teal-400 */
       --db-dark:      #0a1628;
       --db-accent:    #10b981; /* Emerald */
       --db-violet:    #7c3aed; /* Violet */
@@ -94,7 +94,7 @@
       display: inline-block; padding: 0.25em 0.9em; border-radius: 999px;
       font-size: 0.6em; font-weight: 700; text-transform: uppercase;
       letter-spacing: 0.15em; color: var(--db-primary);
-      background: rgba(2,132,199,0.08); border: 1px solid rgba(2,132,199,0.18);
+      background: rgba(13,148,136,0.08); border: 1px solid rgba(13,148,136,0.18);
       margin-bottom: 0.4em;
     }
     .tag-green { color: var(--db-accent);   background: rgba(16,185,129,0.08); border-color: rgba(16,185,129,0.2); }
@@ -103,13 +103,13 @@
     .tag-red   { color: var(--db-danger);   background: rgba(239,68,68,0.08);  border-color: rgba(239,68,68,0.2); }
 
     .gradient-text {
-      background: linear-gradient(135deg, #0284c7, #7c3aed);
+      background: linear-gradient(135deg, #0d9488, #7c3aed);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     }
 
     .sep {
       width: 44px; height: 3px;
-      background: linear-gradient(90deg, #0284c7, #7c3aed);
+      background: linear-gradient(90deg, #0d9488, #7c3aed);
       border-radius: 2px; margin: 0.5em auto;
     }
 
@@ -125,7 +125,7 @@
     }
     .card-highlight {
       border-color: var(--db-primary);
-      box-shadow: 0 2px 10px rgba(2,132,199,0.1);
+      box-shadow: 0 2px 10px rgba(13,148,136,0.1);
     }
     .card h4 {
       font-size: 0.8em; margin: 0 0 0.25em 0; color: var(--db-gray-800);
@@ -170,7 +170,7 @@
     /* ── CTA Box ── */
     .cta-box {
       border: 2px solid var(--db-primary); border-radius: 14px;
-      padding: 1.2em 1.8em; background: rgba(2,132,199,0.03); text-align: center;
+      padding: 1.2em 1.8em; background: rgba(13,148,136,0.03); text-align: center;
     }
 
     /* ── Speaker ── */
@@ -204,9 +204,6 @@
 
   <!-- ─── Persistent Footer ─── -->
   <div class="db-footer">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-    </svg>
     <span>DeepBio Academy · NextGen Drug Discovery with AI</span>
   </div>
 
@@ -219,7 +216,7 @@
         <h1 style="margin-top:0.2em;margin-bottom:0.1em;">NextGen Drug Discovery<br><span class="gradient-text">with AI</span></h1>
         <div class="sep"></div>
         <p style="font-size:0.85em;font-weight:600;color:var(--db-gray-800);margin-bottom:0.8em;">
-          Master Cheminformatics, Structural Bioinformatics, Molecular Docking, Molecular Dynamics &amp; Deep Learning
+          From Molecules to Medicine — Empowering the Next Generation of AI-Driven Drug Discoverers
         </p>
         <div class="speaker-info">
           <div class="speaker-name">Jubayer Hossain &middot; Founder &amp; CEO, DeepBio Ltd</div>
@@ -245,7 +242,7 @@
           <!-- 1 -->
           <div style="position:relative;display:flex;align-items:center;gap:1em;background:var(--db-white);border:1px solid var(--db-gray-200);border-radius:14px;padding:1em 1.2em;box-shadow:0 2px 8px rgba(15,23,42,0.04);overflow:hidden;">
             <div style="position:absolute;top:0;left:0;width:4px;height:100%;background:var(--db-primary);"></div>
-            <div style="flex-shrink:0;width:48px;height:48px;border-radius:12px;background:rgba(2,132,199,0.1);display:flex;align-items:center;justify-content:center;color:var(--db-primary);">
+            <div style="flex-shrink:0;width:48px;height:48px;border-radius:12px;background:rgba(13,148,136,0.1);display:flex;align-items:center;justify-content:center;color:var(--db-primary);">
               <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
             </div>
             <div style="flex-grow:1;">
@@ -305,135 +302,546 @@
         </div>
       </section>
 
-      <!-- ══ 02 ABOUT THE LEAD INSTRUCTOR ════════════════════════════ -->
+      <!-- ══ 02 ABOUT THE MENTOR ════════════════════════════════════ -->
       <section>
-        <div class="tag">Program Leadership</div>
+        <!-- Decorative Background Shape -->
+        <div style="position:absolute; top:-10%; right:-10%; width:300px; height:300px; background:radial-gradient(circle, rgba(13,148,136,0.05) 0%, transparent 70%); z-index:-1; pointer-events:none;"></div>
 
-        <div class="two-col" style="grid-template-columns: 0.65fr 1.35fr; gap: 2.2em; align-items: start; margin-top: 0.8em;">
-          <!-- Left Column -->
+        <div class="two-col" style="grid-template-columns: 0.65fr 1.35fr; gap: 2.2em; align-items: start; margin-top: 0.2em;">
+          
+          <!-- Left Column: Visuals & Core Stats -->
           <div style="text-align: center;">
-            <div style="position: relative; width: 200px; height: 200px; margin: 0 auto 1.2em;">
-              <div style="position: absolute; inset: -6px; border: 2px solid var(--db-gray-200); border-radius: 20px;"></div>
-              <div style="position: relative; width: 100%; height: 100%; border-radius: 16px; overflow: hidden; border: 4px solid var(--db-white); box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
+            <div style="position: relative; width: 220px; height: 220px; margin: 0 auto 1.2em;">
+              <!-- Subtle Ring -->
+              <div style="position: absolute; inset: -8px; border: 2px solid var(--db-gray-100); border-radius: 20px; z-index: 0;"></div>
+              <!-- Photo -->
+              <div style="position: relative; width: 100%; height: 100%; border-radius: 16px; overflow: hidden; border: 4px solid var(--db-white); box-shadow: 0 12px 24px rgba(0,0,0,0.1); z-index: 1;">
                 <img src="jubayer.jpg" alt="Md. Jubayer Hossain" style="width: 100%; height: 100%; object-fit: cover;">
               </div>
             </div>
             
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5em; max-width: 220px; margin: 0 auto;">
-              <div style="background: var(--db-white); border: 1px solid var(--db-gray-200); border-radius: 10px; padding: 0.5em 0.2em;">
-                <div style="font-family: var(--font-heading); font-size: 1.2em; font-weight: 900; color: var(--db-primary); line-height: 1;">5+</div>
-                <div style="font-size: 0.42em; color: var(--db-gray-500); text-transform: uppercase; margin-top: 0.2em; font-weight: 700;">Years Research</div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.6em; max-width: 220px; margin: 0 auto;">
+              <div style="background: var(--db-white); border: 1px solid var(--db-gray-200); border-radius: 12px; padding: 0.6em 0.3em; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
+                <div style="font-family: var(--font-heading); font-size: 1.25em; font-weight: 900; color: var(--db-primary); line-height: 1;">5+</div>
+                <div style="font-size: 0.42em; color: var(--db-gray-500); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 0.3em; font-weight: 700;">Years Research</div>
               </div>
-              <div style="background: var(--db-white); border: 1px solid var(--db-gray-200); border-radius: 10px; padding: 0.5em 0.2em;">
-                <div style="font-family: var(--font-heading); font-size: 1.2em; font-weight: 900; color: var(--db-accent); line-height: 1;">5+</div>
-                <div style="font-size: 0.42em; color: var(--db-gray-500); text-transform: uppercase; margin-top: 0.2em; font-weight: 700;">Years Mentoring</div>
+              <div style="background: var(--db-white); border: 1px solid var(--db-gray-200); border-radius: 12px; padding: 0.6em 0.3em; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
+                <div style="font-family: var(--font-heading); font-size: 1.25em; font-weight: 900; color: var(--db-primary); line-height: 1;">5+</div>
+                <div style="font-size: 0.42em; color: var(--db-gray-500); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 0.3em; font-weight: 700;">Years Mentoring</div>
               </div>
-              <div style="background: var(--db-white); border: 1px solid var(--db-gray-200); border-radius: 10px; padding: 0.5em 0.2em;">
-                <div style="font-family: var(--font-heading); font-size: 1.2em; font-weight: 900; color: var(--db-violet); line-height: 1;">3K+</div>
-                <div style="font-size: 0.42em; color: var(--db-gray-500); text-transform: uppercase; margin-top: 0.2em; font-weight: 700;">Students Trained</div>
+              <div style="background: var(--db-white); border: 1px solid var(--db-gray-200); border-radius: 12px; padding: 0.6em 0.3em; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
+                <div style="font-family: var(--font-heading); font-size: 1.25em; font-weight: 900; color: var(--db-primary); line-height: 1;">3K+</div>
+                <div style="font-size: 0.42em; color: var(--db-gray-500); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 0.3em; font-weight: 700;">Students Trained</div>
               </div>
-              <div style="background: var(--db-white); border: 1px solid var(--db-gray-200); border-radius: 10px; padding: 0.5em 0.2em;">
-                <div style="font-family: var(--font-heading); font-size: 1.2em; font-weight: 900; color: var(--db-warning); line-height: 1;">20+</div>
-                <div style="font-size: 0.42em; color: var(--db-gray-500); text-transform: uppercase; margin-top: 0.2em; font-weight: 700;">Publications</div>
+              <div style="background: var(--db-white); border: 1px solid var(--db-gray-200); border-radius: 12px; padding: 0.6em 0.3em; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
+                <div style="font-family: var(--font-heading); font-size: 1.25em; font-weight: 900; color: var(--db-primary); line-height: 1;">20+</div>
+                <div style="font-size: 0.42em; color: var(--db-gray-500); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 0.3em; font-weight: 700;">Publications</div>
               </div>
             </div>
           </div>
 
-          <!-- Right Column -->
-          <div style="text-align: left; margin-top: -0.35em;">
-            <div style="margin-bottom: 0.8em;">
-              <h2 style="margin: 0; font-size: 1.85em; line-height: 1; color: var(--db-gray-900);">Jubayer Hossain</h2>
-              <div style="font-size: 0.88em; font-weight: 700; color: var(--db-primary); margin-top: 0.25em;">Multiomics Scientist &middot; DeepBio Ltd</div>
+          <!-- Right Column: Bio, Interests, Education, Affiliations -->
+          <div style="text-align: left;">
+            <div style="margin-bottom: 0.6em;">
+              <div class="tag" style="margin-left: 0; margin-bottom: 0.35em; display: inline-block;">About the Mentor</div>
+              <h2 style="margin: 0; font-size: 1.9em; line-height: 1.1; color: var(--db-gray-900);">Md. Jubayer Hossain</h2>
+              <div style="font-size: 0.88em; font-weight: 700; color: var(--db-primary); margin-top: 0.2em; letter-spacing: 0.01em;">Founder &amp; CEO, DeepBio Ltd</div>
             </div>
             
-            <p style="font-size: 0.72em; line-height: 1.6; color: var(--db-gray-600); margin-bottom: 1em;">
-              Bioinformatician and computational biologist who has trained over 3,000 students since 2020. In this program, every student works directly with him and the DeepBio drug discovery team — not substitutes — on real target-to-lead pipelines.
+            <p style="font-size: 0.7em; line-height: 1.55; color: var(--db-gray-600); margin-bottom: 1em;">
+              Bioinformatician and computational biologist with 5+ years of experience in active research and teaching. Since 2020, he has trained 3,000+ students in practical skills for real-world biological data analysis.
             </p>
             
-            <div class="grid-3" style="gap: 0.6em;">
-              <div style="background: var(--db-gray-50); padding: 0.7em; border-radius: 10px; border-top: 3px solid var(--db-primary);">
-                <h4 style="font-size: 0.62em; color: var(--db-primary); text-transform: uppercase; margin-bottom: 0.4em; font-weight: 800;">Focus Areas</h4>
-                <ul class="no-bullets" style="font-size: 0.55em; line-height: 1.45; color: var(--db-gray-600);">
-                  <li>CADD &amp; Molecular Docking</li>
-                  <li>Molecular Dynamics (GROMACS)</li>
-                  <li>Cheminformatics with RDKit</li>
-                  <li>Graph Neural Networks in Drug AI</li>
+            <div class="grid-3" style="gap: 0.8em; align-items: stretch;">
+              
+              <!-- Interests -->
+              <div style="background: var(--db-gray-50); padding: 0.8em; border-radius: 12px; border-top: 3px solid var(--db-primary);">
+                <h4 style="font-size: 0.62em; color: var(--db-primary); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5em; font-weight: 800;">Interests</h4>
+                <ul class="no-bullets" style="font-size: 0.55em; line-height: 1.4; color: var(--db-gray-600);">
+                  <li>Cancer Genomics</li>
+                  <li>Single-Cell Transcriptomics</li>
+                  <li>Spatial Transcriptomics</li>
+                  <li>Multi-omics Integration</li>
+                  <li>AI in Biology</li>
                 </ul>
               </div>
 
-              <div style="background: var(--db-gray-50); padding: 0.7em; border-radius: 10px; border-top: 3px solid var(--db-accent);">
-                <h4 style="font-size: 0.62em; color: var(--db-accent); text-transform: uppercase; margin-bottom: 0.4em; font-weight: 800;">Specialized Team</h4>
-                <ul class="no-bullets" style="font-size: 0.55em; line-height: 1.45; color: var(--db-gray-600);">
-                  <li>Musab Shahriar (Drug Discovery)</li>
-                  <li>Pritom Kundu (AI Drug Design)</li>
-                  <li>Lamia Hasan Barsha (CADD)</li>
-                  <li>Naem Islam Abhi (scRNA &amp; Targets)</li>
+              <!-- Education -->
+              <div style="background: var(--db-gray-50); padding: 0.8em; border-radius: 12px; border-top: 3px solid var(--db-accent);">
+                <h4 style="font-size: 0.62em; color: var(--db-accent); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5em; font-weight: 800;">Education</h4>
+                <div style="font-size: 0.55em; line-height: 1.4; color: var(--db-gray-600);">
+                  <strong style="color:var(--db-gray-800);">MS, Microbiology</strong><br>Jagannath University<br>
+                  <strong style="color:var(--db-gray-800); display:block; margin-top:0.3em;">BS, Microbiology</strong>Jagannath University
+                </div>
+              </div>
+
+              <!-- Affiliations -->
+              <div style="background: var(--db-gray-50); padding: 0.85em; border-radius: 12px; border-top: 3px solid var(--db-warning);">
+                <h4 style="font-size: 0.62em; color: var(--db-warning); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5em; font-weight: 800;">Affiliations</h4>
+                <ul class="no-bullets" style="font-size: 0.52em; line-height: 1.35; color: var(--db-gray-600);">
+                  <li>Founder &amp; CEO, DeepBio Limited</li>
+                  <li>Founder &amp; Lead Instructor, DeepBio Academy</li>
+                  <li>Founder &amp; Director, CHIRAL Bangladesh</li>
+                  <li>Visiting Scholar, Daffodil International University</li>
+                  <li>Program Lead, GSA Bioinformatics Internship</li>
                 </ul>
               </div>
 
-              <div style="background: var(--db-gray-50); padding: 0.7em; border-radius: 10px; border-top: 3px solid var(--db-violet);">
-                <h4 style="font-size: 0.62em; color: var(--db-violet); text-transform: uppercase; margin-bottom: 0.4em; font-weight: 800;">Ecosystem</h4>
-                <ul class="no-bullets" style="font-size: 0.55em; line-height: 1.45; color: var(--db-gray-600);">
-                  <li>DeepBio Limited (R&amp;D Services)</li>
-                  <li>DeepBio Academy (Live Cohorts)</li>
-                  <li>CHIRAL Bangladesh (Research)</li>
-                  <li>cBLAST, University of Dhaka</li>
-                </ul>
-              </div>
             </div>
 
-            <div class="quote-block" style="margin-top: 1.2em; font-size: 0.7em; line-height: 1.5; border-left: 4px solid var(--db-primary); padding: 0.6em 1em; background: rgba(2,132,199,0.04);">
-              &ldquo;You bring the curiosity — I bring the roadmap, the tools, and the accountability to get you from raw target sequence to lead candidate.&rdquo;
+            <div class="quote-block" style="margin-top: 1.4em; font-size: 0.72em; line-height: 1.6; text-align: left; border-left: 4px solid var(--db-primary); padding: 0.8em 1.2em; background: rgba(13,148,136,0.03); border-radius: 0 12px 12px 0;">
+              &ldquo;My role is to accelerate your journey from question to discovery. You bring the curiosity; I bring the roadmap, the tools, and the accountability.&rdquo;
             </div>
+
           </div>
         </div>
       </section>
 
-      <!-- ══ SECTION 01 DIVIDER ════════════════════════════════════════ -->
+      <!-- ══ 03 TEAM & TEACHING ASSISTANTS ═══════════════════════════ -->
+      <section>
+        <div class="tag">Instructors &amp; Teaching Assistants</div>
+        <h2 style="margin-top:0.2em;margin-bottom:0.1em;">Meet the <span class="gradient-text">Team</span></h2>
+        <p style="font-size:0.72em;color:var(--db-gray-500);max-width:580px;margin:0 auto 0.6em;line-height:1.5;">
+          Every session is guided by domain specialists with hands-on research experience in computational drug discovery.
+        </p>
+
+        <!-- Instructors Row -->
+        <div style="font-size:0.5em;font-weight:800;color:var(--db-gray-500);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:0.5em;">Instructors</div>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0.6em;max-width:940px;margin:0 auto 0.7em;text-align:center;">
+
+          <!-- Musab Shahriar -->
+          <div class="card" style="padding:0.6em 0.5em;border-top:3px solid var(--db-primary);">
+            <div style="width:80px;height:80px;border-radius:14px;overflow:hidden;margin:0 auto 0.4em;border:2px solid var(--db-gray-200);box-shadow:0 3px 10px rgba(0,0,0,0.08);">
+              <img src="team/musab.jpg" alt="Musab Shahriar" style="width:100%;height:100%;object-fit:cover;object-position:top;">
+            </div>
+            <h4 style="font-size:0.75em;margin:0 0 0.1em;">Musab Shahriar</h4>
+            <div style="font-size:0.5em;font-weight:700;color:var(--db-primary);margin-bottom:0.25em;">Instructor</div>
+            <p style="font-size:0.48em;color:var(--db-gray-500);line-height:1.35;margin:0;">Computational Drug Discovery &amp; Virtual Screening</p>
+          </div>
+
+          <!-- Pritom Kundu -->
+          <div class="card" style="padding:0.6em 0.5em;border-top:3px solid var(--db-accent);">
+            <div style="width:80px;height:80px;border-radius:14px;overflow:hidden;margin:0 auto 0.4em;border:2px solid var(--db-gray-200);box-shadow:0 3px 10px rgba(0,0,0,0.08);">
+              <img src="team/pritom.jpg" alt="Pritom Kundu" style="width:100%;height:100%;object-fit:cover;object-position:top;">
+            </div>
+            <h4 style="font-size:0.75em;margin:0 0 0.1em;">Pritom Kundu</h4>
+            <div style="font-size:0.5em;font-weight:700;color:var(--db-accent);margin-bottom:0.25em;">Instructor</div>
+            <p style="font-size:0.48em;color:var(--db-gray-500);line-height:1.35;margin:0;">AI-driven Drug Discovery &amp; Machine Learning</p>
+          </div>
+
+          <!-- Lamia Hasan Barsha -->
+          <div class="card" style="padding:0.6em 0.5em;border-top:3px solid var(--db-violet);">
+            <div style="width:80px;height:80px;border-radius:14px;overflow:hidden;margin:0 auto 0.4em;border:2px solid var(--db-gray-200);box-shadow:0 3px 10px rgba(0,0,0,0.08);">
+              <img src="team/barsha.jpg" alt="Lamia Hasan Barsha" style="width:100%;height:100%;object-fit:cover;object-position:top;">
+            </div>
+            <h4 style="font-size:0.75em;margin:0 0 0.1em;">Lamia Hasan Barsha</h4>
+            <div style="font-size:0.5em;font-weight:700;color:var(--db-violet);margin-bottom:0.25em;">Instructor</div>
+            <p style="font-size:0.48em;color:var(--db-gray-500);line-height:1.35;margin:0;">Computer-Aided Drug Design &amp; Molecular Modeling</p>
+          </div>
+
+          <!-- Naem Islam Abhi -->
+          <div class="card" style="padding:0.6em 0.5em;border-top:3px solid var(--db-warning);">
+            <div style="width:80px;height:80px;border-radius:14px;overflow:hidden;margin:0 auto 0.4em;border:2px solid var(--db-gray-200);box-shadow:0 3px 10px rgba(0,0,0,0.08);">
+              <img src="team/abhi.jpg" alt="Naem Islam Abhi" style="width:100%;height:100%;object-fit:cover;object-position:top;">
+            </div>
+            <h4 style="font-size:0.75em;margin:0 0 0.1em;">Naem Islam Abhi</h4>
+            <div style="font-size:0.5em;font-weight:700;color:var(--db-warning);margin-bottom:0.25em;">Instructor</div>
+            <p style="font-size:0.48em;color:var(--db-gray-500);line-height:1.35;margin:0;">scRNA-seq Disease Drug Discovery &amp; Target ID</p>
+          </div>
+
+        </div>
+
+        <!-- Teaching Assistants Row -->
+        <div style="font-size:0.5em;font-weight:800;color:var(--db-gray-400);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:0.5em;">Teaching Assistants</div>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0.6em;max-width:940px;margin:0 auto;text-align:center;">
+
+          <div class="card" style="padding:0.5em 0.4em;border-top:3px solid var(--db-gray-300);opacity:0.85;">
+            <div style="width:50px;height:50px;border-radius:12px;margin:0 auto 0.35em;border:2px solid var(--db-gray-200);background:var(--db-gray-100);display:flex;align-items:center;justify-content:center;color:var(--db-gray-400);">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <h4 style="font-size:0.7em;margin:0 0 0.1em;color:var(--db-gray-500);">TBD</h4>
+            <div style="font-size:0.48em;font-weight:700;color:var(--db-gray-400);">Teaching Assistant</div>
+            <span class="tag" style="font-size:0.38em;padding:0.1em 0.45em;margin:0.2em 0 0;color:var(--db-gray-400);background:var(--db-gray-100);border-color:var(--db-gray-200);">Incoming</span>
+          </div>
+
+          <div class="card" style="padding:0.5em 0.4em;border-top:3px solid var(--db-gray-300);opacity:0.85;">
+            <div style="width:50px;height:50px;border-radius:12px;margin:0 auto 0.35em;border:2px solid var(--db-gray-200);background:var(--db-gray-100);display:flex;align-items:center;justify-content:center;color:var(--db-gray-400);">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <h4 style="font-size:0.7em;margin:0 0 0.1em;color:var(--db-gray-500);">TBD</h4>
+            <div style="font-size:0.48em;font-weight:700;color:var(--db-gray-400);">Teaching Assistant</div>
+            <span class="tag" style="font-size:0.38em;padding:0.1em 0.45em;margin:0.2em 0 0;color:var(--db-gray-400);background:var(--db-gray-100);border-color:var(--db-gray-200);">Incoming</span>
+          </div>
+
+          <div class="card" style="padding:0.5em 0.4em;border-top:3px solid var(--db-gray-300);opacity:0.85;">
+            <div style="width:50px;height:50px;border-radius:12px;margin:0 auto 0.35em;border:2px solid var(--db-gray-200);background:var(--db-gray-100);display:flex;align-items:center;justify-content:center;color:var(--db-gray-400);">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <h4 style="font-size:0.7em;margin:0 0 0.1em;color:var(--db-gray-500);">TBD</h4>
+            <div style="font-size:0.48em;font-weight:700;color:var(--db-gray-400);">Teaching Assistant</div>
+            <span class="tag" style="font-size:0.38em;padding:0.1em 0.45em;margin:0.2em 0 0;color:var(--db-gray-400);background:var(--db-gray-100);border-color:var(--db-gray-200);">Incoming</span>
+          </div>
+
+          <div class="card" style="padding:0.5em 0.4em;border-top:3px solid var(--db-gray-300);opacity:0.85;">
+            <div style="width:50px;height:50px;border-radius:12px;margin:0 auto 0.35em;border:2px solid var(--db-gray-200);background:var(--db-gray-100);display:flex;align-items:center;justify-content:center;color:var(--db-gray-400);">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <h4 style="font-size:0.7em;margin:0 0 0.1em;color:var(--db-gray-500);">TBD</h4>
+            <div style="font-size:0.48em;font-weight:700;color:var(--db-gray-400);">Teaching Assistant</div>
+            <span class="tag" style="font-size:0.38em;padding:0.1em 0.45em;margin:0.2em 0 0;color:var(--db-gray-400);background:var(--db-gray-100);border-color:var(--db-gray-200);">Incoming</span>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ══ SECTION 01: THE IN SILICO & AI REVOLUTION ═══════════════ -->
       <section>
         <div class="tag">Section 01</div>
-        <h2 style="margin-top:0.25em;">The Pharma Crisis. <span class="gradient-text">The Computational Solution.</span></h2>
+        <h2 style="margin-top:0.25em;">The In Silico <span class="gradient-text">&amp; AI Revolution</span></h2>
         <div class="sep" style="margin:0.55em auto;max-width:60px;"></div>
-        <p style="font-size:0.88em;color:var(--db-gray-500);max-width:560px;margin:0 auto;line-height:1.7;">
-          Why traditional wet-lab drug discovery is hitting a wall — and why in silico AI therapeutics is the fastest-growing discipline in biotechnology.
+        <p style="font-size:0.88em;color:var(--db-gray-500);max-width:620px;margin:0 auto;line-height:1.7;">
+          Why traditional wet-lab pharma is hitting a wall &mdash; and how computational biology and deep learning collapse 10-year timelines into days.
         </p>
       </section>
 
-      <!-- ══ WHY THIS MATTERS: THE PHARMA REALITY ═════════════════════ -->
+      <!-- Slide 2: Pipeline Overview (drugml-ijcai.jpg) -->
       <section>
-        <div class="tag">The Industry Reality</div>
-        <h2 style="margin-top:0.15em;margin-bottom:0.15em;">Why In Silico Drug Discovery is <span class="gradient-text">Essential</span></h2>
-        <p style="font-size:0.78em;margin-bottom:0.6em;color:var(--db-gray-500);">The economics and timelines of traditional medicine discovery are completely unsustainable.</p>
-        <div class="grid-3" style="align-items:stretch;">
+        <div class="tag">The Modern Blueprint</div>
+        <h3 style="margin-top:0.15em;margin-bottom:0.2em;">Machine Learning in the <span class="gradient-text">Drug Discovery Pipeline</span></h3>
+        <p style="font-size:0.68em;color:var(--db-gray-500);margin:0 auto 0.5em;max-width:760px;line-height:1.4;">
+          The integrated workflow connecting disease targets, deep learning representations, generative chemistry, and physical validation.
+        </p>
+        <div style="max-width:920px;margin:0 auto;border-radius:14px;overflow:hidden;border:1px solid var(--db-gray-200);box-shadow:0 8px 24px rgba(0,0,0,0.06);background:#fff;padding:0.45em;">
+          <img src="ai-drug-discovery/drugml-ijcai.jpg" alt="Machine Learning in Drug Discovery Overview" style="width:100%;height:auto;display:block;border-radius:8px;">
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0.6em;max-width:920px;margin:0.5em auto 0;text-align:left;">
+          <div style="background:var(--db-gray-50);border-radius:8px;padding:0.4em 0.6em;border-left:3px solid var(--db-primary);">
+            <div style="font-size:0.55em;font-weight:800;color:var(--db-primary);">1. Target ID</div>
+            <div style="font-size:0.48em;color:var(--db-gray-600);">Genomics, scRNA-seq &amp; target druggability</div>
+          </div>
+          <div style="background:var(--db-gray-50);border-radius:8px;padding:0.4em 0.6em;border-left:3px solid var(--db-accent);">
+            <div style="font-size:0.55em;font-weight:800;color:var(--db-accent);">2. Property AI</div>
+            <div style="font-size:0.48em;color:var(--db-gray-600);">GNNs for bioactivity, QSAR &amp; ADMET</div>
+          </div>
+          <div style="background:var(--db-gray-50);border-radius:8px;padding:0.4em 0.6em;border-left:3px solid var(--db-violet);">
+            <div style="font-size:0.55em;font-weight:800;color:var(--db-violet);">3. De Novo Design</div>
+            <div style="font-size:0.48em;color:var(--db-gray-600);">Generative AI synthesizes novel leads</div>
+          </div>
+          <div style="background:var(--db-gray-50);border-radius:8px;padding:0.4em 0.6em;border-left:3px solid var(--db-warning);">
+            <div style="font-size:0.55em;font-weight:800;color:var(--db-warning);">4. Biophysics</div>
+            <div style="font-size:0.48em;color:var(--db-gray-600);">AutoDock Vina &amp; 100ns GROMACS MD</div>
+          </div>
+        </div>
+      </section>
 
-          <!-- 01 / The Cost & Time Crisis -->
-          <div class="card" style="border-top:3px solid var(--db-danger);padding:1em 1.1em;">
-            <div style="display:inline-flex;align-items:center;gap:0.4em;background:rgba(239,68,68,0.08);border-radius:999px;padding:0.2em 0.75em;margin-bottom:0.55em;">
-              <span style="font-size:0.65em;font-weight:700;color:var(--db-danger);">Traditional Wet-Lab</span>
+      <!-- Slide 3: 10^60 Search Problem -->
+      <section>
+        <div class="tag tag-red">The Scale Challenge</div>
+        <h3 style="margin-top:0.15em;margin-bottom:0.35em;">Drug Discovery is a <span class="gradient-text">10<sup>60</sup> Search Problem</span></h3>
+        
+        <div class="two-col" style="grid-template-columns: 1.05fr 0.95fr; gap: 1.4em; align-items: center; text-align: left;">
+          <div>
+            <div style="border-radius: 12px; overflow: hidden; border: 1px solid var(--db-gray-200); box-shadow: 0 8px 20px rgba(0,0,0,0.07); background:#fff;">
+              <img src="ai-drug-discovery/page_5.jpg" alt="10^60 Chemical Space" style="width: 100%; height: auto; display: block;">
             </div>
-            <h4 style="font-size:0.88em;margin-bottom:0.45em;color:var(--db-gray-900);">10–15 Years &amp; $2.6B+ Per Approved Drug</h4>
-            <p style="font-size:0.7em;line-height:1.65;color:var(--db-gray-500);">Over 90% of candidate molecules fail in clinical trials due to unpredicted toxicity, poor binding affinity, or bad pharmacokinetics (ADMET) discovered far too late.</p>
+            <div style="font-size: 0.45em; color: var(--db-gray-400); margin-top: 0.35em; text-align: center;">Chemical space vs. experimental screening limits (Bohacek et al. / MIT CSAIL)</div>
           </div>
 
-          <!-- 02 / The In Silico Revolution -->
-          <div class="card" style="border-top:3px solid var(--db-primary);padding:1em 1.1em;">
-            <div style="display:inline-flex;align-items:center;gap:0.4em;background:rgba(2,132,199,0.08);border-radius:999px;padding:0.2em 0.75em;margin-bottom:0.55em;">
-              <span style="font-size:0.65em;font-weight:700;color:var(--db-primary);">Computational Advantage</span>
+          <div>
+            <div class="card" style="border-left: 4px solid var(--db-danger); padding: 0.65em 0.85em; margin-bottom: 0.5em;">
+              <div style="font-size: 0.6em; font-weight: 800; color: var(--db-danger); text-transform: uppercase;">The Experimental Barrier</div>
+              <p style="font-size: 0.56em; color: var(--db-gray-700); line-height: 1.45; margin: 0.2em 0 0;">
+                High-throughput screening tests only ~<strong>10<sup>6</sup></strong> compounds over 10–15 years at <strong>$2.6B+</strong> per approved drug—leaving 99.99999999% of drug space unexamined.
+              </p>
             </div>
-            <h4 style="font-size:0.88em;margin-bottom:0.45em;color:var(--db-gray-900);">Screen Billions of Molecules in Silico</h4>
-            <p style="font-size:0.7em;line-height:1.65;color:var(--db-gray-500);">AutoDock Vina, GROMACS simulations, and Graph Neural Networks let researchers test binding pose stability and forecast bioactivity in hours before spending a dollar on chemical synthesis.</p>
+
+            <div class="card" style="border-left: 4px solid var(--db-primary); padding: 0.65em 0.85em; margin-bottom: 0.5em;">
+              <div style="font-size: 0.6em; font-weight: 800; color: var(--db-primary); text-transform: uppercase;">The AI Solution</div>
+              <p style="font-size: 0.56em; color: var(--db-gray-700); line-height: 1.45; margin: 0.2em 0 0;">
+                Graph Neural Networks screen virtual libraries of <strong>10<sup>8</sup>+</strong> molecules in days, filtering high-affinity candidates before synthesis.
+              </p>
+            </div>
+
+            <div style="background: rgba(13,148,136,0.06); border-radius: 8px; padding: 0.45em 0.75em; border: 1px dashed var(--db-primary);">
+              <span style="font-size: 0.55em; font-weight: 700; color: var(--db-primary);">🎯 What You Will Learn:</span>
+              <span style="font-size: 0.5em; color: var(--db-gray-700);"> Mine massive databases (ChEMBL, ZINC, PubChem) programmatically using Python and RDKit.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 4: 3 Computational Schemes & GNNs -->
+      <section>
+        <div class="tag">Computational Taxonomy</div>
+        <h3 style="margin-top:0.15em;margin-bottom:0.35em;">The Three Pillars of <span class="gradient-text">In Silico Discovery</span></h3>
+        
+        <div class="two-col" style="grid-template-columns: 1fr 1fr; gap: 1.4em; align-items: center; text-align: left;">
+          <div>
+            <div style="border-radius: 12px; overflow: hidden; border: 1px solid var(--db-gray-200); box-shadow: 0 8px 20px rgba(0,0,0,0.07); background:#fff;">
+              <img src="ai-drug-discovery/page_7.jpg" alt="Computational Drug Discovery Schemes" style="width: 100%; height: auto; display: block;">
+            </div>
+            <div style="font-size: 0.45em; color: var(--db-gray-400); margin-top: 0.35em; text-align: center;">Virtual Screening vs. Physics Simulation vs. De Novo Design (MIT Lecture)</div>
           </div>
 
-          <!-- 03 / Career Demand -->
-          <div class="card" style="border-top:3px solid var(--db-accent);padding:1em 1.1em;">
-            <div style="display:inline-flex;align-items:center;gap:0.4em;background:rgba(16,185,129,0.08);border-radius:999px;padding:0.2em 0.75em;margin-bottom:0.55em;">
-              <span style="font-size:0.65em;font-weight:700;color:var(--db-accent);">Global Hiring Surge</span>
+          <div style="display:flex; flex-direction:column; gap:0.45em;">
+            <div class="card" style="border-top: 2px solid var(--db-primary); padding: 0.5em 0.7em;">
+              <h4 style="font-size: 0.65em; margin:0 0 0.1em; color:var(--db-primary);">1. Physics Simulation (MD / GROMACS)</h4>
+              <p style="font-size: 0.52em; line-height: 1.35; color: var(--db-gray-600); margin:0;">
+                Rigorous atomistic dynamics, solvent thermodynamics, and RMSD stability for verified lead refinement.
+              </p>
             </div>
-            <h4 style="font-size:0.88em;margin-bottom:0.45em;color:var(--db-gray-900);">Hybrid Chemists &amp; AI Researchers Wanted</h4>
-            <p style="font-size:0.7em;line-height:1.65;color:var(--db-gray-500);">Biotech, pharma, and global universities desperately seek researchers who bridge chemical intuition with Python, AutoDock Vina, GROMACS, and PyTorch deep learning.</p>
+
+            <div class="card" style="border-top: 2px solid var(--db-accent); padding: 0.5em 0.7em;">
+              <h4 style="font-size: 0.65em; margin:0 0 0.1em; color:var(--db-accent);">2. Deep Virtual Screening (GNNs + Docking)</h4>
+              <p style="font-size: 0.52em; line-height: 1.35; color: var(--db-gray-600); margin:0;">
+                Ultra-fast scoring across 100,000+ candidates in minutes to filter high-affinity binding poses.
+              </p>
+            </div>
+
+            <div class="card" style="border-top: 2px solid var(--db-violet); padding: 0.5em 0.7em;">
+              <h4 style="font-size: 0.65em; margin:0 0 0.1em; color:var(--db-violet);">3. De Novo Generative AI</h4>
+              <p style="font-size: 0.52em; line-height: 1.35; color: var(--db-gray-600); margin:0;">
+                Deep generative models synthesize entirely new chemical structures optimized for target pocket geometry.
+              </p>
+            </div>
+
+            <div style="font-size:0.52em; font-weight:700; color:var(--db-gray-900); background:#f1f5f9; padding:0.35em 0.7em; border-radius:6px; text-align:center;">
+              ⭐ In this course, you master all 3 methods seamlessly in Google Colab.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 5: Landmark Case Study - Halicin (Cell 2020) -->
+      <section>
+        <div class="tag tag-green">Landmark Breakthrough · Cell 2020</div>
+        <h3 style="margin-top:0.15em;margin-bottom:0.3em;">From 107M Molecules to <span class="gradient-text">Halicin in 3 Days</span></h3>
+        
+        <div class="two-col" style="grid-template-columns: 1.05fr 0.95fr; gap: 1.4em; align-items: center; text-align: left;">
+          <div>
+            <div style="border-radius: 12px; overflow: hidden; border: 1px solid var(--db-gray-200); box-shadow: 0 8px 20px rgba(0,0,0,0.07); background:#fff;">
+              <img src="ai-drug-discovery/page_16.jpg" alt="Halicin Antibiotic Discovery" style="width: 100%; height: auto; display: block;">
+            </div>
+            <div style="font-size: 0.45em; color: var(--db-gray-400); margin-top: 0.35em; text-align: center;">Stokes, Yang, Swanson, Jin, Barzilay, Collins et al. <em>Cell</em> (2020)</div>
+          </div>
+
+          <div>
+            <div style="background:var(--db-white); border:1px solid var(--db-gray-200); border-radius:10px; padding:0.65em 0.85em; margin-bottom:0.45em; box-shadow:0 2px 8px rgba(0,0,0,0.03);">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.25em;">
+                <span style="font-size:0.6em; font-weight:800; color:var(--db-primary);">The Breakthrough:</span>
+                <span class="tag tag-green" style="font-size:0.36em; margin:0;">Published in Cell</span>
+              </div>
+              <ul class="no-bullets" style="font-size:0.54em; line-height:1.45; color:var(--db-gray-700);">
+                <li>⚡ <strong>Trained GNN:</strong> Learned chemical graph embeddings on 2,335 FDA-approved &amp; natural molecules.</li>
+                <li>🚀 <strong>Screened 107,000,000 Compounds:</strong> ZINC library evaluated on GPU clusters in <strong>3 days</strong>.</li>
+                <li>🎯 <strong>Discovered Halicin:</strong> Structurally novel antibiotic eradicating pan-resistant <em>A. baumannii</em> in mice.</li>
+              </ul>
+            </div>
+
+            <div style="background: linear-gradient(135deg, rgba(13,148,136,0.1), rgba(124,58,237,0.1)); border: 1px solid var(--db-primary); border-radius: 8px; padding: 0.5em 0.75em; text-align: center;">
+              <div style="font-size: 0.6em; font-weight: 800; color: var(--db-primary);">Industry Relevance:</div>
+              <div style="font-size: 0.52em; color: var(--db-gray-800); margin-top: 0.15em; line-height: 1.35;">
+                Every leading pharma &amp; biotech team uses these exact Graph AI pipelines. In our live sessions, you build them hands-on.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 6: Generative Chemistry & De Novo Design -->
+      <section>
+        <div class="tag tag-violet">Generative Chemistry</div>
+        <h3 style="margin-top:0.15em;margin-bottom:0.3em;">De Novo Design: <span class="gradient-text">Generating Novel Scaffolds</span></h3>
+        
+        <div class="two-col" style="grid-template-columns: 1fr 1fr; gap: 1.4em; align-items: center; text-align: left;">
+          <div>
+            <div style="border-radius: 12px; overflow: hidden; border: 1px solid var(--db-gray-200); box-shadow: 0 8px 20px rgba(0,0,0,0.07); background:#fff;">
+              <img src="ai-drug-discovery/page_49.jpg" alt="Junction Tree VAE Molecular Generation" style="width: 100%; height: auto; display: block;">
+            </div>
+            <div style="font-size: 0.45em; color: var(--db-gray-400); margin-top: 0.35em; text-align: center;">Junction Tree Variational Autoencoder (Jin et al., ICML / NeurIPS)</div>
+          </div>
+
+          <div style="display:flex; flex-direction:column; gap:0.45em;">
+            <div class="card" style="padding:0.5em 0.75em; border-left:3px solid var(--db-violet);">
+              <h4 style="font-size:0.62em; margin:0 0 0.1em; color:var(--db-violet);">From Sequences to Graph Motifs</h4>
+              <p style="font-size:0.52em; line-height:1.35; color:var(--db-gray-600); margin:0;">
+                Hierarchical graph decoders generate chemically valid drug molecules piece-by-piece, respecting ring chemistry and valence rules.
+              </p>
+            </div>
+
+            <div class="card" style="padding:0.5em 0.75em; border-left:3px solid var(--db-primary);">
+              <h4 style="font-size:0.62em; margin:0 0 0.1em; color:var(--db-primary);">Multi-Objective Lead Optimization</h4>
+              <p style="font-size:0.52em; line-height:1.35; color:var(--db-gray-600); margin:0;">
+                Simultaneously optimize binding affinity (&Delta;G), drug-likeness (QED), blood-brain barrier permeability, and synthetic accessibility.
+              </p>
+            </div>
+
+            <div style="background: rgba(124,58,237,0.06); border: 1px dashed var(--db-violet); border-radius: 8px; padding: 0.45em 0.75em;">
+              <div style="font-size: 0.55em; font-weight: 800; color: var(--db-violet);">✨ Your Capstone Project:</div>
+              <div style="font-size: 0.5em; color: var(--db-gray-700); margin-top: 0.1em; line-height: 1.3;">
+                You will design, screen, dock, and simulate target-specific lead molecules and compile a publication-grade scientific manuscript.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ STARTUPS & GLOBAL OPPORTUNITIES CHAPTER ══════════════════ -->
+
+      <!-- Slide 1: AI Drug Discovery Startups & Industry Landscape -->
+      <section>
+        <div class="tag tag-green">Industry Ecosystem &amp; Unicorns</div>
+        <h3 style="margin-top:0.15em;margin-bottom:0.25em;">Where the Industry is Heading: <span class="gradient-text">AI Biotech Unicorns</span></h3>
+        <p style="font-size:0.68em;color:var(--db-gray-500);margin:0 auto 0.6em;max-width:760px;line-height:1.45;">
+          Over $20B+ invested into pioneering AI biotechs that are taking computationally designed molecules into global clinical trials.
+        </p>
+
+        <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:0.6em;max-width:960px;margin:0 auto;text-align:left;">
+
+          <!-- Insilico Medicine -->
+          <div class="card" style="padding:0.65em 0.55em;border-top:3px solid var(--db-primary);display:flex;flex-direction:column;align-items:center;text-align:center;">
+            <div style="width:52px;height:52px;background:#fff;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:0.35em;box-shadow:0 2px 6px rgba(0,0,0,0.06);border:1px solid var(--db-gray-100);">
+              <img src="logos/insilico_card.png" alt="Insilico Medicine" style="max-width:44px;max-height:44px;object-fit:contain;">
+            </div>
+            <h4 style="font-size:0.7em;margin:0 0 0.1em;color:var(--db-gray-900);">Insilico Medicine</h4>
+            <span class="tag tag-green" style="font-size:0.36em;padding:0.1em 0.4em;margin:0 0 0.3em;">Phase II Clinical</span>
+            <p style="font-size:0.48em;color:var(--db-gray-500);line-height:1.35;margin:0;">Generative AI for novel target discovery &amp; small-molecule design (e.g. IPF drug).</p>
+          </div>
+
+          <!-- Recursion -->
+          <div class="card" style="padding:0.65em 0.55em;border-top:3px solid var(--db-accent);display:flex;flex-direction:column;align-items:center;text-align:center;">
+            <div style="width:52px;height:52px;background:#fff;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:0.35em;box-shadow:0 2px 6px rgba(0,0,0,0.06);border:1px solid var(--db-gray-100);">
+              <img src="logos/recursion_card.png" alt="Recursion Pharmaceuticals" style="max-width:44px;max-height:44px;object-fit:contain;">
+            </div>
+            <h4 style="font-size:0.7em;margin:0 0 0.1em;color:var(--db-gray-900);">Recursion Pharma</h4>
+            <span class="tag" style="font-size:0.36em;padding:0.1em 0.4em;margin:0 0 0.3em;">NVIDIA BioNeMo</span>
+            <p style="font-size:0.48em;color:var(--db-gray-500);line-height:1.35;margin:0;">Industrialized AI phenomics &amp; massive digital biology screening at petabyte scale.</p>
+          </div>
+
+          <!-- Isomorphic Labs -->
+          <div class="card" style="padding:0.65em 0.55em;border-top:3px solid var(--db-violet);display:flex;flex-direction:column;align-items:center;text-align:center;">
+            <div style="width:52px;height:52px;background:#fff;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:0.35em;box-shadow:0 2px 6px rgba(0,0,0,0.06);border:1px solid var(--db-gray-100);">
+              <img src="logos/isomorphic_card.png" alt="Isomorphic Labs" style="max-width:44px;max-height:44px;object-fit:contain;">
+            </div>
+            <h4 style="font-size:0.7em;margin:0 0 0.1em;color:var(--db-gray-900);">Isomorphic Labs</h4>
+            <span class="tag tag-violet" style="font-size:0.36em;padding:0.1em 0.4em;margin:0 0 0.3em;">AlphaFold 3</span>
+            <p style="font-size:0.48em;color:var(--db-gray-500);line-height:1.35;margin:0;">Alphabet / DeepMind spinout reimagining drug design from first principles with AI.</p>
+          </div>
+
+          <!-- Schrödinger -->
+          <div class="card" style="padding:0.65em 0.55em;border-top:3px solid #0284c7;display:flex;flex-direction:column;align-items:center;text-align:center;">
+            <div style="width:52px;height:52px;background:#fff;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:0.35em;box-shadow:0 2px 6px rgba(0,0,0,0.06);border:1px solid var(--db-gray-100);">
+              <img src="logos/schrodinger_card.png" alt="Schrodinger" style="max-width:44px;max-height:44px;object-fit:contain;">
+            </div>
+            <h4 style="font-size:0.7em;margin:0 0 0.1em;color:var(--db-gray-900);">Schrödinger</h4>
+            <span class="tag" style="font-size:0.36em;padding:0.1em 0.4em;margin:0 0 0.3em;">Industry Standard</span>
+            <p style="font-size:0.48em;color:var(--db-gray-500);line-height:1.35;margin:0;">Physics-based molecular dynamics + ML free energy perturbation (FEP+) leader.</p>
+          </div>
+
+          <!-- Exscientia -->
+          <div class="card" style="padding:0.65em 0.55em;border-top:3px solid var(--db-warning);display:flex;flex-direction:column;align-items:center;text-align:center;">
+            <div style="width:52px;height:52px;background:#fff;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:0.35em;box-shadow:0 2px 6px rgba(0,0,0,0.06);border:1px solid var(--db-gray-100);">
+              <img src="logos/exscientia_card.png" alt="Exscientia" style="max-width:44px;max-height:44px;object-fit:contain;">
+            </div>
+            <h4 style="font-size:0.7em;margin:0 0 0.1em;color:var(--db-gray-900);">Exscientia</h4>
+            <span class="tag tag-amber" style="font-size:0.36em;padding:0.1em 0.4em;margin:0 0 0.3em;">Precision AI</span>
+            <p style="font-size:0.48em;color:var(--db-gray-500);line-height:1.35;margin:0;">First company to enter clinical trials with AI-designed small molecule compounds.</p>
           </div>
 
         </div>
+
+        <div style="max-width:960px;margin:0.7em auto 0;background:rgba(13,148,136,0.06);border:1px dashed var(--db-primary);border-radius:8px;padding:0.45em 0.9em;text-align:center;">
+          <span style="font-size:0.55em;font-weight:700;color:var(--db-primary);">💡 Skills They Hire For:</span>
+          <span style="font-size:0.52em;color:var(--db-gray-700);"> Python, RDKit, PyTorch GNNs, AutoDock Vina, GROMACS MD, and molecular property prediction.</span>
+        </div>
+      </section>
+
+      <!-- Slide 2: Top Global PhD & Graduate Programs -->
+      <section>
+        <div class="tag">Global Academic Pathways</div>
+        <h3 style="margin-top:0.15em;margin-bottom:0.25em;">Funded Global <span class="gradient-text">PhD &amp; Master's Programs</span></h3>
+        <p style="font-size:0.68em;color:var(--db-gray-500);margin:0 auto 0.6em;max-width:760px;line-height:1.45;">
+          World-leading universities actively recruit students with demonstrated computational drug discovery &amp; AI research portfolios.
+        </p>
+
+        <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:0.5em;max-width:960px;margin:0 auto;text-align:center;">
+
+          <!-- MIT -->
+          <div class="card" style="padding:0.6em 0.4em;border-top:3px solid #a31f34;">
+            <div style="width:48px;height:48px;background:#fff;border-radius:10px;display:flex;align-items:center;justify-content:center;margin:0 auto 0.3em;box-shadow:0 2px 6px rgba(0,0,0,0.05);border:1px solid var(--db-gray-100);">
+              <img src="logos/mit_card.png" alt="MIT" style="max-width:40px;max-height:40px;object-fit:contain;">
+            </div>
+            <h4 style="font-size:0.68em;margin:0 0 0.1em;color:var(--db-gray-900);">MIT</h4>
+            <div style="font-size:0.48em;font-weight:700;color:#a31f34;margin-bottom:0.2em;">CSAIL &amp; ChemE</div>
+            <p style="font-size:0.44em;color:var(--db-gray-500);line-height:1.3;margin:0;">AI in Biomedicine &amp; Molecular Science</p>
+          </div>
+
+          <!-- Harvard -->
+          <div class="card" style="padding:0.6em 0.4em;border-top:3px solid #a51c30;">
+            <div style="width:48px;height:48px;background:#fff;border-radius:10px;display:flex;align-items:center;justify-content:center;margin:0 auto 0.3em;box-shadow:0 2px 6px rgba(0,0,0,0.05);border:1px solid var(--db-gray-100);">
+              <img src="logos/harvard_card.png" alt="Harvard" style="max-width:40px;max-height:40px;object-fit:contain;">
+            </div>
+            <h4 style="font-size:0.68em;margin:0 0 0.1em;color:var(--db-gray-900);">Harvard</h4>
+            <div style="font-size:0.48em;font-weight:700;color:#a51c30;margin-bottom:0.2em;">Biophysics</div>
+            <p style="font-size:0.44em;color:var(--db-gray-500);line-height:1.3;margin:0;">Therapeutics &amp; Systems Biology</p>
+          </div>
+
+          <!-- Stanford -->
+          <div class="card" style="padding:0.6em 0.4em;border-top:3px solid #8c1515;">
+            <div style="width:48px;height:48px;background:#fff;border-radius:10px;display:flex;align-items:center;justify-content:center;margin:0 auto 0.3em;box-shadow:0 2px 6px rgba(0,0,0,0.05);border:1px solid var(--db-gray-100);">
+              <img src="logos/stanford_card.png" alt="Stanford" style="max-width:40px;max-height:40px;object-fit:contain;">
+            </div>
+            <h4 style="font-size:0.68em;margin:0 0 0.1em;color:var(--db-gray-900);">Stanford</h4>
+            <div style="font-size:0.48em;font-weight:700;color:#8c1515;margin-bottom:0.2em;">BMI &amp; AI Lab</div>
+            <p style="font-size:0.44em;color:var(--db-gray-500);line-height:1.3;margin:0;">Biomedical Informatics &amp; Structure AI</p>
+          </div>
+
+          <!-- Oxford -->
+          <div class="card" style="padding:0.6em 0.4em;border-top:3px solid #002147;">
+            <div style="width:48px;height:48px;background:#fff;border-radius:10px;display:flex;align-items:center;justify-content:center;margin:0 auto 0.3em;box-shadow:0 2px 6px rgba(0,0,0,0.05);border:1px solid var(--db-gray-100);">
+              <img src="logos/oxford_card.png" alt="Oxford" style="max-width:40px;max-height:40px;object-fit:contain;">
+            </div>
+            <h4 style="font-size:0.68em;margin:0 0 0.1em;color:var(--db-gray-900);">Oxford</h4>
+            <div style="font-size:0.48em;font-weight:700;color:#002147;margin-bottom:0.2em;">EPSRC CDT</div>
+            <p style="font-size:0.44em;color:var(--db-gray-500);line-height:1.3;margin:0;">Computational Chemistry &amp; Discovery</p>
+          </div>
+
+          <!-- Cambridge -->
+          <div class="card" style="padding:0.6em 0.4em;border-top:3px solid #0072cf;">
+            <div style="width:48px;height:48px;background:#fff;border-radius:10px;display:flex;align-items:center;justify-content:center;margin:0 auto 0.3em;box-shadow:0 2px 6px rgba(0,0,0,0.05);border:1px solid var(--db-gray-100);">
+              <img src="logos/cambridge_card.png" alt="Cambridge" style="max-width:40px;max-height:40px;object-fit:contain;">
+            </div>
+            <h4 style="font-size:0.68em;margin:0 0 0.1em;color:var(--db-gray-900);">Cambridge</h4>
+            <div style="font-size:0.48em;font-weight:700;color:#0072cf;margin-bottom:0.2em;">Bioinformatics</div>
+            <p style="font-size:0.44em;color:var(--db-gray-500);line-height:1.3;margin:0;">Molecular Biology &amp; In Silico Design</p>
+          </div>
+
+          <!-- ETH Zurich -->
+          <div class="card" style="padding:0.6em 0.4em;border-top:3px solid #1f407a;">
+            <div style="width:48px;height:48px;background:#fff;border-radius:10px;display:flex;align-items:center;justify-content:center;margin:0 auto 0.3em;box-shadow:0 2px 6px rgba(0,0,0,0.05);border:1px solid var(--db-gray-100);">
+              <img src="logos/eth_card.png" alt="ETH Zurich" style="max-width:40px;max-height:40px;object-fit:contain;">
+            </div>
+            <h4 style="font-size:0.68em;margin:0 0 0.1em;color:var(--db-gray-900);">ETH Zurich</h4>
+            <div style="font-size:0.48em;font-weight:700;color:#1f407a;margin-bottom:0.2em;">Comp Biology</div>
+            <p style="font-size:0.44em;color:var(--db-gray-500);line-height:1.3;margin:0;">Computational Chemistry &amp; Pharma AI</p>
+          </div>
+
+        </div>
+
+        <div style="max-width:960px;margin:0.7em auto 0;background:linear-gradient(135deg,rgba(13,148,136,0.06),rgba(124,58,237,0.06));border:1px solid rgba(13,148,136,0.18);border-radius:8px;padding:0.45em 0.9em;text-align:center;">
+          <span style="font-size:0.55em;font-weight:800;color:var(--db-gray-900);">🎓 The Admission Secret:</span>
+          <span style="font-size:0.52em;color:var(--db-gray-700);"> Having a GitHub repository with working Colab notebooks &amp; a submittable capstone manuscript puts you in the top 1% of global applicants.</span>
+        </div>
+      </section>
+
+      <!-- ══ SECTION 02: THE 8-MODULE CURRICULUM & METHODOLOGY ═════════ -->
+      <section>
+        <div class="tag">Section 02</div>
+        <h2 style="margin-top:0.25em;">The 8-Module Curriculum <span class="gradient-text">&amp; Tech Stack</span></h2>
+        <div class="sep" style="margin:0.55em auto;max-width:60px;"></div>
+        <p style="font-size:0.88em;color:var(--db-gray-500);max-width:560px;margin:0 auto;line-height:1.7;">
+          A progressive, research-grade path from Python fundamentals to multi-dimensional molecular AI pipelines.
+        </p>
       </section>
 
       <!-- ══ THE PROBLEM: WHY BEGINNERS GET STUCK ══════════════════════ -->
@@ -483,9 +891,9 @@
 
         <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0.6em;max-width:960px;margin:0 auto;text-align:left;">
 
-          <div class="card" style="border-top:3px solid #0284c7;padding:0.75em 0.85em;">
+          <div class="card" style="border-top:3px solid #0d9488;padding:0.75em 0.85em;">
             <div style="display:flex;align-items:center;gap:0.45em;margin-bottom:0.5em;">
-              <div style="width:1.9em;height:1.9em;border-radius:6px;background:rgba(2,132,199,0.08);display:flex;align-items:center;justify-content:center;font-size:0.95em;flex-shrink:0;">☁️</div>
+              <div style="width:1.9em;height:1.9em;border-radius:6px;background:rgba(13,148,136,0.08);display:flex;align-items:center;justify-content:center;font-size:0.95em;flex-shrink:0;">☁️</div>
               <h4 style="margin:0;font-size:0.82em;line-height:1.2;">Google Colab Cloud</h4>
             </div>
             <p style="font-size:0.65em;line-height:1.5;color:var(--db-gray-600);margin:0 0 0.5em;">Zero local hardware requirements. Every notebook runs on free cloud GPUs with pre-installed tools.</p>
@@ -507,15 +915,15 @@
             </div>
           </div>
 
-          <div class="card" style="border-top:3px solid #38bdf8;padding:0.75em 0.85em;">
+          <div class="card" style="border-top:3px solid #2dd4bf;padding:0.75em 0.85em;">
             <div style="display:flex;align-items:center;gap:0.45em;margin-bottom:0.5em;">
-              <div style="width:1.9em;height:1.9em;border-radius:6px;background:rgba(56,189,248,0.08);display:flex;align-items:center;justify-content:center;font-size:0.95em;flex-shrink:0;">🧬</div>
+              <div style="width:1.9em;height:1.9em;border-radius:6px;background:rgba(45,212,191,0.08);display:flex;align-items:center;justify-content:center;font-size:0.95em;flex-shrink:0;">🧬</div>
               <h4 style="margin:0;font-size:0.82em;line-height:1.2;">Docking &amp; Screening</h4>
             </div>
             <p style="font-size:0.65em;line-height:1.5;color:var(--db-gray-600);margin:0 0 0.5em;">AutoDock Vina, grid box optimization, virtual screening of 10,000+ compounds, and pose scoring.</p>
             <div style="display:flex;gap:0.25em;flex-wrap:wrap;">
-              <span class="tag" style="font-size:0.42em;padding:0.1em 0.45em;margin:0;color:#0284c7;">AutoDock Vina</span>
-              <span class="tag" style="font-size:0.42em;padding:0.1em 0.45em;margin:0;color:#0284c7;">PDB</span>
+              <span class="tag" style="font-size:0.42em;padding:0.1em 0.45em;margin:0;color:#0d9488;">AutoDock Vina</span>
+              <span class="tag" style="font-size:0.42em;padding:0.1em 0.45em;margin:0;color:#0d9488;">PDB</span>
             </div>
           </div>
 
@@ -582,14 +990,88 @@
         </div>
       </section>
 
-      <!-- ══ SECTION 02 DIVIDER ════════════════════════════════════════ -->
+      <!-- ══ PROGRAM STRUCTURE & METHODOLOGY ═════════════════════════ -->
       <section>
-        <div class="tag">Section 02</div>
-        <h2 style="margin-top:0.25em;">The 8-Module Curriculum <span class="gradient-text">&amp; Tech Stack</span></h2>
-        <div class="sep" style="margin:0.55em auto;max-width:60px;"></div>
-        <p style="font-size:0.88em;color:var(--db-gray-500);max-width:560px;margin:0 auto;line-height:1.7;">
-          A progressive, research-grade path from Python fundamentals to multi-dimensional molecular AI pipelines.
-        </p>
+        <div class="tag tag-green">Learning Methodology</div>
+        <h2 style="margin-top:0.15em; margin-bottom: 0.1em;">Program <span class="gradient-text">Structure</span></h2>
+        <p style="font-size:0.75em; color:var(--db-gray-500); margin-bottom:0.9em;">A rigorous, hands-on learning framework engineered for deep mastery and publication-ready research output.</p>
+
+        <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:1em; max-width:960px; margin:0 auto; text-align:left; align-items:stretch;">
+          
+          <!-- Pillar 1: Lecture -->
+          <div class="card" style="padding:1.1em 1em; border-top:4px solid var(--db-primary); display:flex; flex-direction:column;">
+            <div style="display:flex; align-items:center; gap:0.6em; margin-bottom:0.7em;">
+              <div style="width:2.4em; height:2.4em; border-radius:10px; background:rgba(13,148,136,0.1); display:flex; align-items:center; justify-content:center; font-size:1.2em; color:var(--db-primary);">
+                💻
+              </div>
+              <div>
+                <h4 style="margin:0; font-size:0.92em; color:var(--db-gray-900);">Live Lectures</h4>
+                <span class="tag tag-green" style="font-size:0.42em; padding:0.15em 0.5em; margin:0.2em 0 0;">Hands-on + Theory</span>
+              </div>
+            </div>
+            
+            <p style="font-size:0.68em; color:var(--db-gray-600); line-height:1.55; margin-bottom:0.7em; flex-grow:1;">
+              Interactive live masterclasses combining biophysical theory with live code-along execution in Google Colab cloud GPUs.
+            </p>
+
+            <div style="background:var(--db-gray-50); border-radius:8px; padding:0.5em 0.7em; font-size:0.58em; color:var(--db-gray-700); line-height:1.45; border-left:3px solid var(--db-primary);">
+              <div>🔹 <strong>Biophysics &amp; AI Math:</strong> Clear intuition</div>
+              <div>🔹 <strong>Live Coding:</strong> Python, RDKit &amp; GROMACS</div>
+              <div>🔹 <strong>Recorded Access:</strong> Full session replays</div>
+            </div>
+          </div>
+
+          <!-- Pillar 2: Assignment -->
+          <div class="card" style="padding:1.1em 1em; border-top:4px solid var(--db-accent); display:flex; flex-direction:column;">
+            <div style="display:flex; align-items:center; gap:0.6em; margin-bottom:0.7em;">
+              <div style="width:2.4em; height:2.4em; border-radius:10px; background:rgba(16,185,129,0.1); display:flex; align-items:center; justify-content:center; font-size:1.2em; color:var(--db-accent);">
+                📝
+              </div>
+              <div>
+                <h4 style="margin:0; font-size:0.92em; color:var(--db-gray-900);">Weekly Assignments</h4>
+                <span class="tag" style="font-size:0.42em; padding:0.15em 0.5em; margin:0.2em 0 0; color:var(--db-accent); border-color:rgba(16,185,129,0.3); background:rgba(16,185,129,0.08);">Coding + Paper Summary</span>
+              </div>
+            </div>
+            
+            <p style="font-size:0.68em; color:var(--db-gray-600); line-height:1.55; margin-bottom:0.7em; flex-grow:1;">
+              Structured weekly tasks reinforcing programming workflows and critical analysis of landmark drug discovery literature.
+            </p>
+
+            <div style="background:var(--db-gray-50); border-radius:8px; padding:0.5em 0.7em; font-size:0.58em; color:var(--db-gray-700); line-height:1.45; border-left:3px solid var(--db-accent);">
+              <div>🔹 <strong>Coding Notebooks:</strong> Colab problem sets</div>
+              <div>🔹 <strong>Paper Summaries:</strong> Peer-reviewed articles</div>
+              <div>🔹 <strong>Templates Provided:</strong> Full instructions &amp; rubric</div>
+            </div>
+          </div>
+
+          <!-- Pillar 3: Project Proposal -->
+          <div class="card" style="padding:1.1em 1em; border-top:4px solid var(--db-violet); display:flex; flex-direction:column;">
+            <div style="display:flex; align-items:center; gap:0.6em; margin-bottom:0.7em;">
+              <div style="width:2.4em; height:2.4em; border-radius:10px; background:rgba(124,58,237,0.1); display:flex; align-items:center; justify-content:center; font-size:1.2em; color:var(--db-violet);">
+                🚀
+              </div>
+              <div>
+                <h4 style="margin:0; font-size:0.92em; color:var(--db-gray-900);">Project Proposal</h4>
+                <span class="tag tag-violet" style="font-size:0.42em; padding:0.15em 0.5em; margin:0.2em 0 0;">Capstone Research</span>
+              </div>
+            </div>
+            
+            <p style="font-size:0.68em; color:var(--db-gray-600); line-height:1.55; margin-bottom:0.7em; flex-grow:1;">
+              Formulate your own disease target-to-lead proposal with direct mentor guidance, building a publication-ready portfolio.
+            </p>
+
+            <div style="background:var(--db-gray-50); border-radius:8px; padding:0.5em 0.7em; font-size:0.58em; color:var(--db-gray-700); line-height:1.45; border-left:3px solid var(--db-violet);">
+              <div>🔹 <strong>Disease &amp; Target Choice:</strong> Real targets</div>
+              <div>🔹 <strong>Templates Provided:</strong> Step-by-step guidance</div>
+              <div>🔹 <strong>1-on-1 Feedback:</strong> Mentors &amp; TA review</div>
+            </div>
+          </div>
+
+        </div>
+
+        <div style="max-width:960px; margin:0.9em auto 0; background:linear-gradient(135deg,rgba(13,148,136,0.06),rgba(124,58,237,0.06)); border:1px solid rgba(13,148,136,0.2); border-radius:10px; padding:0.5em 1.2em; text-align:center;">
+          <span style="font-size:0.6em; font-weight:800; color:var(--db-gray-900);">🎯 Every assignment and proposal template is designed to directly assemble into your final research manuscript draft.</span>
+        </div>
       </section>
 
       <!-- ══ 03 THE 3 CORE TRACKS ═════════════════════════════════════ -->
@@ -601,9 +1083,9 @@
         <div style="display:grid; grid-template-columns: 1fr 1fr 1fr; gap:0.8em; align-items: stretch; max-width: 960px; margin: 0 auto;">
           
           <!-- Track 01: Cheminformatics -->
-          <div class="card" style="border-top: 3px solid #0284c7; text-align: left; padding: 0.9em; display: flex; flex-direction: column;">
+          <div class="card" style="border-top: 3px solid #0d9488; text-align: left; padding: 0.9em; display: flex; flex-direction: column;">
             <div style="display:flex; align-items:center; gap:0.7em; margin-bottom:0.9em;">
-              <div style="width:2.4em; height:2.4em; border-radius:10px; background:rgba(2,132,199,0.08); display:flex; align-items:center; justify-content:center; font-size:1.1em;">🧪</div>
+              <div style="width:2.4em; height:2.4em; border-radius:10px; background:rgba(13,148,136,0.08); display:flex; align-items:center; justify-content:center; font-size:1.1em;">🧪</div>
               <div>
                 <div style="font-size:0.55em; font-weight:700; color:var(--db-primary); text-transform:uppercase; letter-spacing:0.08em;">Track 01</div>
                 <div style="font-size:1.05em; font-weight:800; color:var(--db-gray-900); line-height:1.1;">Cheminformatics</div>
@@ -701,13 +1183,13 @@
 
         <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0.6em;max-width:960px;margin:0 auto;text-align:left;">
           
-          <div class="card" style="border-top:3px solid #0284c7;padding:0.7em;">
+          <div class="card" style="border-top:3px solid #0d9488;padding:0.7em;">
             <span style="font-size:0.5em;font-weight:800;color:var(--db-primary);text-transform:uppercase;">Module 01</span>
             <h4 style="font-size:0.78em;margin:0.2em 0 0.3em;line-height:1.2;">Foundations &amp; Scientific Python</h4>
             <p style="font-size:0.6em;color:var(--db-gray-500);line-height:1.4;">Python, Colab, NumPy, Pandas, BioPython, and chemical biology primer.</p>
           </div>
 
-          <div class="card" style="border-top:3px solid #0284c7;padding:0.7em;">
+          <div class="card" style="border-top:3px solid #0d9488;padding:0.7em;">
             <span style="font-size:0.5em;font-weight:800;color:var(--db-primary);text-transform:uppercase;">Module 02</span>
             <h4 style="font-size:0.78em;margin:0.2em 0 0.3em;line-height:1.2;">Cheminformatics with RDKit</h4>
             <p style="font-size:0.6em;color:var(--db-gray-500);line-height:1.4;">SMILES, descriptors, ChEMBL/PubChem APIs, and QSAR modeling.</p>
@@ -725,8 +1207,8 @@
             <p style="font-size:0.6em;color:var(--db-gray-500);line-height:1.4;">AutoDock Vina, grid optimization, virtual screening &amp; docking pose scoring.</p>
           </div>
 
-          <div class="card" style="border-top:3px solid #38bdf8;padding:0.7em;">
-            <span style="font-size:0.5em;font-weight:800;color:#0284c7;text-transform:uppercase;">Module 05</span>
+          <div class="card" style="border-top:3px solid #2dd4bf;padding:0.7em;">
+            <span style="font-size:0.5em;font-weight:800;color:#0d9488;text-transform:uppercase;">Module 05</span>
             <h4 style="font-size:0.78em;margin:0.2em 0 0.3em;line-height:1.2;">Molecular Dynamics (GROMACS)</h4>
             <p style="font-size:0.6em;color:var(--db-gray-500);line-height:1.4;">Complex setup, solvent box, 100ns simulation, RMSD &amp; binding free energy.</p>
           </div>
@@ -761,9 +1243,9 @@
         <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:1em; max-width: 940px; margin: 0 auto; text-align: left;">
           
           <!-- Computational Chemistry -->
-          <div class="card" style="border-top: 3px solid #0284c7;">
+          <div class="card" style="border-top: 3px solid #0d9488;">
             <div style="display:flex; align-items:center; gap:0.6em; margin-bottom:0.7em;">
-              <div style="width:2.4em; height:2.4em; border-radius:8px; background:rgba(2,132,199,0.08); display:flex; align-items:center; justify-content:center; font-size:1.1em;">🧪</div>
+              <div style="width:2.4em; height:2.4em; border-radius:8px; background:rgba(13,148,136,0.08); display:flex; align-items:center; justify-content:center; font-size:1.1em;">🧪</div>
               <h4 style="margin:0; font-size:0.95em;">Cheminformatics &amp; Data</h4>
             </div>
             <p style="font-size:0.72em; line-height:1.6; color:var(--db-gray-600);">Master chemical manipulation, Morgan fingerprints, SMILES parsing, and bioactivity database querying.</p>
@@ -828,7 +1310,7 @@
           <!-- 02 / Antiviral -->
           <div class="card-bordered" style="padding:1.1em; border-left: 4px solid var(--db-primary);">
             <div style="display:flex; align-items:center; gap:0.6em; margin-bottom:0.5em;">
-              <div style="width:2.2em; height:2.2em; border-radius:6px; background:rgba(2,132,199,0.08); display:flex; align-items:center; justify-content:center;">🦠</div>
+              <div style="width:2.2em; height:2.2em; border-radius:6px; background:rgba(13,148,136,0.08); display:flex; align-items:center; justify-content:center;">🦠</div>
               <h4 style="margin:0; font-size:0.92em; color:var(--db-gray-900);">Antiviral &amp; Protease Inhibitors</h4>
             </div>
             <p style="font-size:0.7em; line-height:1.55;">Dock and optimize covalent and non-covalent inhibitors against essential viral enzymes (e.g. SARS-CoV-2 Mpro, HIV-1 protease, Dengue/Zika targets).</p>
@@ -853,6 +1335,16 @@
           </div>
 
         </div>
+      </section>
+
+      <!-- ══ SECTION 03: RESEARCH OUTPUT & CAPSTONE PROJECT ═══════════ -->
+      <section>
+        <div class="tag">Section 03</div>
+        <h2 style="margin-top:0.25em;">Research Output <span class="gradient-text">&amp; Capstone Project</span></h2>
+        <div class="sep" style="margin:0.55em auto;max-width:60px;"></div>
+        <p style="font-size:0.88em;color:var(--db-gray-500);max-width:580px;margin:0 auto;line-height:1.7;">
+          Moving beyond theory &mdash; building an end-to-end target-to-lead pipeline and a publication-grade scientific portfolio.
+        </p>
       </section>
 
       <!-- ══ 04 AI IN DRUG DISCOVERY: THE PERSPECTIVE ═════════════════ -->
@@ -895,7 +1387,7 @@
 
         </div>
 
-        <div style="max-width:920px;margin:0.9em auto 0;background:linear-gradient(135deg,rgba(2,132,199,0.06),rgba(124,58,237,0.06));border:1px solid rgba(2,132,199,0.15);border-radius:12px;padding:0.7em 1.2em;text-align:center;">
+        <div style="max-width:920px;margin:0.9em auto 0;background:linear-gradient(135deg,rgba(13,148,136,0.06),rgba(124,58,237,0.06));border:1px solid rgba(13,148,136,0.15);border-radius:12px;padding:0.7em 1.2em;text-align:center;">
           <span style="font-size:0.85em;font-weight:800;color:var(--db-gray-900);">AI generates candidates — physical computation and your judgment validate them.</span>
         </div>
       </section>
@@ -915,7 +1407,7 @@
           </div>
 
           <div style="text-align:left;background:var(--db-white);border:1px solid var(--db-gray-200);border-top:3px solid var(--db-secondary);border-radius:14px;padding:1em;box-shadow:0 2px 8px rgba(15,23,42,0.04);">
-            <span style="font-size:0.5em;font-weight:800;color:#0284c7;text-transform:uppercase;">Phase 02</span>
+            <span style="font-size:0.5em;font-weight:800;color:#0d9488;text-transform:uppercase;">Phase 02</span>
             <h4 style="font-size:0.82em;margin:0.25em 0;color:var(--db-gray-900);">Virtual Screening &amp; Docking</h4>
             <p style="font-size:0.65em;color:var(--db-gray-500);line-height:1.5;">Screen 10,000+ compounds with AutoDock Vina, score binding affinities (&Delta;G), and rank top hits.</p>
           </div>
@@ -926,7 +1418,7 @@
             <p style="font-size:0.65em;color:var(--db-gray-500);line-height:1.5;">Solvate the complex in a TIP3P water box, run 100ns MD, and analyze RMSD, RMSF &amp; hydrogen bond stability.</p>
           </div>
 
-          <div style="text-align:left;background:linear-gradient(150deg,var(--db-primary),#0369a1);border-radius:14px;padding:1em;box-shadow:0 6px 20px rgba(2,132,199,0.25);">
+          <div style="text-align:left;background:linear-gradient(150deg,var(--db-primary),#115e59);border-radius:14px;padding:1em;box-shadow:0 6px 20px rgba(13,148,136,0.25);">
             <span style="font-size:0.5em;font-weight:800;color:rgba(255,255,255,0.8);text-transform:uppercase;">Phase 04</span>
             <h4 style="font-size:0.82em;margin:0.25em 0;color:#fff;">AI GNN Rescoring &amp; Paper Draft</h4>
             <p style="font-size:0.65em;color:rgba(255,255,255,0.85);line-height:1.5;">Predict ADMET properties with PyTorch GNNs, optimize lead scaffolds, and compile a research report.</p>
@@ -937,6 +1429,89 @@
         <div style="max-width:960px;margin:0.9em auto 0;display:flex;align-items:center;justify-content:center;gap:0.6em;background:rgba(16,185,129,0.06);border:1px solid rgba(16,185,129,0.2);border-radius:10px;padding:0.6em 1em;">
           <span style="font-size:1em;">🎯</span>
           <span style="font-size:0.78em;font-weight:700;color:var(--db-gray-800);">You leave the program with a real GitHub repository, reproducible Colab notebooks, and a publication-grade portfolio.</span>
+        </div>
+      </section>
+
+      <!-- ══ SECTION 04: CAREER PATHWAYS & ENROLLMENT ═════════════════ -->
+      <section>
+        <div class="tag">Section 04</div>
+        <h2 style="margin-top:0.25em;">Career Pathways <span class="gradient-text">&amp; Enrollment</span></h2>
+        <div class="sep" style="margin:0.55em auto;max-width:60px;"></div>
+        <p style="font-size:0.88em;color:var(--db-gray-500);max-width:580px;margin:0 auto;line-height:1.7;">
+          Direct career trajectories, candidate fit, schedule logistics, and how to pre-register with zero financial risk.
+        </p>
+      </section>
+
+      <!-- ══ THREE DIRECT CAREER PATHWAYS ═════════════════════════════ -->
+      <section>
+        <div class="tag tag-amber">Your Career Trajectory</div>
+        <h3 style="margin-top:0.15em;margin-bottom:0.25em;">Three Direct Paths <span class="gradient-text">After This Program</span></h3>
+        <p style="font-size:0.68em;color:var(--db-gray-500);margin:0 auto 0.7em;max-width:720px;line-height:1.45;">
+          You exit this 3-month cohort not just with course completion, but with an industry-grade research asset portfolio.
+        </p>
+
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.9em;max-width:940px;margin:0 auto;text-align:left;">
+
+          <!-- Path 1: Industry / Startup -->
+          <div class="card" style="padding:0.85em 0.9em;border-top:3px solid var(--db-primary);">
+            <div style="display:flex;align-items:center;gap:0.5em;margin-bottom:0.4em;">
+              <div style="width:2em;height:2em;border-radius:8px;background:rgba(13,148,136,0.1);display:flex;align-items:center;justify-content:center;font-size:1.1em;">💼</div>
+              <div>
+                <h4 style="margin:0;font-size:0.82em;color:var(--db-gray-900);">Biotech &amp; Pharma Jobs</h4>
+                <div style="font-size:0.5em;font-weight:700;color:var(--db-primary);text-transform:uppercase;">Industry Careers</div>
+              </div>
+            </div>
+            <ul class="no-bullets" style="font-size:0.55em;line-height:1.5;color:var(--db-gray-600);margin-bottom:0.6em;">
+              <li>• Computational Chemist</li>
+              <li>• CADD &amp; Virtual Screening Specialist</li>
+              <li>• AI Drug Discovery Associate</li>
+              <li>• Structural Bioinformatician</li>
+            </ul>
+            <div style="font-size:0.5em;background:rgba(13,148,136,0.06);padding:0.3em 0.6em;border-radius:6px;color:var(--db-primary);font-weight:700;">
+              $80,000 – $150,000+ Global Benchmarks
+            </div>
+          </div>
+
+          <!-- Path 2: Funded PhD / Master's -->
+          <div class="card" style="padding:0.85em 0.9em;border-top:3px solid var(--db-accent);">
+            <div style="display:flex;align-items:center;gap:0.5em;margin-bottom:0.4em;">
+              <div style="width:2em;height:2em;border-radius:8px;background:rgba(16,185,129,0.1);display:flex;align-items:center;justify-content:center;font-size:1.1em;">🎓</div>
+              <div>
+                <h4 style="margin:0;font-size:0.82em;color:var(--db-gray-900);">Funded PhD &amp; MS</h4>
+                <div style="font-size:0.5em;font-weight:700;color:var(--db-accent);text-transform:uppercase;">Higher Studies</div>
+              </div>
+            </div>
+            <ul class="no-bullets" style="font-size:0.55em;line-height:1.5;color:var(--db-gray-600);margin-bottom:0.6em;">
+              <li>• Fully funded US / EU / UK Fellowships</li>
+              <li>• Standout Statement of Purpose (SOP)</li>
+              <li>• Verified GitHub code repositories</li>
+              <li>• Recommendation references from DeepBio</li>
+            </ul>
+            <div style="font-size:0.5em;background:rgba(16,185,129,0.06);padding:0.3em 0.6em;border-radius:6px;color:var(--db-accent);font-weight:700;">
+              Full Tuition Waiver + $30K–$45K Stipend
+            </div>
+          </div>
+
+          <!-- Path 3: Research Papers -->
+          <div class="card" style="padding:0.85em 0.9em;border-top:3px solid var(--db-violet);">
+            <div style="display:flex;align-items:center;gap:0.5em;margin-bottom:0.4em;">
+              <div style="width:2em;height:2em;border-radius:8px;background:rgba(124,58,237,0.1);display:flex;align-items:center;justify-content:center;font-size:1.1em;">📄</div>
+              <div>
+                <h4 style="margin:0;font-size:0.82em;color:var(--db-gray-900);">Publication &amp; Papers</h4>
+                <div style="font-size:0.5em;font-weight:700;color:var(--db-violet);text-transform:uppercase;">Scientific Impact</div>
+              </div>
+            </div>
+            <ul class="no-bullets" style="font-size:0.55em;line-height:1.5;color:var(--db-gray-600);margin-bottom:0.6em;">
+              <li>• Target-to-lead manuscript draft</li>
+              <li>• Complete 100ns MD simulation plots</li>
+              <li>• AutoDock Vina binding pose diagrams</li>
+              <li>• Direct recruitment to DeepBio lab as RA</li>
+            </ul>
+            <div style="font-size:0.5em;background:rgba(124,58,237,0.06);padding:0.3em 0.6em;border-radius:6px;color:var(--db-violet);font-weight:700;">
+              Peer-Reviewed First Author Output
+            </div>
+          </div>
+
         </div>
       </section>
 
@@ -975,45 +1550,6 @@
         </div>
       </section>
 
-      <!-- ══ CAREER OUTCOMES ════════════════════════════════════════ -->
-      <section>
-        <div class="tag">Career &amp; Research Pathways</div>
-        <h2 style="margin-top:0.2em;">Where this program <span class="gradient-text">leads you</span></h2>
-        <p style="font-size:0.8em;margin-bottom:0.6em;">Gain the skill set required for academic research and high-growth biotechnology roles.</p>
-        <div class="grid-3-col" style="margin-top:0.6em;">
-          <div class="card card-highlight" style="border-color:var(--db-primary);">
-            <div style="font-size:1.5em;margin-bottom:0.2em;">🎓</div>
-            <h3 style="font-size:1em;color:var(--db-primary);">Academic Readiness</h3>
-            <p style="font-size:0.75em;font-weight:600;margin-bottom:0.6em;color:var(--db-gray-800);">MS / PhD Applications Abroad</p>
-            <ul class="side-list">
-              <li><strong>GitHub Portfolio</strong> &mdash; Production Colab notebooks showcasing docking, MD, and GNN pipelines.</li>
-              <li><strong>Research Proposal</strong> &mdash; Deep understanding to write compelling graduate statement of purpose (SOP).</li>
-              <li><strong>Competitive Edge</strong> &mdash; Stand out to top professors in computational chemistry and structural biology.</li>
-            </ul>
-          </div>
-          <div class="card card-highlight" style="border-color:var(--db-accent);">
-            <div style="font-size:1.5em;margin-bottom:0.2em;">🏢</div>
-            <h3 style="font-size:1em;color:var(--db-accent);">Industry Mastery</h3>
-            <p style="font-size:0.75em;font-weight:600;margin-bottom:0.6em;color:var(--db-gray-800);">Biotech &amp; Pharma Roles</p>
-            <ul class="side-list">
-              <li><strong>CADD Scientist</strong> &mdash; Execute structure- and ligand-based virtual screening campaigns.</li>
-              <li><strong>Cheminformatics Analyst</strong> &mdash; Mine molecular databases (ChEMBL) and engineer QSAR pipelines.</li>
-              <li><strong>AI Molecular Modeler</strong> &mdash; Apply Graph Neural Networks and generative models to lead design.</li>
-            </ul>
-          </div>
-          <div class="card card-highlight" style="border-color:var(--db-warning);">
-            <div style="font-size:1.5em;margin-bottom:0.2em;">🤝</div>
-            <h3 style="font-size:1em;color:var(--db-warning);">Research Assistantship</h3>
-            <p style="font-size:0.75em;font-weight:600;margin-bottom:0.6em;color:var(--db-gray-800);">DeepBio Lab Co-Authorship</p>
-            <ul class="side-list">
-              <li><strong>Direct Recruitment</strong> &mdash; Top cohort graduates join our research team as Research Assistants.</li>
-              <li><strong>Q1 Publications</strong> &mdash; Work directly with Md. Jubayer Hossain on peer-reviewed drug discovery papers.</li>
-              <li><strong>Global Networking</strong> &mdash; Connect with a community of 3,000+ DeepBio alumni worldwide.</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
       <!-- ══ PRICING & COHORT DETAILS ════════════════════════════════ -->
       <section>
         <div class="tag tag-amber">Cohort Investment &amp; Schedule</div>
@@ -1023,9 +1559,9 @@
         <div style="display:grid;grid-template-columns:1.1fr 0.9fr;gap:1.1em;align-items:stretch;max-width:940px;margin:0 auto;">
 
           <!-- What you get -->
-          <div style="background:var(--db-white);border:1px solid rgba(2,132,199,0.18);border-top:4px solid var(--db-primary);border-radius:14px;padding:1em 1.2em;box-shadow:0 2px 12px rgba(2,132,199,0.07);text-align:left;">
+          <div style="background:var(--db-white);border:1px solid rgba(13,148,136,0.18);border-top:4px solid var(--db-primary);border-radius:14px;padding:1em 1.2em;box-shadow:0 2px 12px rgba(13,148,136,0.07);text-align:left;">
             <div style="display:flex;align-items:center;gap:0.6em;margin-bottom:0.6em;">
-              <div style="width:2.2em;height:2.2em;border-radius:8px;background:rgba(2,132,199,0.08);display:flex;align-items:center;justify-content:center;color:var(--db-primary);flex-shrink:0;">
+              <div style="width:2.2em;height:2.2em;border-radius:8px;background:rgba(13,148,136,0.08);display:flex;align-items:center;justify-content:center;color:var(--db-primary);flex-shrink:0;">
                 <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
               </div>
               <h4 style="margin:0;font-size:0.92em;color:var(--db-primary);">Everything Included:</h4>
@@ -1041,13 +1577,13 @@
           </div>
 
           <!-- Pricing Box -->
-          <div style="position:relative;background:var(--db-white);border:2px solid var(--db-primary);border-radius:14px;padding:1.1em 1.2em 1.2em;box-shadow:0 6px 22px rgba(2,132,199,0.12);display:flex;flex-direction:column;align-items:center;text-align:center;">
-            <span style="position:absolute;top:-0.85em;left:50%;transform:translateX(-50%);white-space:nowrap;background:var(--db-primary);color:#fff;font-size:0.56em;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;padding:0.4em 0.9em;border-radius:999px;box-shadow:0 4px 10px rgba(2,132,199,0.25);">⚡ Enroll Now &middot; Cohort 2026</span>
+          <div style="position:relative;background:var(--db-white);border:2px solid var(--db-primary);border-radius:14px;padding:1.1em 1.2em 1.2em;box-shadow:0 6px 22px rgba(13,148,136,0.12);display:flex;flex-direction:column;align-items:center;text-align:center;">
+            <span style="position:absolute;top:-0.85em;left:50%;transform:translateX(-50%);white-space:nowrap;background:var(--db-primary);color:#fff;font-size:0.56em;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;padding:0.4em 0.9em;border-radius:999px;box-shadow:0 4px 10px rgba(13,148,136,0.25);">⚡ Enroll Now &middot; Cohort 2026</span>
 
             <div class="price-main" style="margin:0.6em 0 0.1em;">10,200 <span class="price-period">BDT / month</span></div>
             <span style="display:inline-block;background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.3);color:var(--db-accent);font-size:0.6em;font-weight:800;border-radius:999px;padding:0.25em 0.8em;margin-bottom:0.6em;">3-Month Structured Program</span>
 
-            <a href="https://forms.gle/5aekYtmDXmLh4ePp7" target="_blank" style="display:block;width:100%;max-width:280px;background:var(--db-primary);color:#fff;font-size:0.82em;font-weight:800;text-align:center;padding:0.7em 1em;border-radius:10px;box-shadow:0 4px 14px rgba(2,132,199,0.25);margin-bottom:0.6em;">Pre-Register Free Now →</a>
+            <a href="https://forms.gle/5aekYtmDXmLh4ePp7" target="_blank" style="display:block;width:100%;max-width:280px;background:var(--db-primary);color:#fff;font-size:0.82em;font-weight:800;text-align:center;padding:0.7em 1em;border-radius:10px;box-shadow:0 4px 14px rgba(13,148,136,0.25);margin-bottom:0.6em;">Pre-Register Free Now →</a>
 
             <div style="font-size:0.62em;color:var(--db-gray-500);text-align:left;line-height:1.85;width:100%;max-width:280px;">
               <div>✅ <strong>Free Pre-Registration (No payment upfront)</strong></div>
