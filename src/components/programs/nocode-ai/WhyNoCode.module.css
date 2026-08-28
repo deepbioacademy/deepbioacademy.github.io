@@ -1,0 +1,104 @@
+.whyNoCode {
+  padding: 6rem 0;
+  background-color: var(--bg-primary);
+  position: relative;
+  border-top: 1px solid var(--border-color);
+}
+
+.header {
+  margin-bottom: 3rem;
+}
+
+.contentSection {
+  padding: 0 1rem;
+}
+
+.introText {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  max-width: 900px;
+  margin-bottom: 3rem;
+}
+
+
+.advantageList {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 900px;
+}
+
+.advantageItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  background: var(--bg-card);
+  padding: 2rem;
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.advantageItem:hover {
+  transform: translateX(10px);
+  border-color: var(--accent-secondary);
+}
+
+.iconWrapper {
+  flex-shrink: 0;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  background: rgba(99, 102, 241, 0.1);
+  border: 2px solid var(--accent-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.2);
+}
+
+.icon {
+  font-size: 2.2rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-top: 0.5rem;
+}
+
+.advantageTitle {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--accent-secondary);
+  margin-bottom: 0.25rem;
+}
+
+.advantageDesc {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .contentSection {
+    padding: 0;
+  }
+
+  .advantageItem {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .advantageItem {
+    padding: 1.5rem 1rem;
+  }
+}

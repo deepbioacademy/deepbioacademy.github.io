@@ -1,41 +1,110 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# ==============================================================================
+# Dependencies
+# ==============================================================================
+node_modules/
+.pnp
+.pnp.js
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
 
-# dependencies
-/node_modules
-/.pnp
-.pnp.*
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/versions
+# ==============================================================================
+# Production & Build Outputs
+# ==============================================================================
+.next/
+out/
+build/
+dist/
+*.tsbuildinfo
+next-env.d.ts
 
-# testing
-/coverage
+# ==============================================================================
+# Large & Standalone Deck / Ad / Media Assets
+# ==============================================================================
+public/bmp_info_deck/
+public/nextgendd_info_deck/
+public/brand_deck_template/
+public/bmp_ads/
+public/socials_generator/
+public/courses_img/
+public/course_curricula/
+public/certificates/
+public/*.pdf
+public/*.xlsx
 
-# next.js
-/.next/
-/out/
+# ==============================================================================
+# Large Binary, Archive & Document Formats
+# ==============================================================================
+*.pdf
+*.zip
+*.tar.gz
+*.tar
+*.gz
+*.rar
+*.7z
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.tiff
+*.tif
+*.psd
+*.ai
+*.eps
 
-# production
-/build
-
-# misc
-.DS_Store
+# ==============================================================================
+# Environment Variables & Secrets
+# ==============================================================================
+.env
+.env*.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
 *.pem
+*.key
+*.cert
 
-# debug
+# ==============================================================================
+# Logs & Debug
+# ==============================================================================
+logs
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-.pnpm-debug.log*
+pnpm-debug.log*
+lerna-debug.log*
 
-# env files (can opt-in for committing if needed)
-.env*
+# ==============================================================================
+# Temporary, Cache & Platform Metadata
+# ==============================================================================
+.turbo/
+.vercel/
+.cache/
+tmp/
+temp/
 
-# vercel
-.vercel
+# ==============================================================================
+# Operating System Files
+# ==============================================================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
 
-# typescript
-*.tsbuildinfo
-next-env.d.ts
+# ==============================================================================
+# IDE & Editor Files
+# ==============================================================================
+.idea/
+.vscode/
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+

@@ -1,0 +1,265 @@
+.enrollSection {
+  padding: 6rem 0;
+  background-color: var(--bg-primary);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.header {
+  margin-bottom: 3rem;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+}
+
+/* ── Card ── */
+.cardWrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--accent-primary);
+  border-radius: 24px;
+  padding: 3rem 2.5rem;
+  width: 100%;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 0 60px rgba(99, 102, 241, 0.15);
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.featuredCard {
+  border-color: var(--accent-secondary);
+  box-shadow: 0 0 60px rgba(6, 182, 212, 0.2);
+}
+
+.popularBadge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 0.3rem 1rem;
+  border-radius: 50px;
+  white-space: nowrap;
+}
+
+.badge {
+  display: inline-block;
+  background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding: 0.35rem 1rem;
+  border-radius: 50px;
+  margin-bottom: 2rem;
+}
+
+/* ── Pricing ── */
+.pricing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.6rem;
+}
+
+.originalPrice {
+  font-size: 1.6rem;
+  color: var(--text-secondary);
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.discountedPrice {
+  display: flex;
+  align-items: flex-start;
+  line-height: 1;
+}
+
+.currency {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent-secondary);
+  margin-top: 0.4rem;
+}
+
+.amount {
+  font-size: 4.5rem;
+  font-weight: 900;
+  background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+
+.savingsTag {
+  background: rgba(6, 182, 212, 0.15);
+  border: 1px solid var(--accent-secondary);
+  color: var(--accent-secondary);
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.3rem 0.8rem;
+  border-radius: 50px;
+  align-self: center;
+}
+
+.pricingNote {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+/* ── Includes list ── */
+.includesList {
+  list-style: none;
+  text-align: left;
+  margin-bottom: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.includesItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.check {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  color: var(--accent-secondary);
+  margin-top: 0.2rem;
+}
+
+/* ── CTA ── */
+.ctaButton {
+  width: 100%;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 50px;
+  margin-bottom: 1rem;
+  display: block;
+  text-align: center;
+}
+
+.disclaimer {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  opacity: 0.7;
+}
+
+/* ── Application Form ── */
+.formWrapper {
+  margin-top: 5rem;
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.formTitle {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--accent-secondary);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.iframeContainer {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  background: var(--bg-card);
+}
+
+.formFrame {
+  width: 100%;
+  height: 900px;
+  border: none;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .formFrame {
+    height: 1100px;
+  }
+}
+
+/* ── Background glow ── */
+.glow {
+  position: absolute;
+  bottom: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+@media (max-width: 768px) {
+  .cardWrapper {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+  }
+
+  .card {
+    padding: 2rem 1.5rem;
+  }
+
+  .amount {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 1.5rem 1rem;
+  }
+
+  .pricing {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .amount {
+    font-size: 3rem;
+  }
+
+  .originalPrice {
+    font-size: 1.2rem;
+  }
+
+  .ctaButton {
+    font-size: 1rem;
+    padding: 0.9rem 1.5rem;
+  }
+}
