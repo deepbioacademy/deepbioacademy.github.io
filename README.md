@@ -8,7 +8,7 @@ The official web platform and learning portal for **DeepBio Academy** — provid
 - **UI & Styling:** [Tailwind CSS v4](https://tailwindcss.com/), [Lucide Icons](https://lucide.dev/)
 - **Language:** [TypeScript](https://www.typescriptlang.org/)
 - **Runtime:** [Node.js](https://nodejs.org/) & [React 19](https://react.dev/)
-- **Deployment:** [GitHub Pages](https://pages.github.com/) via GitHub Actions
+- **Deployment:** [GitHub Pages](https://pages.github.com/) / [Netlify](https://www.netlify.com/)
 
 ---
 
@@ -50,13 +50,20 @@ npm run build
 
 ---
 
-## 🌐 GitHub Pages Deployment
+## 🌐 Deployment Options
 
-This repository is pre-configured with automated GitHub Actions deployment.
+### Option 1: GitHub Pages (Automated via GitHub Actions)
 
 1. Go to your GitHub repository **Settings** > **Pages**.
 2. Under **Build and deployment** > **Source**, select **GitHub Actions**.
-3. Push commits to the `main` branch — the workflow in `.github/workflows/deploy.yml` will automatically build and deploy the site.
+3. Push commits to `main` — the workflow in `.github/workflows/deploy.yml` will automatically build and deploy.
+
+### Option 2: Netlify
+
+The repository includes a pre-configured `netlify.toml` file:
+- **Build command:** `npm run build`
+- **Publish directory:** `out`
+- Simply link your repository in Netlify or deploy via Netlify CLI (`netlify deploy --prod`).
 
 ---
 
@@ -80,6 +87,7 @@ This repository is pre-configured with automated GitHub Actions deployment.
 │   ├── data/               # Static datasets and curriculum configs
 │   ├── lib/                # Utility helpers and markdown parser
 │   └── types/              # TypeScript interface definitions
+├── netlify.toml            # Netlify deployment & headers configuration
 ├── next.config.ts          # Static export configuration
 ├── package.json
 └── tsconfig.json
