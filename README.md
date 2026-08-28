@@ -4,11 +4,11 @@ The official web platform and learning portal for **DeepBio Academy** — provid
 
 ## 🚀 Tech Stack
 
-- **Framework:** [Next.js](https://nextjs.org/) (App Router & Static HTML Export)
+- **Framework:** [Next.js](https://nextjs.org/) (App Router)
 - **UI & Styling:** [Tailwind CSS v4](https://tailwindcss.com/), [Lucide Icons](https://lucide.dev/)
 - **Language:** [TypeScript](https://www.typescriptlang.org/)
 - **Runtime:** [Node.js](https://nodejs.org/) & [React 19](https://react.dev/)
-- **Deployment:** [GitHub Pages](https://pages.github.com/) / [Netlify](https://www.netlify.com/)
+- **Deployment:** [Vercel](https://vercel.com/) (Recommended) / [Netlify](https://www.netlify.com/) / [GitHub Pages](https://pages.github.com/)
 
 ---
 
@@ -41,38 +41,50 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-### Build & Export
+### Build
 
 ```bash
-# Generate the static production build (output to /out)
+# Run production build
 npm run build
 ```
 
 ---
 
-## 🌐 Deployment Options
+## 🚀 Deploying to Vercel (Recommended)
 
-### Option 1: GitHub Pages (Automated via GitHub Actions)
+### Step 1: Import Project to Vercel
+1. Go to **[vercel.com](https://vercel.com)** and sign in with your GitHub account.
+2. Click **"Add New..."** > **"Project"**.
+3. Select this repository (`deepbioacademy.github.io`) and click **Import**.
+4. Leave all default settings (Framework: Next.js) and click **Deploy**.
 
-1. Go to your GitHub repository **Settings** > **Pages**.
-2. Under **Build and deployment** > **Source**, select **GitHub Actions**.
-3. Push commits to `main` — the workflow in `.github/workflows/deploy.yml` will automatically build and deploy.
+---
 
-### Option 2: Netlify
+## 🌐 Connecting a Custom Domain on Vercel
 
-The repository includes a pre-configured `netlify.toml` file:
-- **Build command:** `npm run build`
-- **Publish directory:** `out`
-- Simply link your repository in Netlify or deploy via Netlify CLI (`netlify deploy --prod`).
+### Step 1: Add your domain in Vercel
+1. In your project dashboard on Vercel, go to **Settings** > **Domains**.
+2. Enter your custom domain (e.g. `deepbioacademy.com` or `www.deepbioacademy.com`) and click **Add**.
+3. Vercel will ask how you want to redirect (recommended: redirect root domain `deepbioacademy.com` to `www.deepbioacademy.com` or vice versa).
+
+### Step 2: Configure DNS at your Domain Registrar
+Log in to your domain registrar (Namecheap, GoDaddy, Cloudflare, etc.) and add the following DNS records:
+
+| Type | Name / Host | Value / Points to | Note |
+| :--- | :--- | :--- | :--- |
+| **A** | `@` | `76.76.21.21` | Points apex domain to Vercel |
+| **CNAME** | `www` | `cname.vercel-dns.com.` | Points www subdomain to Vercel |
+
+*(If using a custom subdomain like `app.deepbioacademy.com`, add a `CNAME` with Host = `app` and Value = `cname.vercel-dns.com`)*
+
+### Step 3: SSL / HTTPS Verification
+- Vercel will automatically verify DNS records within 1–10 minutes and provision a free, auto-renewing SSL certificate (HTTPS).
 
 ---
 
 ## 📁 Project Structure
 
 ```
-├── .github/
-│   └── workflows/
-│       └── deploy.yml      # Automated GitHub Actions deployment workflow
 ├── public/                 # Static assets (images, logos, publications)
 ├── src/
 │   ├── app/                # Next.js App Router pages and layouts
@@ -87,8 +99,7 @@ The repository includes a pre-configured `netlify.toml` file:
 │   ├── data/               # Static datasets and curriculum configs
 │   ├── lib/                # Utility helpers and markdown parser
 │   └── types/              # TypeScript interface definitions
-├── netlify.toml            # Netlify deployment & headers configuration
-├── next.config.ts          # Static export configuration
+├── next.config.ts          # Next.js configuration & Edge security headers
 ├── package.json
 └── tsconfig.json
 ```
