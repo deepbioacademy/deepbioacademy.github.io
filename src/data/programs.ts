@@ -23,7 +23,7 @@ export interface Program {
   href: string;
   applyUrl: string;
   isPopular?: boolean;
-  status: "Open for Enrollment" | "Upcoming Cohort" | "Rolling Admission" | "Free Open Access";
+  status: "Cohort 03 Admission is Open Now" | "Running" | "Admission Closed" | "Admission Starting Soon" | string;
 }
 
 export const ACADEMY_PROGRAMS: Program[] = [
@@ -57,7 +57,7 @@ export const ACADEMY_PROGRAMS: Program[] = [
     href: "/programs/bioinformatics-mentorship",
     applyUrl: "https://forms.gle/zSPBekZdeiBpJURj9",
     isPopular: true,
-    status: "Open for Enrollment"
+    status: "Cohort 03 Admission is Open Now"
   },
   {
     id: "drug-discovery",
@@ -89,7 +89,7 @@ export const ACADEMY_PROGRAMS: Program[] = [
     href: "/programs/drug-discovery",
     applyUrl: "/apply?track=drug-discovery",
     isPopular: true,
-    status: "Open for Enrollment"
+    status: "Running"
   },
   {
     id: "nocode-ai",
@@ -120,7 +120,7 @@ export const ACADEMY_PROGRAMS: Program[] = [
     keyTopics: ["Agentic AI", "Life Science Prompting", "Claude & ChatGPT 4o", "NotebookLM", "AI Data Analysis"],
     href: "/programs/nocode-ai",
     applyUrl: "/apply?track=nocode-ai",
-    status: "Open for Enrollment"
+    status: "Admission Closed"
   },
   {
     id: "youth-ai",
@@ -151,6 +151,6 @@ export const ACADEMY_PROGRAMS: Program[] = [
     keyTopics: ["AI Foundations", "Computer Vision Basics", "AI Ethics", "Raspberry Pi STEM", "Hands-on ML"],
     href: "/programs/youth-ai",
     applyUrl: "/apply?track=youth-ai",
-    status: "Free Open Access"
+    status: "Admission Starting Soon"
   }
 ];

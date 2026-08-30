@@ -1,10 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import EnrollCTA from "@/components/sections/EnrollCTA";
+import BlogProgramsCTA from "@/components/sections/BlogProgramsCTA";
 import { getPublishedPosts, getPost, formatDate } from "@/lib/blog";
-
-const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 export function generateStaticParams() {
   return getPublishedPosts().map((post) => ({ slug: post.slug }));
@@ -35,7 +33,6 @@ export default async function BlogPostPage({
 
   return (
     <>
-      
       <main className="min-h-screen bg-[var(--bg)] py-12">
         <article className="max-w-3xl mx-auto px-6 lg:px-8 font-dm-sans">
           <Link
@@ -111,8 +108,7 @@ export default async function BlogPostPage({
           />
         </article>
       </main>
-      <EnrollCTA />
-      
+      <BlogProgramsCTA currentAuthor={post.author} />
     </>
   );
 }

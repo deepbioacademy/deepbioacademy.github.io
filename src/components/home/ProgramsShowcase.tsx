@@ -61,6 +61,37 @@ export default function ProgramsShowcase() {
     }
   };
 
+  const getStatusBadge = (status: string) => {
+    if (status.includes("Open")) {
+      return {
+        badgeStyle: "bg-emerald-50 text-emerald-700 border-emerald-200/90 shadow-2xs",
+        dotStyle: "bg-emerald-500 animate-pulse",
+      };
+    }
+    if (status === "Running") {
+      return {
+        badgeStyle: "bg-amber-50 text-amber-800 border-amber-200/90 shadow-2xs",
+        dotStyle: "bg-amber-500",
+      };
+    }
+    if (status === "Admission Closed") {
+      return {
+        badgeStyle: "bg-rose-50 text-rose-700 border-rose-200/90 shadow-2xs",
+        dotStyle: "bg-rose-500",
+      };
+    }
+    if (status.includes("Soon")) {
+      return {
+        badgeStyle: "bg-indigo-50 text-indigo-700 border-indigo-200/90 shadow-2xs",
+        dotStyle: "bg-indigo-500",
+      };
+    }
+    return {
+      badgeStyle: "bg-slate-100 text-slate-700 border-slate-200/90",
+      dotStyle: "bg-slate-400",
+    };
+  };
+
   return (
     <section id="programs" className="py-20 bg-slate-50/70 border-b border-slate-200/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -80,7 +111,10 @@ export default function ProgramsShowcase() {
 
         {/* Clean, Modern 2x2 Grid of Program Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {ACADEMY_PROGRAMS.map((prog) => (
+          {ACADEMY_PROGRAMS.map((prog) => {
+            const statusConfig = getStatusBadge(prog.status);
+
+            return (
             <div
               key={prog.id}
               className="bg-white rounded-3xl border border-slate-200/90 shadow-xs hover:shadow-xl hover:border-slate-300 transition-all duration-300 flex flex-col justify-between relative overflow-hidden group"
@@ -107,8 +141,9 @@ export default function ProgramsShowcase() {
                       </div>
                     </div>
 
-                    <span className="text-xs font-bold px-3 py-1 rounded-full bg-slate-100 text-slate-700 border border-slate-200/80 flex-shrink-0">
-                      {prog.status}
+                    <span className={`inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-full border flex-shrink-0 ${statusConfig.badgeStyle}`}>
+                      <span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${statusConfig.dotStyle}`} />
+                      <span>{prog.status}</span>
                     </span>
                   </div>
 
@@ -180,7 +215,8 @@ export default function ProgramsShowcase() {
 
               </div>
             </div>
-          ))}
+            );
+          })}
         </div>
 
       </div>
