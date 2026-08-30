@@ -18,11 +18,17 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
-  themeColor: "#0f172a",
+  themeColor: "#090d16",
 };
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://deepbioacademy.com";
+
 export const metadata: Metadata = {
-  title: "DeepBio Academy — Bioinformatics, Computational Biology & Life Science AI",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "DeepBio Academy — Bioinformatics, Computational Biology & Life Science AI",
+    template: "%s | DeepBio Academy",
+  },
   description:
     "The premier academy for modern Bioinformatics, Next-Gen AI Drug Discovery, No-Code Agentic AI for Life Sciences, and National AI Literacy. Mentorship, real-world research, and production-grade computational biology toolkits.",
   keywords: [
@@ -36,16 +42,40 @@ export const metadata: Metadata = {
     "Spatial Transcriptomics",
     "No-Code AI for Life Sciences",
     "DeepBio Academy",
-    "agami.ai"
+    "agami.ai",
   ],
   authors: [{ name: "DeepBio Academy" }],
+  creator: "DeepBio Academy",
+  publisher: "DeepBio Academy",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: siteUrl,
     title: "DeepBio Academy — Bioinformatics, Computational Biology & Life Science AI",
     description:
       "Empowering the next generation of life scientists and computational researchers with cutting-edge bioinformatics, AI drug design, and agentic workflows.",
     siteName: "DeepBio Academy",
-    locale: "en_US",
-    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "DeepBio Academy — Bioinformatics, Computational Biology & Life Science AI",
+    description:
+      "Accelerating Life Science research with modern Bioinformatics, Next-Gen AI Drug Discovery, and Multi-Omics Mentorship.",
+    creator: "@deepbioacademy",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
@@ -60,9 +90,7 @@ export default function RootLayout({
         </Suspense>
         <SmoothScroll />
         <Navbar />
-        <main className="flex-1 flex flex-col">
-          {children}
-        </main>
+        <main className="flex-1 flex flex-col">{children}</main>
         <Footer />
       </body>
     </html>

@@ -63,14 +63,25 @@ export default async function BlogPostPage({
           </h1>
 
           <div className="flex items-center gap-3 mb-10 pb-10 border-b border-[var(--border)]">
-            <div className="w-11 h-11 rounded-full bg-indigo-600/10 flex items-center justify-center text-indigo-600 font-bold text-sm">
-              {post.author
-                .split(" ")
-                .slice(0, 2)
-                .map((n) => n[0])
-                .join("")
-                .toUpperCase()}
-            </div>
+            {post.cover ? (
+              <div className="relative w-12 h-12 rounded-full overflow-hidden border border-slate-200 shadow-sm flex-shrink-0">
+                <Image
+                  src={post.cover}
+                  alt={post.author}
+                  fill
+                  className="object-cover object-top"
+                />
+              </div>
+            ) : (
+              <div className="w-11 h-11 rounded-full bg-indigo-600/10 flex items-center justify-center text-indigo-600 font-bold text-sm flex-shrink-0">
+                {post.author
+                  .split(" ")
+                  .slice(0, 2)
+                  .map((n) => n[0])
+                  .join("")
+                  .toUpperCase()}
+              </div>
+            )}
             <div>
               <div className="text-sm font-bold text-[var(--text-primary)]">
                 {post.author}
@@ -83,11 +94,12 @@ export default async function BlogPostPage({
           </div>
 
           {post.cover && (
-            <div className="relative w-full max-w-sm mx-auto aspect-[4/5] mb-12 rounded-2xl overflow-hidden border border-[var(--border)] bg-[var(--bg-alt)]">
+            <div className="relative w-full max-w-sm mx-auto aspect-[4/5] mb-12 rounded-2xl overflow-hidden border border-[var(--border)] bg-[var(--bg-alt)] shadow-lg">
               <Image
-                src={`${BASE}${post.cover}`}
-                alt={post.title}
+                src={post.cover}
+                alt={post.author || post.title}
                 fill
+                priority
                 style={{ objectFit: "cover", objectPosition: "top center" }}
               />
             </div>

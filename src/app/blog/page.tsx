@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { getPublishedPosts, formatDate } from "@/lib/blog";
-import { Sparkles, ArrowRight, BookOpen, Clock, Tag } from "lucide-react";
+import { Sparkles, ArrowRight } from "lucide-react";
 
 export const metadata = {
   title: "Blog & Mentee Stories — DeepBio Academy",
@@ -38,14 +38,26 @@ export default function BlogIndexPage() {
             >
               <div>
                 {post.cover && (
-                  <div className="relative h-48 w-full bg-slate-100 overflow-hidden">
+                  <div className="relative h-56 w-full bg-slate-100 overflow-hidden">
                     <Image
                       src={post.cover}
-                      alt={post.title}
+                      alt={post.author || post.title}
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
                     />
+                    {post.tags && post.tags.length > 0 && (
+                      <div className="absolute top-3 left-3 flex flex-wrap gap-1.5 z-10">
+                        {post.tags.slice(0, 2).map((tag) => (
+                          <span
+                            key={tag}
+                            className="px-2.5 py-0.5 rounded-full bg-white/90 backdrop-blur-sm text-slate-800 text-[10px] font-bold uppercase tracking-wider shadow-sm"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 )}
 
@@ -72,8 +84,23 @@ export default function BlogIndexPage() {
 
               <div className="px-6 pb-6 pt-2">
                 <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-blue-600">
-                  <span>Read Full Story</span>
-                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                  <div className="flex items-center gap-2">
+                    {post.cover && (
+                      <div className="relative w-6 h-6 rounded-full overflow-hidden border border-slate-200 flex-shrink-0">
+                        <Image
+                          src={post.cover}
+                          alt={post.author}
+                          fill
+                          className="object-cover object-top"
+                        />
+                      </div>
+                    )}
+                    <span className="text-slate-700 font-semibold">{post.author}</span>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <span>Read Story</span>
+                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                  </div>
                 </div>
               </div>
             </Link>

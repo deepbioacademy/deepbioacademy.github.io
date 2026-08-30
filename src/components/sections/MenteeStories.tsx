@@ -34,10 +34,10 @@ export default function MenteeStories() {
             <div className="ms-card-cover">
               {post.cover ? (
                 <Image
-                  src={`${BASE}${post.cover}`}
+                  src={post.cover}
                   alt={post.author}
                   fill
-                  style={{ objectFit: "cover" }}
+                  style={{ objectFit: "cover", objectPosition: "top center" }}
                   className="ms-card-img"
                 />
               ) : (

@@ -3,24 +3,23 @@
 import { useEffect } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 import Script from "next/script";
-
-const FB_PIXEL_ID = "2090072425255791";
+import * as fpixel from "@/lib/fpixel";
 
 export default function FacebookPixel() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
   useEffect(() => {
-    if (typeof window !== "undefined" && (window as unknown as { fbq: (cmd: string, evt: string) => void }).fbq) {
-      (window as unknown as { fbq: (cmd: string, evt: string) => void }).fbq("track", "PageView");
-    }
+    fpixel.pageview();
   }, [pathname, searchParams]);
+
+  if (!fpixel.FB_PIXEL_ID) return null;
 
   return (
     <>
       <Script
         id="fb-pixel"
-        strategy="lazyOnload"
+        strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: `
             !function(f,b,e,v,n,t,s)
@@ -31,7 +30,7 @@ export default function FacebookPixel() {
             t.src=v;s=b.getElementsByTagName(e)[0];
             s.parentNode.insertBefore(t,s)}(window, document,'script',
             'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '${FB_PIXEL_ID}');
+            fbq('init', '${fpixel.FB_PIXEL_ID}');
             fbq('track', 'PageView');
           `,
         }}
@@ -41,7 +40,7 @@ export default function FacebookPixel() {
           height="1"
           width="1"
           style={{ display: "none" }}
-          src={`https://www.facebook.com/tr?id=${FB_PIXEL_ID}&ev=PageView&noscript=1`}
+          src={`https://www.facebook.com/tr?id=${fpixel.FB_PIXEL_ID}&ev=PageView&noscript=1`}
           alt=""
         />
       </noscript>
