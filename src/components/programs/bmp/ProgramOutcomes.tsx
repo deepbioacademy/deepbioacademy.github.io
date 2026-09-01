@@ -127,7 +127,7 @@ export default function ProgramOutcomes() {
                 <Globe2 className="w-5 h-5 text-blue-600" /> Research Fields You Can Enter Immediately
               </h3>
               <p className="text-xs sm:text-sm text-slate-500 mt-1">
-                The skills in Linux, R, Bulk RNA-seq, Single-Cell, and Spatial transcriptomics apply directly to:
+                The skills in Linux, Python, R, Bulk RNA-seq, Single-Cell, Spatial transcriptomics, and AI apply directly to:
               </p>
             </div>
             <span className="self-start sm:self-auto px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-bold font-mono">

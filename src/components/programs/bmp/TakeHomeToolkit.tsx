@@ -1,4 +1,4 @@
-import { Terminal, Dna, Layers, FolderGit2, BarChart2 } from "lucide-react";
+import { Terminal, Dna, Layers, FolderGit2, BarChart2, Cpu } from "lucide-react";
 
 export default function TakeHomeToolkit() {
   const toolkits = [
@@ -8,10 +8,10 @@ export default function TakeHomeToolkit() {
       accent: "text-blue-600",
       accentBg: "bg-blue-50 border-blue-200",
       topBorder: "border-t-blue-500",
-      title: "Bulk_RNAseq_Pipeline/",
-      desc: "End-to-end standard RNA-seq pipeline from raw sequencing reads to count matrices, DESeq2 differential expression, and GSEA pathway discovery.",
+      title: "Bulk_RNAseq/",
+      desc: "End-to-end RNA-seq from raw reads to count tables, DESeq2 differential expression, and GSEA functional pathway analysis.",
       tree: [
-        "Bulk_RNAseq_Pipeline/",
+        "Bulk_RNAseq/",
         "├── 01_fastp_qc.sh",
         "├── 02_star_salmon.sh",
         "├── 03_deseq2_dge.R",
@@ -24,10 +24,10 @@ export default function TakeHomeToolkit() {
       accent: "text-teal-600",
       accentBg: "bg-teal-50 border-teal-200",
       topBorder: "border-t-teal-500",
-      title: "Bulk_RNAseq_MetaPipeline/",
-      desc: "Multi-cohort transcriptomics meta-analysis combining independent studies using ComBat batch removal and Random Effects Models (REM).",
+      title: "Bulk_Meta/",
+      desc: "Multi-cohort transcriptomics meta-analysis combining independent GEO datasets with ComBat batch removal and REM modeling.",
       tree: [
-        "Bulk_RNAseq_MetaPipeline/",
+        "Bulk_Meta/",
         "├── 01_geo_download.R",
         "├── 02_combat_batch.R",
         "├── 03_meta_de_rem.R",
@@ -40,14 +40,14 @@ export default function TakeHomeToolkit() {
       accent: "text-indigo-600",
       accentBg: "bg-indigo-50 border-indigo-200",
       topBorder: "border-t-indigo-500",
-      title: "SingleCell_Seurat_Pipeline/",
-      desc: "Single-cell R workflows — 10x Cell Ranger QC, DoubletFinder, Harmony integration, UMAP clustering, and SingleR automated annotation.",
+      title: "Single_Cell/",
+      desc: "Single-cell Python workflows: Scanpy QC, DoubletDetection, Harmony integration, UMAP clustering, and cell type annotation.",
       tree: [
-        "SingleCell_Seurat_Pipeline/",
-        "├── 01_cellranger_qc.R",
-        "├── 02_harmony_umap.R",
-        "├── 03_singler_annot.R",
-        "└── 04_prop_testing.R"
+        "Single_Cell/",
+        "├── 01_scanpy_qc.py",
+        "├── 02_harmony_umap.py",
+        "├── 03_cell_annot.py",
+        "└── 04_marker_diff.py"
       ]
     },
     {
@@ -56,14 +56,30 @@ export default function TakeHomeToolkit() {
       accent: "text-pink-600",
       accentBg: "bg-pink-50 border-pink-200",
       topBorder: "border-t-pink-500",
-      title: "Spatial_Transcriptomics_R/",
-      desc: "10x Visium HD & Xenium In Situ pipelines — spot-level QC, SpatialExperiment objects, BayesSpace domain clustering, and tissue niche modeling.",
+      title: "Spatial_Omics/",
+      desc: "10x Visium HD & Xenium Python pipelines: spot/cell QC, SpatialData objects, domain clustering, and tissue niche modeling.",
       tree: [
-        "Spatial_Transcriptomics_R/",
-        "├── 01_visium_hd_qc.R",
-        "├── 02_bayesspace_clust.R",
-        "├── 03_spatial_de.R",
-        "└── 04_niche_mapping.R"
+        "Spatial_Omics/",
+        "├── 01_visium_hd_qc.py",
+        "├── 02_domain_clust.py",
+        "├── 03_spatial_de.py",
+        "└── 04_niche_mapping.py"
+      ]
+    },
+    {
+      id: "bio-ai-ml",
+      icon: Cpu,
+      accent: "text-purple-600",
+      accentBg: "bg-purple-50 border-purple-200",
+      topBorder: "border-t-purple-500",
+      title: "Bio_AI_ML/",
+      desc: "Omics Machine Learning & Deep Learning: feature selection, predictive classifiers, SHAP values, and agentic AI scripts.",
+      tree: [
+        "Bio_AI_ML/",
+        "├── 01_feature_select.py",
+        "├── 02_ml_classifier.py",
+        "├── 03_shap_explain.py",
+        "└── 04_agentic_bio.py"
       ]
     }
   ];
@@ -72,7 +88,7 @@ export default function TakeHomeToolkit() {
     <section className="py-20 lg:py-24 bg-white border-t border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         
-        {/* Clean, Clear Header Block */}
+        {/* Header Block */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-600 text-xs font-mono font-bold uppercase tracking-widest">
             <FolderGit2 className="w-3.5 h-3.5 text-blue-600" /> TAKE-HOME TOOLKIT
@@ -83,18 +99,18 @@ export default function TakeHomeToolkit() {
           </h2>
           
           <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-xl mx-auto">
-            Get fully annotated, production-ready scripts you can immediately run on your own research datasets.
+            Get fully annotated, production-ready Python &amp; R scripts you can immediately run on your own research datasets.
           </p>
         </div>
 
-        {/* 4 Focused Pipeline Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* 5 Focused Pipeline Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5 sm:gap-6">
           {toolkits.map((tk) => {
             const Icon = tk.icon;
             return (
               <div 
                 key={tk.id}
-                className={`bg-white rounded-3xl p-6 border border-slate-200 shadow-sm ${tk.topBorder} border-t-4 flex flex-col justify-between space-y-5 hover:shadow-xl hover:-translate-y-1 hover:border-slate-300 transition-all duration-300 group`}
+                className={`bg-white rounded-3xl p-5 sm:p-6 border border-slate-200 shadow-sm ${tk.topBorder} border-t-4 flex flex-col justify-between h-full space-y-5 hover:shadow-xl hover:-translate-y-1.5 hover:border-slate-300 transition-all duration-300 group`}
               >
                 <div className="space-y-3">
                   {/* Icon */}
@@ -104,21 +120,21 @@ export default function TakeHomeToolkit() {
 
                   {/* Title & Desc */}
                   <div>
-                    <h3 className="text-sm sm:text-base font-mono font-bold text-slate-950 tracking-tight group-hover:text-blue-600 transition-colors">
+                    <h3 className="text-sm font-mono font-bold text-slate-950 tracking-tight group-hover:text-blue-600 transition-colors leading-snug">
                       {tk.title}
                     </h3>
-                    <p className="text-xs text-slate-600 leading-relaxed mt-2">
+                    <p className="text-xs text-slate-600 leading-relaxed mt-2 line-clamp-3">
                       {tk.desc}
                     </p>
                   </div>
                 </div>
 
                 {/* Clean Terminal Code Box */}
-                <div className="p-3.5 rounded-2xl bg-slate-950 border border-slate-800 font-mono text-[11px] text-slate-300 space-y-1 overflow-x-auto shadow-inner">
+                <div className="p-3 rounded-2xl bg-slate-950 border border-slate-800 font-mono text-[10.5px] text-slate-300 space-y-1 overflow-x-auto shadow-inner">
                   {tk.tree.map((line, idx) => (
                     <div 
                       key={idx} 
-                      className={idx === 0 ? "text-emerald-400 font-bold" : "text-slate-400"}
+                      className={`whitespace-nowrap ${idx === 0 ? "text-emerald-400 font-bold" : "text-slate-400"}`}
                     >
                       {line}
                     </div>
@@ -133,7 +149,7 @@ export default function TakeHomeToolkit() {
         {/* Focused Bottom Note */}
         <div className="text-center pt-2">
           <p className="text-xs sm:text-sm text-slate-500 max-w-xl mx-auto">
-            Start from raw sequencing reads or from a count matrix — the pipelines meet your data wherever it is.
+            Start from raw sequencing reads or from a count matrix — the Python &amp; R pipelines meet your data wherever it is.
           </p>
         </div>
 

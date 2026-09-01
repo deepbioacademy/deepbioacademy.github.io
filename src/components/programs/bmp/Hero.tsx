@@ -2,7 +2,6 @@ import {
   ArrowRight,
   BookOpen,
   CheckCircle2,
-  ChevronRight,
   Sparkles,
   ExternalLink,
 } from "lucide-react";
@@ -20,7 +19,7 @@ const previewModules = [
     hoverBg: "hover:bg-blue-50/70 hover:border-blue-200",
     hoverText: "group-hover:text-blue-700",
     title: "01: Computational Foundation",
-    desc: "Linux HPC, Bash automation, NGS data formats & R fundamentals",
+    desc: "Linux HPC, Bash, NGS data formats, Python & R fundamentals",
     href: BMP_CURRICULUM_SHEET_URL,
   },
   {
@@ -50,6 +49,15 @@ const previewModules = [
     desc: "10x Visium HD & Xenium, SpatialExperiment & tissue niches",
     href: BMP_CURRICULUM_SHEET_URL,
   },
+  {
+    num: "05",
+    bg: "bg-purple-100 text-purple-800",
+    hoverBg: "hover:bg-purple-50/70 hover:border-purple-200",
+    hoverText: "group-hover:text-purple-700",
+    title: "05: AI in Computational Biology",
+    desc: "ML Models, FAIR Data, Deep Learning & Agentic Bio-AI",
+    href: BMP_CURRICULUM_SHEET_URL,
+  },
 ];
 
 export default function Hero() {
@@ -59,7 +67,7 @@ export default function Hero() {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 pointer-events-none -z-10 overflow-hidden opacity-60">
         <div className="absolute -top-24 left-1/4 w-96 h-96 bg-blue-200/35 rounded-full blur-3xl" />
         <div className="absolute top-12 right-1/4 w-80 h-80 bg-teal-200/30 rounded-full blur-3xl" />
-        <div className="absolute top-36 left-1/2 w-72 h-72 bg-indigo-200/25 rounded-full blur-3xl" />
+        <div className="absolute top-36 left-1/2 w-72 h-72 bg-purple-200/25 rounded-full blur-3xl" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -86,7 +94,7 @@ export default function Hero() {
 
             {/* Subtitle */}
             <p className="text-base sm:text-lg text-slate-600 font-normal leading-relaxed max-w-2xl">
-              A selective, research-grade mentorship led by <strong className="text-slate-900 font-semibold">Md. Jubayer Hossain</strong>. Master production-grade pipelines in <strong className="text-slate-900 font-semibold">Linux &amp; R / Bioconductor</strong> across Bulk RNA-seq, Single-Cell genomics, and Spatial Transcriptomics (Visium HD &amp; Xenium) toward high-impact publication and international PhD admissions.
+              A selective, research-grade mentorship led by <strong className="text-slate-900 font-semibold">Md. Jubayer Hossain</strong>. Master production-grade pipelines in <strong className="text-slate-900 font-semibold">Linux, Python, R &amp; AI</strong> across Bulk RNA-seq, Single-Cell genomics, Spatial Transcriptomics (Visium HD &amp; Xenium), and Machine Learning toward high-impact publication and international PhD admissions.
             </p>
 
             {/* Mentor Attribution Strip */}
@@ -133,15 +141,15 @@ export default function Hero() {
             <div className="pt-4 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 border-t border-slate-200/80 text-xs font-semibold text-slate-600">
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-                <span>24 Live Lab Sessions</span>
+                <span>Live Lab Sessions</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-                <span>Linux &amp; R Bioconductor</span>
+                <span>Python, R &amp; Bioconductor</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-                <span>3 Research Projects</span>
+                <span>5 Comprehensive Modules</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
@@ -153,31 +161,31 @@ export default function Hero() {
 
           {/* Right Column: Curriculum Framework Preview Card */}
           <div className="lg:col-span-5">
-            <div className="bg-white rounded-3xl border border-slate-200 shadow-xl shadow-slate-200/60 p-6 sm:p-7 space-y-5">
+            <div className="bg-white rounded-3xl border border-slate-200 shadow-xl shadow-slate-200/60 p-6 sm:p-7 space-y-4">
               
-              <div className="flex items-center justify-between pb-4 border-b border-slate-100">
+              <div className="flex items-center justify-between pb-3 border-b border-slate-100">
                 <div className="flex items-center gap-2.5">
                   <div className="w-9 h-9 rounded-xl bg-blue-50 border border-blue-200/60 flex items-center justify-center text-blue-700">
                     <Sparkles className="w-4 h-4" />
                   </div>
                   <div>
-                    <h3 className="font-black text-slate-900 text-sm">Syllabus Framework</h3>
-                    <p className="text-[11px] text-slate-500">Raw Data to Publication</p>
+                    <h3 className="font-black text-slate-900 text-sm">Curriculum Framework</h3>
+                    <p className="text-[11px] text-slate-500">Raw Data to Bio-AI Deployment</p>
                   </div>
                 </div>
                 <span className="px-2.5 py-1 rounded-full bg-blue-50 text-blue-700 border border-blue-200 text-[11px] font-bold font-mono">
-                  4 Core Modules
+                  5 Core Modules
                 </span>
               </div>
 
-              <div className="space-y-2.5">
+              <div className="space-y-2">
                 {previewModules.map((item) => (
                   <a
                     key={item.num}
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`p-3.5 rounded-2xl bg-slate-50/80 ${item.hoverBg} border border-slate-200/60 transition-all cursor-pointer flex items-center justify-between group`}
+                    className={`p-3 rounded-2xl bg-slate-50/80 ${item.hoverBg} border border-slate-200/60 transition-all cursor-pointer flex items-center justify-between group`}
                   >
                     <div className="flex items-center gap-3">
                       <div
@@ -202,10 +210,10 @@ export default function Hero() {
                   href={BMP_CURRICULUM_SHEET_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full py-3 rounded-xl border border-blue-200 bg-blue-50/60 hover:bg-blue-100/70 text-blue-800 font-bold text-xs transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
+                  className="w-full py-2.5 rounded-xl border border-blue-200 bg-blue-50/60 hover:bg-blue-100/70 text-blue-800 font-bold text-xs transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
                 >
                   <BookOpen className="w-3.5 h-3.5" />
-                  <span>Explore Full 24-Session Curricula (Google Sheet)</span>
+                  <span>Explore Curricula (Google Sheet)</span>
                   <ExternalLink className="w-3.5 h-3.5" />
                 </a>
               </div>

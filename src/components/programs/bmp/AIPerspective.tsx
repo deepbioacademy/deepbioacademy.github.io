@@ -2,14 +2,14 @@ export default function AIPerspective() {
   const amplifyPoints = [
     "Instant syntax assistance & rapid shell script drafting",
     "Fast environment configuration & container troubleshooting",
-    "Instant Bioconductor function and package lookups",
+    "Instant Bioconductor, Python & package lookups",
     "Automated pipeline documentation & reproducible code formatting",
     "Accelerated publication figure styling and palette customization",
   ];
 
   const fundamentalsPoints = [
     "Generates plausible-looking code with invalid statistical assumptions",
-    "Hallucinates nonexistent R functions, parameters, or genome builds",
+    "Hallucinates nonexistent Python & R functions, parameters, or genome builds",
     "Confuses basic overlap tests with true GSEA — leading to journal rejections",
     "You cannot direct, debug, or validate what you don't deeply understand",
   ];
@@ -27,7 +27,7 @@ export default function AIPerspective() {
             Bioinformatics in the <span className="text-blue-600">Era of AI</span>
           </h2>
           <p className="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto">
-            Why domain mastery in Linux &amp; R is the single most valuable advantage for modern life science researchers.
+            Why domain mastery in Linux, Python &amp; R is the single most valuable advantage for modern life science researchers.
           </p>
         </div>
 

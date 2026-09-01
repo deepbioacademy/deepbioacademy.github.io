@@ -48,12 +48,12 @@ export const ACADEMY_PROGRAMS: Program[] = [
       gradient: "from-blue-600 to-cyan-500",
     },
     highlights: [
-      "End-to-end Bulk RNA-seq, Single-Cell (scRNA-seq) & Spatial Transcriptomics",
-      "Build a reproducible GitHub research portfolio with production-grade Linux & R pipelines",
-      "Complete Bioconductor ecosystem: DESeq2, Seurat v5, SpatialExperiment, clusterProfiler",
+      "End-to-end Bulk RNA-seq, Single-Cell (scRNA-seq), Spatial Transcriptomics & AI/ML",
+      "Build a reproducible GitHub research portfolio with production-grade Linux, Python & R pipelines",
+      "Complete Bioconductor & Bio-AI ecosystem: DESeq2, Seurat v5, SpatialExperiment, Scikit-Learn",
       "Direct weekly guidance from experienced computational biology mentors"
     ],
-    keyTopics: ["Linux CLI & HPC", "R / Bioconductor", "Bulk RNA-seq (DESeq2)", "Single-Cell (Seurat v5)", "Spatial Transcriptomics", "GSEA Pathways"],
+    keyTopics: ["Linux CLI & HPC", "Python & R Omics", "Bulk RNA-seq (DESeq2)", "Single-Cell (Seurat v5)", "Spatial Transcriptomics", "AI in Computational Biology"],
     href: "/programs/bioinformatics-mentorship",
     applyUrl: "https://forms.gle/zSPBekZdeiBpJURj9",
     isPopular: true,

@@ -71,14 +71,14 @@ const bmpDetails = [
   {
     icon: Terminal,
     label: "ENVIRONMENT",
-    value: "Pre-Configured Conda & R",
+    value: "Pre-Configured Conda, Python & R",
     note: "Zero complex setup — start coding Day 1",
   },
   {
     icon: FlaskConical,
     label: "CODE REPOSITORIES",
     value: "Every Single Session",
-    note: "Production-ready R & Bash scripts",
+    note: "Production-ready Python, R & Bash scripts",
   },
   {
     icon: ClipboardCheck,

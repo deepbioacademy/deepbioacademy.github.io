@@ -1,4 +1,4 @@
-import { Terminal, Dna, Sparkles, MapPin } from "lucide-react";
+import { Terminal, Dna, Sparkles, MapPin, Cpu } from "lucide-react";
 
 export default function WhatYouWillLearn() {
   const pillars = [
@@ -8,8 +8,8 @@ export default function WhatYouWillLearn() {
       accentBg: "bg-blue-50 border-blue-200",
       topBorder: "border-t-blue-500",
       pill: "The Core Foundation",
-      title: "Technical Foundation: Linux + R",
-      desc: "Learn to navigate the command line with confidence and write statistical R code. You'll master environment setup, file handling, and data visualization from scratch without feeling overwhelmed.",
+      title: "Technical Foundation: Linux, Python + R",
+      desc: "Learn to navigate the command line with confidence, write Python parsing scripts, and code statistical R analyses. You'll master environment setup, file handling, and data visualization from scratch.",
     },
     {
       icon: Dna,
@@ -38,6 +38,15 @@ export default function WhatYouWillLearn() {
       title: "Spatial Transcriptomics",
       desc: "Map active genes directly onto tissue microscope images. See exactly where disease cells live, how tumor microenvironments interact, and where therapeutic targets are located in 2D space.",
     },
+    {
+      icon: Cpu,
+      accent: "text-purple-600",
+      accentBg: "bg-purple-50 border-purple-200",
+      topBorder: "border-t-purple-500",
+      pill: "Modern Bio-AI",
+      title: "AI in Computational Biology",
+      desc: "Master machine learning and deep learning for biological data. Learn FAIR data principles, feature engineering, predictive modeling, and agentic AI workflows for life sciences.",
+    },
   ];
 
   return (
@@ -55,18 +64,18 @@ export default function WhatYouWillLearn() {
           </h2>
           
           <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-2xl mx-auto">
-            A comprehensive, hands-on path from computational fundamentals to the cutting-edge of modern genomics — explained simply and step-by-step.
+            A comprehensive, hands-on path from computational fundamentals to the cutting-edge of modern genomics and AI — explained simply and step-by-step.
           </p>
         </div>
 
-        {/* 4 Clean, Plain-Language Cards without footer text */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* 5 Clean, Plain-Language Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
           {pillars.map((p, i) => {
             const Icon = p.icon;
             return (
               <div
                 key={i}
-                className={`bg-white rounded-3xl p-6 sm:p-7 border border-slate-200 shadow-sm ${p.topBorder} border-t-4 flex flex-col justify-start space-y-4 hover:-translate-y-1.5 hover:shadow-xl hover:border-slate-300 transition-all duration-300 group`}
+                className={`bg-white rounded-3xl p-6 border border-slate-200 shadow-sm ${p.topBorder} border-t-4 flex flex-col justify-start space-y-4 hover:-translate-y-1.5 hover:shadow-xl hover:border-slate-300 transition-all duration-300 group`}
               >
                 {/* Icon & Pill */}
                 <div className="flex items-center justify-between">
@@ -79,12 +88,12 @@ export default function WhatYouWillLearn() {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-lg font-bold text-slate-950 tracking-tight group-hover:text-blue-600 transition-colors leading-snug">
+                <h3 className="text-base font-bold text-slate-950 tracking-tight group-hover:text-blue-600 transition-colors leading-snug">
                   {p.title}
                 </h3>
 
                 {/* Plain Language Body */}
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                <p className="text-xs text-slate-600 leading-relaxed">
                   {p.desc}
                 </p>
 

@@ -22,14 +22,14 @@ const solutions = [
   },
   {
     icon: "📊",
-    title: "Lean R — only what you need for Bulk, Single-Cell and Spatial Transcriptomics",
-    body: "We skip generic coding theory to focus strictly on what drives genomics research: tidyverse data wrangling, DESeq2 differential expression, Seurat v5 single-cell workflows, and SpatialExperiment.",
+    title: "Lean Python & R — only what you need for Omics, Single-Cell, Spatial & AI",
+    body: "We skip generic coding theory to focus strictly on what drives genomics research: Python sequence handling, tidyverse data wrangling, DESeq2 differential expression, Seurat v5 single-cell workflows, and Bio-AI modeling.",
     accent: "#4f46e5",
   },
   {
     icon: "📜",
     title: "Ready-to-use scripts for your own data",
-    body: "Take home clean, modular, fully annotated R scripts and Bash pipelines that you can immediately point at your own research laboratory datasets to generate publication-grade figures.",
+    body: "Take home clean, modular, fully annotated Python & R scripts and Bash pipelines that you can immediately point at your own research laboratory datasets to generate publication-grade figures.",
     accent: "#0d9488",
   },
   {

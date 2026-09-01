@@ -54,9 +54,9 @@ export default function Publications() {
               className="pub-box"
             >
               <div className="pub-pages-wrap">
-                <Image src={pageUrl(pub.slug, 3)} alt={`${pub.title} pg 3`} width={160} height={220} className="pub-page-img pub-page-left" quality={85} />
-                <Image src={pageUrl(pub.slug, 2)} alt={`${pub.title} pg 2`} width={160} height={220} className="pub-page-img pub-page-right" quality={85} />
-                <Image src={pageUrl(pub.slug, 1)} alt={`${pub.title} pg 1`} width={175} height={240} className="pub-page-img pub-page-center" quality={95} priority />
+                <Image src={pageUrl(pub.slug, 3)} alt={`${pub.title} pg 3`} width={160} height={220} className="pub-page-img pub-page-left" quality={80} loading="lazy" />
+                <Image src={pageUrl(pub.slug, 2)} alt={`${pub.title} pg 2`} width={160} height={220} className="pub-page-img pub-page-right" quality={80} loading="lazy" />
+                <Image src={pageUrl(pub.slug, 1)} alt={`${pub.title} pg 1`} width={175} height={240} className="pub-page-img pub-page-center" quality={85} loading="lazy" />
               </div>
 
               <div className="pub-text">

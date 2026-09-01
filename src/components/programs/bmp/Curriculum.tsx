@@ -6,10 +6,10 @@ import {
   Dna, 
   Sparkles, 
   Layers, 
+  Bot,
   Calendar,
   CheckCircle2,
-  FileSpreadsheet,
-  Download
+  Cpu
 } from "lucide-react";
 
 export interface SessionItem {
@@ -17,7 +17,7 @@ export interface SessionItem {
   date: string;
   displayDate: string;
   topic: string;
-  category: "Foundation" | "Bulk RNA-Seq" | "Single-Cell RNA-Seq" | "Spatial Transcriptomics" | "Project & Presentation";
+  category: "Foundation" | "Bulk RNA-Seq" | "Single-Cell RNA-Seq" | "Spatial Transcriptomics" | "AI & Machine Learning" | "Project & Presentation";
   type: string;
   desc: string;
   tools: string[];
@@ -42,8 +42,8 @@ export const BMP_COHORT_03_MODULES: ModuleData[] = [
     id: "module-1",
     moduleNumber: 1,
     title: "Computational Foundation",
-    subtitle: "Linux HPC, NGS Data Formats, Bash Scripting & R Fundamentals",
-    duration: "3 Sessions (D1 – D3)",
+    subtitle: "Linux HPC, NGS Data Formats, Bash Scripting, Python & R Fundamentals",
+    duration: "4 Sessions (D1 – D4)",
     accent: "#2563EB",
     accentBg: "bg-blue-50 text-blue-700",
     accentBorder: "border-blue-200",
@@ -51,8 +51,8 @@ export const BMP_COHORT_03_MODULES: ModuleData[] = [
     sessions: [
       {
         day: "D1",
-        date: "2026-09-02",
-        displayDate: "Sept 02, 2026",
+        date: "2026-10-02",
+        displayDate: "Oct 02, 2026",
         topic: "Bioinformatics Workflow Setup: Building Your Computational Foundation",
         category: "Foundation",
         type: "Environment & Setup",
@@ -73,7 +73,17 @@ export const BMP_COHORT_03_MODULES: ModuleData[] = [
         day: "D3",
         date: "2026-10-09",
         displayDate: "Oct 09, 2026",
-        topic: "Introduction to Programming in Bioinformatics: R Fundamentals",
+        topic: "Introduction to Programming in the Bioinformatics: Python Fundamentals",
+        category: "Foundation",
+        type: "Python Fundamentals",
+        desc: "Foundations of Python for computational biology. Working with variables, data structures, BioPython, sequence parsing (FASTA/FASTQ), automation scripts, and tabular omics processing with Pandas.",
+        tools: ["Python 3", "BioPython", "Pandas", "NumPy", "Jupyter"]
+      },
+      {
+        day: "D4",
+        date: "2026-10-10",
+        displayDate: "Oct 10, 2026",
+        topic: "Introduction to Programming in the Bioinformatics: R Fundamentals",
         category: "Foundation",
         type: "R Programming",
         desc: "Master data structures, Bioconductor packages, data wrangling with tidyverse, and publication-ready statistical plotting with ggplot2 tailored for biological datasets.",
@@ -85,17 +95,17 @@ export const BMP_COHORT_03_MODULES: ModuleData[] = [
     id: "module-2",
     moduleNumber: 2,
     title: "Bulk RNA-seq Analysis for Absolute Beginners",
-    subtitle: "From Raw FASTQ to Differential Expression, GSEA Pathways & Meta-Analysis",
-    duration: "8 Sessions (D4 – D11)",
+    subtitle: "From Raw FASTQ to Differential Expression, GSEA Pathways, Batch Effects & Meta-Analysis",
+    duration: "6 Sessions (D5 – D10)",
     accent: "#0D9488",
     accentBg: "bg-teal-50 text-teal-700",
     accentBorder: "border-teal-200",
     icon: Dna,
     sessions: [
       {
-        day: "D4",
-        date: "2026-10-10",
-        displayDate: "Oct 10, 2026",
+        day: "D5",
+        date: "2026-10-16",
+        displayDate: "Oct 16, 2026",
         topic: "Introduction to Bulk RNA-Seq: Experimental design, Wet-lab overview, Dry-lab overview",
         category: "Bulk RNA-Seq",
         type: "Experimental Design",
@@ -103,9 +113,9 @@ export const BMP_COHORT_03_MODULES: ModuleData[] = [
         tools: ["Experimental Design", "GEO Mining", "SRA Toolkit", "MultiQC"]
       },
       {
-        day: "D5",
-        date: "2026-10-16",
-        displayDate: "Oct 16, 2026",
+        day: "D6",
+        date: "2026-10-17",
+        displayDate: "Oct 17, 2026",
         topic: "From Fastq to Counts Matrix",
         category: "Bulk RNA-Seq",
         type: "Upstream Quantification",
@@ -113,9 +123,9 @@ export const BMP_COHORT_03_MODULES: ModuleData[] = [
         tools: ["fastp", "STAR", "Salmon", "featureCounts", "FastQC"]
       },
       {
-        day: "D6",
-        date: "2026-10-17",
-        displayDate: "Oct 17, 2026",
+        day: "D7",
+        date: "2026-10-23",
+        displayDate: "Oct 23, 2026",
         topic: "From Count Table to Differential Gene Expression Analysis",
         category: "Bulk RNA-Seq",
         type: "Statistical DGE",
@@ -123,9 +133,9 @@ export const BMP_COHORT_03_MODULES: ModuleData[] = [
         tools: ["DESeq2", "edgeR", "PCA Analysis", "Volcano Plots", "pheatmap"]
       },
       {
-        day: "D7",
-        date: "2026-10-23",
-        displayDate: "Oct 23, 2026",
+        day: "D8",
+        date: "2026-10-24",
+        displayDate: "Oct 24, 2026",
         topic: "From Differential Gene Expression Analysis to Pathways",
         category: "Bulk RNA-Seq",
         type: "Functional Pathways",
@@ -133,9 +143,9 @@ export const BMP_COHORT_03_MODULES: ModuleData[] = [
         tools: ["clusterProfiler", "fgsea", "Pathview", "GO / KEGG", "ReactomePA"]
       },
       {
-        day: "D8",
-        date: "2026-10-24",
-        displayDate: "Oct 24, 2026",
+        day: "D9",
+        date: "2026-10-30",
+        displayDate: "Oct 30, 2026",
         topic: "Batch Effects and Complex Experimental Designs",
         category: "Bulk RNA-Seq",
         type: "Advanced Modeling",
@@ -143,36 +153,14 @@ export const BMP_COHORT_03_MODULES: ModuleData[] = [
         tools: ["ComBat / sva", "limma", "Complex Designs", "Surrogate Variable Analysis"]
       },
       {
-        day: "D9",
-        date: "2026-10-30",
-        displayDate: "Oct 30, 2026",
+        day: "D10",
+        date: "2026-10-31",
+        displayDate: "Oct 31, 2026",
         topic: "Bulk RNA-Seq Meta-Analysis: Random Effects Model (REM), Vote-Counting, Combining Approach",
         category: "Bulk RNA-Seq",
         type: "Meta-Analysis",
         desc: "Integrate multiple public cohorts from GEO/ArrayExpress to maximize statistical power. Master Random Effects Models (REM), Fisher's combined probability, and effect size calculation.",
         tools: ["MetaDE", "REM Modeling", "Forest Plots", "GEO Multi-Cohort", "Effect Sizes"]
-      },
-      {
-        day: "D10",
-        date: "2026-10-31",
-        displayDate: "Oct 31, 2026",
-        topic: "Group Project & Peer-Review (Bulk RNA-Seq)",
-        category: "Project & Presentation",
-        type: "Milestone Lab",
-        desc: "Hands-on collaborative cohort research lab. Teams execute independent end-to-end RNA-seq pipelines on real disease datasets with 1-on-1 mentor code reviews.",
-        tools: ["Collaborative GitHub", "Manuscript Drafting", "Pipeline QA", "Peer Review"],
-        isMilestone: true
-      },
-      {
-        day: "D11",
-        date: "2026-11-06",
-        displayDate: "Nov 06, 2026",
-        topic: "Group Project Presentation (Bulk RNA-Seq)",
-        category: "Project & Presentation",
-        type: "Capstone Defense",
-        desc: "Formal team defense and scientific presentation of findings, biological validation, and reproducibility benchmarks before the academic mentor panel.",
-        tools: ["Scientific Slides", "Defense Panel", "Mentor Feedback", "Certificate Audit"],
-        isMilestone: true
       }
     ]
   },
@@ -180,17 +168,17 @@ export const BMP_COHORT_03_MODULES: ModuleData[] = [
     id: "module-3",
     moduleNumber: 3,
     title: "Single-Cell RNA-seq Analysis for Absolute Beginners",
-    subtitle: "10x Genomics, Cell Ranger, Quality Control, Integration & Marker Annotation",
-    duration: "7 Sessions (D12 – D18)",
+    subtitle: "10x Genomics, Cell Ranger, Quality Control, Harmony Integration & Marker Annotation",
+    duration: "5 Sessions (D11 – D15)",
     accent: "#4F46E5",
     accentBg: "bg-indigo-50 text-indigo-700",
     accentBorder: "border-indigo-200",
     icon: Sparkles,
     sessions: [
       {
-        day: "D12",
-        date: "2026-11-07",
-        displayDate: "Nov 07, 2026",
+        day: "D11",
+        date: "2026-11-06",
+        displayDate: "Nov 06, 2026",
         topic: "Introduction to Single-Cell RNA-Seq: Experimental design, Wet-lab overview, Dry-lab overview",
         category: "Single-Cell RNA-Seq",
         type: "scRNA-seq Intro",
@@ -198,9 +186,9 @@ export const BMP_COHORT_03_MODULES: ModuleData[] = [
         tools: ["10x Chromium", "UMI De-duplication", "Drop-seq Concept", "CELLxGENE"]
       },
       {
-        day: "D13",
-        date: "2026-11-13",
-        displayDate: "Nov 13, 2026",
+        day: "D12",
+        date: "2026-11-07",
+        displayDate: "Nov 07, 2026",
         topic: "From FASTQ to Count Matrix: Quality Check, Quantification with cellranger",
         category: "Single-Cell RNA-Seq",
         type: "Cell Ranger Pipeline",
@@ -208,9 +196,9 @@ export const BMP_COHORT_03_MODULES: ModuleData[] = [
         tools: ["cellranger count", "STARsolo", "Web Summary QA", "Sparse Matrices"]
       },
       {
-        day: "D14",
-        date: "2026-11-14",
-        displayDate: "Nov 14, 2026",
+        day: "D13",
+        date: "2026-11-13",
+        displayDate: "Nov 13, 2026",
         topic: "Quality Control and Cell Filtering",
         category: "Single-Cell RNA-Seq",
         type: "QC & Doublet Removal",
@@ -218,9 +206,9 @@ export const BMP_COHORT_03_MODULES: ModuleData[] = [
         tools: ["Seurat QC", "DoubletFinder", "scDblFinder", "Mitochondrial Filters"]
       },
       {
-        day: "D15",
-        date: "2026-11-20",
-        displayDate: "Nov 20, 2026",
+        day: "D14",
+        date: "2026-11-14",
+        displayDate: "Nov 14, 2026",
         topic: "Data Integration and Clustering",
         category: "Single-Cell RNA-Seq",
         type: "Harmony & Clustering",
@@ -228,36 +216,14 @@ export const BMP_COHORT_03_MODULES: ModuleData[] = [
         tools: ["Harmony", "SCTransform", "UMAP / t-SNE", "FindClusters", "Seurat v5"]
       },
       {
-        day: "D16",
-        date: "2026-11-21",
-        displayDate: "Nov 21, 2026",
+        day: "D15",
+        date: "2026-11-20",
+        displayDate: "Nov 20, 2026",
         topic: "Cell Type Identification",
         category: "Single-Cell RNA-Seq",
         type: "Cell Annotation",
         desc: "Differential marker expression (FindAllMarkers / Wilcoxon), automated reference-based annotation (SingleR, Celldex), and manual curation using canonical lineage markers in R.",
         tools: ["SingleR", "Celldex", "PanglaoDB", "Marker Gene Curation", "DotPlots"]
-      },
-      {
-        day: "D17",
-        date: "2026-11-27",
-        displayDate: "Nov 27, 2026",
-        topic: "Group Project & Peer-Review (Single-Cell)",
-        category: "Project & Presentation",
-        type: "Milestone Lab",
-        desc: "Teams analyze multi-sample clinical single-cell datasets (e.g. PBMC immune profiling, tumor microenvironment) to characterize novel subpopulation dynamics in R.",
-        tools: ["Collaborative scRNA Pipeline", "Marker Discovery", "Trajectory Check", "Code Audit"],
-        isMilestone: true
-      },
-      {
-        day: "D18",
-        date: "2026-11-28",
-        displayDate: "Nov 28, 2026",
-        topic: "Group Project Presentation (Single-Cell)",
-        category: "Project & Presentation",
-        type: "Capstone Defense",
-        desc: "Live presentation of single-cell discovery pipelines, cell proportion statistics, and cellular taxonomy maps before faculty mentors.",
-        tools: ["UMAP Showcases", "Cell Proportion Testing", "Oral Presentation", "Faculty Q&A"],
-        isMilestone: true
       }
     ]
   },
@@ -266,16 +232,16 @@ export const BMP_COHORT_03_MODULES: ModuleData[] = [
     moduleNumber: 4,
     title: "Spatial Transcriptomics",
     subtitle: "10x Visium HD, Xenium In Situ, Spatial Domains & Tissue Microenvironments",
-    duration: "6 Sessions (D19 – D24)",
+    duration: "4 Sessions (D16 – D19)",
     accent: "#DB2777",
     accentBg: "bg-pink-50 text-pink-700",
     accentBorder: "border-pink-200",
     icon: Layers,
     sessions: [
       {
-        day: "D19",
-        date: "2026-12-04",
-        displayDate: "Dec 04, 2026",
+        day: "D16",
+        date: "2026-11-21",
+        displayDate: "Nov 21, 2026",
         topic: "Introduction to Spatial Biology and Spatial Transcriptomics: Experimental design, Wet-lab overview, Dry-lab overview",
         category: "Spatial Transcriptomics",
         type: "Spatial Foundations",
@@ -283,55 +249,107 @@ export const BMP_COHORT_03_MODULES: ModuleData[] = [
         tools: ["Visium HD Overview", "Xenium In Situ", "H&E Imaging Integration", "Spatial Biology"]
       },
       {
-        day: "D20",
-        date: "2026-12-05",
-        displayDate: "Dec 05, 2026",
+        day: "D17",
+        date: "2026-11-27",
+        displayDate: "Nov 27, 2026",
         topic: "SpatialExperiment - VisiumHD binned, SpatialFeatureExperiment - Xenium, SpatialFeatureExperiment - VisiumHD segmented, Visium HD QC, Xenium QC",
         category: "Spatial Transcriptomics",
-        type: "Spatial Data Structures",
+        type: "Spatial Data Structures & QC",
         desc: "Load and structure spatial datasets in R/Bioconductor (SpatialExperiment, SpatialFeatureExperiment). Perform spot-level and cell-segmentation QC, library size normalization, and tissue alignment.",
         tools: ["SpatialExperiment", "SpatialFeatureExperiment", "Visium HD QC", "Xenium QC", "Voyager"]
       },
       {
-        day: "D21",
-        date: "2026-12-11",
-        displayDate: "Dec 11, 2026",
+        day: "D18",
+        date: "2026-11-28",
+        displayDate: "Nov 28, 2026",
         topic: "Visium HD Normalization, Xenium Normalization, SpatialFeatureExperiment - VisiumHD segmented, Clustering and Domains, Annotation",
         category: "Spatial Transcriptomics",
-        type: "Spatial Clustering & Domains",
+        type: "Spatial Domains & Annotation",
         desc: "Spatial normalization algorithms, spatial neighborhood graphs, spatial domain segmentation (BayesSpace, Seurat Spatial), and transfer of single-cell reference annotations in R.",
         tools: ["BayesSpace", "Seurat Spatial", "Cell Type Deconvolution", "Spatial Domains", "Giotto"]
       },
       {
-        day: "D22",
-        date: "2026-12-12",
-        displayDate: "Dec 12, 2026",
+        day: "D19",
+        date: "2026-12-04",
+        displayDate: "Dec 04, 2026",
         topic: "Multi-scale analysis, Differential Analysis",
         category: "Spatial Transcriptomics",
         type: "Spatially Variable Genes",
         desc: "Detect spatially variable genes (SVGs) with Moran's I and SpatialDE. Multi-scale microenvironment analysis, ligand-receptor spatial colocalization, and tumor-stroma niche modeling.",
         tools: ["SpatialDE", "Moran's I", "Cell-Cell Colocalization", "Niche Modeling", "Giotto"]
+      }
+    ]
+  },
+  {
+    id: "module-5",
+    moduleNumber: 5,
+    title: "AI for Computational Biology and Bioinformatics",
+    subtitle: "AI/ML Fundamentals, FAIR Data, Feature Engineering, Deep Learning & Agentic Bio-AI",
+    duration: "6 Sessions (D20 – D25)",
+    accent: "#7C3AED",
+    accentBg: "bg-purple-50 text-purple-700",
+    accentBorder: "border-purple-200",
+    icon: Cpu,
+    sessions: [
+      {
+        day: "D20",
+        date: "2026-12-05",
+        displayDate: "Dec 05, 2026",
+        topic: "Introduction to Artificial Intelligence and Machine Learning (AI/ML), AI/ML Basic concepts, AI/ML Applications",
+        category: "AI & Machine Learning",
+        type: "AI/ML Fundamentals",
+        desc: "Core concepts of artificial intelligence and machine learning in biology. Supervised vs unsupervised learning, regression, classification, and applications across drug discovery and omics.",
+        tools: ["Scikit-Learn", "Python ML", "AI/ML Concepts", "Bioinformatics AI"]
+      },
+      {
+        day: "D21",
+        date: "2026-12-11",
+        displayDate: "Dec 11, 2026",
+        topic: "Overview of the Data Science Life Cycle, FAIR Data Principles, Data-Centric AI/ML, Responsible AI/ML: Principles and Practices",
+        category: "AI & Machine Learning",
+        type: "Data Science & Ethics",
+        desc: "Understand data science lifecycles in computational biology. FAIR (Findable, Accessible, Interoperable, Reusable) data standards, data curation, model reproducibility, and ethical AI practices.",
+        tools: ["FAIR Principles", "Data Stewardship", "Reproducibility", "Model Cards"]
+      },
+      {
+        day: "D22",
+        date: "2026-12-12",
+        displayDate: "Dec 12, 2026",
+        topic: "Data Collection and Preparation, Feature Engineering, Scaling, and Selection",
+        category: "AI & Machine Learning",
+        type: "Feature Engineering",
+        desc: "Biological feature extraction from genomic and expression data. Handling high dimensionality (p >> n), imputation, normalization, PCA/t-SNE embedding, and LASSO/Random Forest feature selection.",
+        tools: ["Pandas", "Feature Selection", "LASSO / Ridge", "Dimensionality Reduction"]
       },
       {
         day: "D23",
         date: "2026-12-18",
         displayDate: "Dec 18, 2026",
-        topic: "Group Project & Peer-Review (Spatial Transcriptomics)",
-        category: "Project & Presentation",
-        type: "Milestone Lab",
-        desc: "Cohort teams develop comprehensive spatial multi-omics portfolios, mapping cellular architecture and spatial gene signatures on authentic human tissue slices.",
-        tools: ["Spatial Multi-Omics", "Histology Co-registration", "Reproducible Code", "Mentorship Audit"],
-        isMilestone: true
+        topic: "ML Models and Model Evaluation, Model Tuning, Interpretation and Deployment",
+        category: "AI & Machine Learning",
+        type: "ML Modeling & Evaluation",
+        desc: "Build, evaluate, and interpret predictive models. ROC-AUC, cross-validation, hyperparameter tuning (GridSearchCV), feature importance with SHAP values, and model deployment.",
+        tools: ["Random Forest", "XGBoost", "Cross-Validation", "SHAP Values", "Streamlit"]
       },
       {
         day: "D24",
         date: "2026-12-19",
         displayDate: "Dec 19, 2026",
-        topic: "Group Project Presentation & Cohort Graduation",
-        category: "Project & Presentation",
-        type: "Final Graduation Defense",
-        desc: "Grand finale cohort presentations, graduation ceremony, and review of research manuscripts for international journal submissions.",
-        tools: ["Graduation Defense", "Publication Review", "Official Credential Audit", "Alumni Fellowship"],
+        topic: "Introduction to Deep Learning, Deep Learning Applications in Computational Biology and Bioinformatics",
+        category: "AI & Machine Learning",
+        type: "Deep Learning in Omics",
+        desc: "Neural network architectures (MLP, CNN, Transformers) applied to genomics. Sequence classification, variant effect prediction, protein structure modeling, and foundation models in biology.",
+        tools: ["PyTorch", "Neural Networks", "AlphaFold Concept", "Genomic Transformers"]
+      },
+      {
+        day: "D25",
+        date: "2026-12-25",
+        displayDate: "Dec 25, 2026",
+        topic: "No Code and Agentic AI for Computational Biology and Bioinformatics",
+        category: "AI & Machine Learning",
+        type: "Agentic AI & Graduation",
+        desc: "Leverage no-code AI tools, LLMs, and autonomous AI agents for automated bioinformatics workflows, literature curation, and code generation. Cohort graduation and research portfolio wrap-up.",
+        tools: ["Agentic AI", "LLM Bio-Agents", "Automated Pipelines", "Portfolio Defense"],
         isMilestone: true
       }
     ]
@@ -352,7 +370,7 @@ export default function Curriculum() {
       
       {/* Background Decorative Soft Gradients */}
       <div className="absolute top-1/4 -left-40 w-96 h-96 bg-blue-100/60 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-1/4 -right-40 w-96 h-96 bg-teal-100/60 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-1/4 -right-40 w-96 h-96 bg-purple-100/60 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-10">
         
@@ -362,30 +380,30 @@ export default function Curriculum() {
             <Calendar className="w-3.5 h-3.5" /> Official Cohort 03 Syllabus (2026)
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-950 tracking-tight">
-            The 24-Session Master Roadmap
+            Master Curriculum Roadmap
           </h2>
           <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
-            A comprehensive, hands-on progression from computational foundations to bulk RNA-seq, single-cell genomics, and spatial transcriptomics.
+            A comprehensive, hands-on progression from computational foundations, bulk RNA-seq, single-cell genomics, and spatial transcriptomics to AI and machine learning for computational biology.
           </p>
         </div>
 
         {/* Quick Highlights Bar */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto text-center">
           <div className="p-5 rounded-2xl bg-white border border-slate-200/90 shadow-xs space-y-1">
-            <div className="text-2xl sm:text-3xl font-black text-blue-600">24 Days</div>
+            <div className="text-2xl sm:text-3xl font-black text-blue-600">25 Days</div>
             <div className="text-xs font-bold text-slate-500 uppercase tracking-wider">Live Lab Sessions</div>
           </div>
           <div className="p-5 rounded-2xl bg-white border border-slate-200/90 shadow-xs space-y-1">
-            <div className="text-2xl sm:text-3xl font-black text-teal-600">4 Modules</div>
-            <div className="text-xs font-bold text-slate-500 uppercase tracking-wider">Core Omics Tracks</div>
+            <div className="text-2xl sm:text-3xl font-black text-teal-600">5 Modules</div>
+            <div className="text-xs font-bold text-slate-500 uppercase tracking-wider">Core Omics & AI Tracks</div>
           </div>
           <div className="p-5 rounded-2xl bg-white border border-slate-200/90 shadow-xs space-y-1">
-            <div className="text-2xl sm:text-3xl font-black text-indigo-600">3 Defenses</div>
-            <div className="text-xs font-bold text-slate-500 uppercase tracking-wider">Group Presentations</div>
+            <div className="text-2xl sm:text-3xl font-black text-indigo-600">Python + R</div>
+            <div className="text-xs font-bold text-slate-500 uppercase tracking-wider">Dual Computational Stack</div>
           </div>
           <div className="p-5 rounded-2xl bg-white border border-slate-200/90 shadow-xs space-y-1">
-            <div className="text-2xl sm:text-3xl font-black text-pink-600">1-on-1</div>
-            <div className="text-xs font-bold text-slate-500 uppercase tracking-wider">Manuscript Mentorship</div>
+            <div className="text-2xl sm:text-3xl font-black text-purple-600">AI & Agentic</div>
+            <div className="text-xs font-bold text-slate-500 uppercase tracking-wider">Modern Bio-AI Workflows</div>
           </div>
         </div>
 
@@ -399,7 +417,7 @@ export default function Curriculum() {
                 : "bg-white text-slate-600 hover:text-slate-900 hover:bg-slate-100 border border-slate-200"
             }`}
           >
-            All 4 Modules ({totalSessions} Sessions)
+            All 5 Modules ({totalSessions} Sessions)
           </button>
           
           {BMP_COHORT_03_MODULES.map((m) => (
@@ -481,7 +499,7 @@ export default function Curriculum() {
                       key={s.day}
                       className={`p-5 rounded-2xl border transition-all flex flex-col justify-between ${
                         s.isMilestone 
-                          ? "bg-gradient-to-br from-blue-50/60 via-white to-cyan-50/40 border-blue-300/80 shadow-xs hover:border-blue-500 hover:shadow-md"
+                          ? "bg-gradient-to-br from-purple-50/60 via-white to-blue-50/40 border-purple-300/80 shadow-xs hover:border-purple-500 hover:shadow-md"
                           : "bg-white border-slate-200/80 hover:border-slate-300 hover:shadow-xs"
                       }`}
                     >
@@ -491,13 +509,13 @@ export default function Curriculum() {
                           <div className="flex items-center gap-2">
                             <span className={`px-2.5 py-0.5 rounded-lg font-mono text-xs font-black ${
                               s.isMilestone 
-                                ? "bg-blue-600 text-white shadow-2xs" 
+                                ? "bg-purple-600 text-white shadow-2xs" 
                                 : "bg-slate-100 text-slate-800 border border-slate-200"
                             }`}>
                               {s.day}
                             </span>
                             <span className={`text-[11px] font-bold uppercase tracking-wider ${
-                              s.isMilestone ? "text-blue-700" : "text-slate-500"
+                              s.isMilestone ? "text-purple-700" : "text-slate-500"
                             }`}>
                               {s.type}
                             </span>
@@ -526,7 +544,7 @@ export default function Curriculum() {
                             key={tIdx}
                             className={`px-2 py-0.5 rounded-md text-[10px] font-semibold border ${
                               s.isMilestone 
-                                ? "bg-blue-100/70 border-blue-200 text-blue-800" 
+                                ? "bg-purple-100/70 border-purple-200 text-purple-800" 
                                 : "bg-slate-50 border-slate-200/80 text-slate-700"
                             }`}
                           >
@@ -550,11 +568,13 @@ export default function Curriculum() {
             <span>Official academic syllabus for <strong>Bioinformatics Mentorship Program (BMP) Cohort 03</strong>.</span>
           </div>
           <div className="flex items-center gap-2 font-mono text-slate-600">
-            <span>24 Live Sessions</span>
+            <span>25 Live Sessions</span>
+            <span>·</span>
+            <span>5 Core Modules</span>
             <span>·</span>
             <span>120+ Lab Hours</span>
             <span>·</span>
-            <span>3 Capstone Defenses</span>
+            <span>Python, R &amp; AI</span>
           </div>
         </div>
 

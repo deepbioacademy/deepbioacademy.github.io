@@ -29,19 +29,19 @@ const incomingTAs: TASeat[] = [
   {
     id: "TA-04",
     role: "Teaching Assistant",
-    focus: "Single-Cell RNA-seq (scRNA-seq) & Seurat v5",
+    focus: "Single-Cell (scRNA-seq) with Python & R",
     status: "Incoming Cohort 03",
   },
   {
     id: "TA-05",
     role: "Teaching Assistant",
-    focus: "Spatial Transcriptomics (Visium HD & Xenium)",
+    focus: "Spatial Transcriptomics & Bio-AI Workflows",
     status: "Incoming Cohort 03",
   },
   {
     id: "TA-06",
     role: "Teaching Assistant",
-    focus: "R Bioconductor & Publication Data Visualization",
+    focus: "Python, R & Machine Learning Data Visualization",
     status: "Incoming Cohort 03",
   },
   {
