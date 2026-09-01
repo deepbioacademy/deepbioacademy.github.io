@@ -24,6 +24,7 @@ export default function ProgramsShowcase() {
         return <FlaskConical className="w-6 h-6 text-teal-700" />;
       case "nocode-ai":
         return <Bot className="w-6 h-6 text-purple-700" />;
+      case "agami-ai":
       case "youth-ai":
         return <GraduationCap className="w-6 h-6 text-pink-700" />;
       default:
@@ -39,6 +40,7 @@ export default function ProgramsShowcase() {
         return "bg-gradient-to-r from-teal-600 via-cyan-600 to-emerald-500";
       case "nocode-ai":
         return "bg-gradient-to-r from-purple-600 via-indigo-600 to-blue-600";
+      case "agami-ai":
       case "youth-ai":
         return "bg-gradient-to-r from-pink-600 via-rose-500 to-orange-400";
       default:
@@ -54,6 +56,7 @@ export default function ProgramsShowcase() {
         return "bg-teal-50 border-teal-200/80 text-teal-700";
       case "nocode-ai":
         return "bg-purple-50 border-purple-200/80 text-purple-700";
+      case "agami-ai":
       case "youth-ai":
         return "bg-pink-50 border-pink-200/80 text-pink-700";
       default:

@@ -29,7 +29,7 @@ export interface Program {
 export const ACADEMY_PROGRAMS: Program[] = [
   {
     id: "bmp",
-    slug: "bioinformatics-mentorship",
+    slug: "bmp",
     title: "Bioinformatics Mentorship Program (BMP)",
     shortTitle: "BMP Mentorship",
     subtitle: "From raw sequencing FASTQ data to high-impact publication-ready transcriptomics discoveries.",
@@ -54,7 +54,7 @@ export const ACADEMY_PROGRAMS: Program[] = [
       "Direct weekly guidance from experienced computational biology mentors"
     ],
     keyTopics: ["Linux CLI & HPC", "Python & R Omics", "Bulk RNA-seq (DESeq2)", "Single-Cell (Seurat v5)", "Spatial Transcriptomics", "AI in Computational Biology"],
-    href: "/programs/bioinformatics-mentorship",
+    href: "/programs/bmp",
     applyUrl: "https://forms.gle/zSPBekZdeiBpJURj9",
     isPopular: true,
     status: "Cohort 03 Admission is Open Now"
@@ -123,8 +123,8 @@ export const ACADEMY_PROGRAMS: Program[] = [
     status: "Admission Closed"
   },
   {
-    id: "youth-ai",
-    slug: "youth-ai",
+    id: "agami-ai",
+    slug: "agami-ai",
     title: "agami.ai — National AI Literacy Initiative",
     shortTitle: "agami.ai Youth AI",
     subtitle: "Empowering school and college students (ages 11–18) and educators across Bangladesh with foundational AI literacy.",
@@ -149,8 +149,8 @@ export const ACADEMY_PROGRAMS: Program[] = [
       "Certificates of completion and national student AI hackathons"
     ],
     keyTopics: ["AI Foundations", "Computer Vision Basics", "AI Ethics", "Raspberry Pi STEM", "Hands-on ML"],
-    href: "/programs/youth-ai",
-    applyUrl: "/apply?track=youth-ai",
+    href: "/programs/agami-ai",
+    applyUrl: "/apply?track=agami-ai",
     status: "Admission Starting Soon"
   }
 ];

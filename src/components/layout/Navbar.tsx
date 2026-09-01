@@ -64,6 +64,7 @@ export default function Navbar() {
         return <FlaskConical className="w-5 h-5 text-teal-700" />;
       case "nocode-ai":
         return <Bot className="w-5 h-5 text-purple-700" />;
+      case "agami-ai":
       case "youth-ai":
         return <GraduationCap className="w-5 h-5 text-pink-700" />;
       default:
@@ -79,6 +80,7 @@ export default function Navbar() {
         return "bg-teal-50 text-teal-700 border-teal-200/80";
       case "nocode-ai":
         return "bg-purple-50 text-purple-700 border-purple-200/80";
+      case "agami-ai":
       case "youth-ai":
         return "bg-pink-50 text-pink-700 border-pink-200/80";
       default:
