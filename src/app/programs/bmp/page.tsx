@@ -9,6 +9,7 @@ import TakeHomeToolkit from "@/components/programs/bmp/TakeHomeToolkit";
 import HowProgramRuns from "@/components/programs/bmp/HowProgramRuns";
 import WhoIsThisFor from "@/components/programs/bmp/WhoIsThisFor";
 import MenteesFeedback from "@/components/programs/bmp/MenteesFeedback";
+import CohortProjects from "@/components/programs/bmp/CohortProjects";
 import Publications from "@/components/programs/bmp/Publications";
 import InstructorBio from "@/components/programs/bmp/InstructorBio";
 import TeachingAssistants from "@/components/programs/bmp/TeachingAssistants";
@@ -28,6 +29,7 @@ export default function BMPProgramPage() {
       <HowProgramRuns />
       <WhoIsThisFor />
       <MenteesFeedback />
+      <CohortProjects />
       <Publications />
       <InstructorBio />
       <TeachingAssistants />
