@@ -133,6 +133,17 @@ export default function Footer() {
             </h4>
             <div className="flex flex-col gap-3 text-sm text-slate-600">
               <a 
+                href="https://deepbio.zulipchat.com/join/gubjsfqnqg7xssyqde4pur4w/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="flex items-center gap-2.5 text-blue-700 hover:text-blue-800 font-semibold transition-colors bg-blue-50/80 px-2.5 py-1.5 rounded-lg border border-blue-200/60 w-fit"
+              >
+                <svg width={16} height={16} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-600">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                </svg>
+                <span>Join Zulip Chat</span>
+              </a>
+              <a 
                 href="https://deepbioacademy.com" 
                 target="_blank" 
                 rel="noopener noreferrer" 

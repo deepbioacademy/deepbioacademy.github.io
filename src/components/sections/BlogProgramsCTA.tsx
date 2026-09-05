@@ -24,6 +24,7 @@ export default function BlogProgramsCTA({ currentAuthor }: BlogProgramsCTAProps)
         return <FlaskConical className="w-5 h-5 text-teal-600" />;
       case "nocode-ai":
         return <Bot className="w-5 h-5 text-purple-600" />;
+      case "agami-ai":
       case "youth-ai":
         return <GraduationCap className="w-5 h-5 text-pink-600" />;
       default:
@@ -39,6 +40,7 @@ export default function BlogProgramsCTA({ currentAuthor }: BlogProgramsCTAProps)
         return "bg-gradient-to-r from-teal-600 via-cyan-600 to-emerald-500";
       case "nocode-ai":
         return "bg-gradient-to-r from-purple-600 via-indigo-600 to-blue-600";
+      case "agami-ai":
       case "youth-ai":
         return "bg-gradient-to-r from-pink-600 via-rose-500 to-orange-400";
       default:
@@ -54,6 +56,7 @@ export default function BlogProgramsCTA({ currentAuthor }: BlogProgramsCTAProps)
         return "bg-teal-50 text-teal-600 border-teal-200/80";
       case "nocode-ai":
         return "bg-purple-50 text-purple-600 border-purple-200/80";
+      case "agami-ai":
       case "youth-ai":
         return "bg-pink-50 text-pink-600 border-pink-200/80";
       default:

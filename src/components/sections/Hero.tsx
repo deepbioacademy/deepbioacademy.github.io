@@ -64,10 +64,14 @@ export default function Hero() {
 
       <div className="hero-inner">
         {/* Badge */}
-        <div className="flex justify-center mb-8">
+        <div className="flex flex-wrap items-center justify-center gap-2 mb-8">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-100 text-slate-600 text-sm font-semibold tracking-wide border border-slate-200 shadow-sm transition-all hover:shadow hover:bg-slate-50 hover:border-slate-300 font-dm-sans">
             Over 3,000 researchers trained
             <svg className="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+          </div>
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-amber-50 border border-amber-200 text-amber-900 text-xs font-bold shadow-2xs font-dm-sans">
+            <span>🗣️ Medium of Instruction:</span>
+            <span className="text-amber-950 font-extrabold underline decoration-amber-400">Bangla (বাংলা)</span>
           </div>
         </div>
 

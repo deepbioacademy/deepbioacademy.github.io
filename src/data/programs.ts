@@ -87,7 +87,7 @@ export const ACADEMY_PROGRAMS: Program[] = [
     ],
     keyTopics: ["RDKit & QSAR", "AutoDock Vina", "GROMACS 100ns MD", "AlphaFold2", "ADMET Modeling", "GPU Colab"],
     href: "/programs/drug-discovery",
-    applyUrl: "/apply?track=drug-discovery",
+    applyUrl: "https://forms.gle/5aekYtmDXmLh4ePp7",
     isPopular: true,
     status: "Running"
   },
@@ -119,7 +119,7 @@ export const ACADEMY_PROGRAMS: Program[] = [
     ],
     keyTopics: ["Agentic AI", "Life Science Prompting", "Claude & ChatGPT 4o", "NotebookLM", "AI Data Analysis"],
     href: "/programs/nocode-ai",
-    applyUrl: "/apply?track=nocode-ai",
+    applyUrl: "https://forms.gle/JxCSxh27PVLuLzNz9",
     status: "Admission Closed"
   },
   {
@@ -150,7 +150,7 @@ export const ACADEMY_PROGRAMS: Program[] = [
     ],
     keyTopics: ["AI Foundations", "Computer Vision Basics", "AI Ethics", "Raspberry Pi STEM", "Hands-on ML"],
     href: "/programs/agami-ai",
-    applyUrl: "/apply?track=agami-ai",
+    applyUrl: "https://forms.gle/ExperienceAIDhakaRegistration2026",
     status: "Admission Starting Soon"
   }
 ];

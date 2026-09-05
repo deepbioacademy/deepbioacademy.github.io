@@ -76,12 +76,18 @@ export default function Hero() {
           {/* Left Column */}
           <div className="lg:col-span-7 space-y-6 text-left">
             
-            {/* Top Cohort Badge */}
-            <div className="inline-flex flex-wrap items-center gap-1.5 sm:gap-2 px-3.5 py-1.5 rounded-full bg-white border border-blue-200 shadow-2xs">
-              <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span className="text-xs font-bold text-slate-800">
-                Cohort 03 (2026) · Open for Enrollment
-              </span>
+            {/* Top Cohort & Language Badges */}
+            <div className="flex flex-wrap items-center gap-2">
+              <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3.5 py-1.5 rounded-full bg-white border border-blue-200 shadow-2xs">
+                <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+                <span className="text-xs font-bold text-slate-800">
+                  Cohort 03 (2026) · Open for Enrollment
+                </span>
+              </div>
+              <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-50 border border-amber-200/90 text-amber-900 text-xs font-bold shadow-2xs">
+                <span>🗣️ Medium of Instruction:</span>
+                <span className="text-amber-950 font-extrabold underline decoration-amber-400">Bangla (বাংলা)</span>
+              </div>
             </div>
 
             {/* Main Headline */}

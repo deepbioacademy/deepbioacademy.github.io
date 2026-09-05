@@ -753,6 +753,32 @@ export default function ResourcesPage() {
           </div>
         </section>
 
+        {/* Section 6: DeepBio Zulip Community Chat */}
+        <section className="p-8 sm:p-10 rounded-3xl bg-gradient-to-r from-blue-900 via-indigo-900 to-slate-900 text-white shadow-xl relative overflow-hidden">
+          <div className="max-w-3xl space-y-4 relative z-10">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-500/20 border border-blue-400/30 text-cyan-300 text-xs font-bold uppercase tracking-wider">
+              💬 Academic Discussion &amp; Mentorship Hub
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
+              Join the DeepBio Research &amp; Learning Community on Zulip
+            </h2>
+            <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
+              Collaborate on transcriptomics pipelines, ask questions about DESeq2, Seurat, and GROMACS MD runs, troubleshoot code errors, and connect with fellow computational biology researchers.
+            </p>
+            <div className="pt-2">
+              <a
+                href="https://deepbio.zulipchat.com/join/gubjsfqnqg7xssyqde4pur4w/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-slate-950 font-bold text-sm shadow-lg shadow-cyan-500/20 transition-all cursor-pointer"
+              >
+                <span>Join DeepBio Zulip Chat</span>
+                <ExternalLink className="w-4 h-4" />
+              </a>
+            </div>
+          </div>
+        </section>
+
       </div>
     </div>
   );

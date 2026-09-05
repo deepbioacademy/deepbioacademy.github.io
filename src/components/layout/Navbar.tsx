@@ -192,12 +192,12 @@ export default function Navbar() {
 
                     {/* Bottom Action Footer */}
                     <div className="px-6 py-3.5 bg-slate-50/90 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
-                      <span>Not sure which track fits your background?</span>
+                      <span>Explore our academic curriculum and tracks:</span>
                       <Link 
-                        href="/apply" 
+                        href="/programs" 
                         className="font-bold text-slate-900 hover:text-blue-700 flex items-center gap-1"
                       >
-                        <span>Admissions & Track Advisor</span>
+                        <span>All Programs & Syllabi</span>
                         <ArrowRight className="w-3.5 h-3.5" />
                       </Link>
                     </div>
@@ -276,23 +276,29 @@ export default function Navbar() {
 
           {/* Desktop Right CTA Actions */}
           <div className="hidden lg:flex items-center gap-3">
-            <Link
-              href="/apply"
+            <a
+              href="https://chiralbd.github.io/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-teal-600 hover:from-blue-700 hover:via-indigo-700 hover:to-teal-700 text-white font-bold text-sm shadow-md shadow-blue-500/20 hover:shadow-lg transition-all flex items-center gap-2"
             >
-              <span>Apply for Cohort</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
+              <Microscope className="w-4 h-4" />
+              <span>Research Labs</span>
+              <ArrowUpRight className="w-4 h-4 opacity-80" />
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
           <div className="flex items-center gap-2 lg:hidden">
-            <Link
-              href="/apply"
-              className="px-3.5 py-1.5 rounded-lg bg-slate-900 text-white text-xs font-semibold"
+            <a
+              href="https://chiralbd.github.io/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-3 py-1.5 rounded-lg bg-slate-900 text-white text-xs font-semibold flex items-center gap-1"
             >
-              Apply
-            </Link>
+              <span>Research Labs</span>
+              <ArrowUpRight className="w-3 h-3" />
+            </a>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 rounded-lg text-slate-700 hover:bg-slate-100 transition-colors cursor-pointer"
@@ -366,12 +372,16 @@ export default function Navbar() {
           </div>
 
           <div className="pt-3 border-t border-slate-100 flex flex-col gap-2">
-            <Link
-              href="/apply"
-              className="w-full py-3 rounded-xl bg-slate-900 text-white font-semibold text-center text-sm shadow-md"
+            <a
+              href="https://chiralbd.github.io/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full py-3 rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-teal-600 text-white font-semibold text-center text-sm shadow-md flex items-center justify-center gap-2"
             >
-              Apply for Next Cohort
-            </Link>
+              <Microscope className="w-4 h-4" />
+              <span>Explore Research Labs (Chiral)</span>
+              <ArrowUpRight className="w-4 h-4" />
+            </a>
           </div>
         </div>
       )}

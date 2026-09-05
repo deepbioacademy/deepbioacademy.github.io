@@ -1,0 +1,369 @@
+import fs from "fs";
+import path from "path";
+import sharp from "sharp";
+
+const baseDir = path.resolve("public/bmp_ads/testimonials");
+const photoDir = path.join(baseDir, "Photo_Mentees Feedback [BMP-C02]");
+const testSvgDir = path.join(baseDir, "svg");
+const testPngDir = path.join(baseDir, "png");
+
+fs.mkdirSync(testSvgDir, { recursive: true });
+fs.mkdirSync(testPngDir, { recursive: true });
+
+function xmlEscape(str) {
+  if (!str) return "";
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&apos;");
+}
+
+const mentees = [
+  {
+    slug: "sayma-anjum",
+    name: "Sayma Anjum Sujana",
+    institution: "Independent University, Bangladesh (IUB)",
+    dept: "Biochemistry & Biotechnology",
+    quote1: "“This mentorship fundamentally changed my perspective on research.",
+    quote2: "I learned how to work with bioinformatics workflows, troubleshoot",
+    quote3: "errors independently, and apply transcriptomics to real projects.”",
+    skills: ["Bulk RNA-Seq", "Workflow Troubleshooting", "Independent Research"],
+    initials: "SA",
+    photoFile: "Screenshot 2026-07-03 215357 - sujana anjum.png"
+  },
+  {
+    slug: "sharfuddin-safin",
+    name: "Sharfuddin Safin",
+    institution: "Islamic University, Kushtia",
+    dept: "Biomedical Engineering",
+    quote1: "“The transition from superficial GUI tools to code-based transcriptomics",
+    quote2: "is the most rewarding. Handling raw sequencing data and statistical",
+    quote3: "rigor gives you the autonomy to ask real scientific questions.”",
+    skills: ["Bulk & Single-Cell", "Raw Sequencing Data", "Statistical Rigor"],
+    initials: "SS",
+    photoFile: "Sharfuddin Safin - Sharfuddin Shafin.jpeg"
+  },
+  {
+    slug: "sumaya-mifty",
+    name: "Dr. Sumaya Khan Mifty",
+    institution: "Dhaka Medical College",
+    dept: "Department of Medicine",
+    quote1: "“As a doctor, genomics lies at the heart of healthcare improvement.",
+    quote2: "BMP taught the ABCs of RNA-seq analysis in a structured, practical",
+    quote3: "manner, giving me the confidence to explore transcriptomics in medicine.”",
+    skills: ["Medical Genomics", "RNA-Seq in Healthcare", "Evidence-Based Medicine"],
+    initials: "SM",
+    photoFile: "IMG_1069 - Sumaya Mifty.jpeg"
+  },
+  {
+    slug: "tanvir-ahmed",
+    name: "Tanvir Ahmed",
+    institution: "Govt Unani & Ayurvedic Medical College",
+    dept: "Department of Medicine & Surgery",
+    quote1: "“As a medical student interested in cancer & neurogenomics, I wanted",
+    quote2: "practical skills beyond theory. Complex topics in bulk and single-cell",
+    quote3: "RNA-seq were explained in a remarkably clear and structured way.”",
+    skills: ["Bulk RNA-Seq", "Single-Cell Omics", "Cancer & Neurogenomics"],
+    initials: "TA",
+    photoFile: "Tanvir_Ahmed - TANVIR AHMED.jpeg"
+  },
+  {
+    slug: "farah-ulfat",
+    name: "Farah Ulfat",
+    institution: "University of Rajshahi",
+    dept: "Genetic Engineering & Biotechnology",
+    quote1: "“The mentorship helped me approach research problems systematically",
+    quote2: "and gave me clear direction on the exact computational skills",
+    quote3: "needed to prepare for future biotechnology research opportunities.”",
+    skills: ["Systematic Data Analysis", "Biotech Research", "Career Direction"],
+    initials: "FU",
+    photoFile: "IMG_20260526_142254 - Farah Ulfat.jpg"
+  },
+  {
+    slug: "mantuka-masnoon",
+    name: "Mantuka Masnoon Umama",
+    institution: "North South University (NSU)",
+    dept: "Department of Microbiology",
+    quote1: "“I was searching for a platform to expand my skills in bioinformatics.",
+    quote2: "This program provided insightful guidance on research methods,",
+    quote3: "data analysis, scientific reasoning, and methodical problem-solving.”",
+    skills: ["Data Analysis", "Scientific Reasoning", "Advanced Omics Tools"],
+    initials: "MU",
+    photoFile: "Mantuka_Masnoon_Umama - Mantuka Umama.jpg"
+  },
+  {
+    slug: "ariful-amin",
+    name: "Md Ariful Amin",
+    institution: "University of Dhaka",
+    dept: "Genetic Engineering & Biotechnology",
+    quote1: "“As the mentor said: 'Real bioinformatics, no more toy tools.'",
+    quote2: "Now I have the direction and materials to initiate computational biology.",
+    quote3: "This mentorship expands my expertise and fuels my PhD admission.”",
+    skills: ["PhD Preparation", "Production Pipelines", "Computational Biology"],
+    initials: "AA",
+    photoFile: null
+  },
+  {
+    slug: "md-sohel-rahman",
+    name: "Md Sohel Rahman",
+    institution: "Gazipur Agricultural University",
+    dept: "Veterinary Medicine & Animal Science",
+    quote1: "“I learned bioinformatics in a structured and practical way.",
+    quote2: "The course was well organized, highly informative, and engaging,",
+    quote3: "giving me valuable hands-on skills for my research journey.”",
+    skills: ["Structured Curriculum", "Practical Omics Skills", "Hands-on Learning"],
+    initials: "SR",
+    photoFile: "IMG_20260720_114532 - Sohel Rahman.jpeg"
+  },
+  {
+    slug: "tasnim-haque-achal",
+    name: "Tasnim Haque Achal",
+    institution: "BRAC University",
+    dept: "Department of Biotechnology",
+    quote1: "“The sessions and resources helped me understand bioinformatics",
+    quote2: "concepts and workflows with clarity. I especially appreciated the",
+    quote3: "practical guidance and applying real pipelines to datasets.”",
+    skills: ["Hands-on Pipelines", "Real Datasets", "Practical Problem-Solving"],
+    initials: "TA",
+    photoFile: "IMG_1559_Original - Tasnim Haque Achal.jpeg"
+  },
+  {
+    slug: "tamanna-dilshad",
+    name: "Tamanna Dilshad Phul",
+    institution: "American International University-Bangladesh",
+    dept: "Computer Science & Engineering",
+    quote1: "“The mentorship helped me understand complex bioinformatics concepts,",
+    quote2: "strengthen computational skills, and gain confidence in exploring",
+    quote3: "future research opportunities at the intersection of CS and biology.”",
+    skills: ["CS to Bioinformatics", "Computational Skills", "Research Confidence"],
+    initials: "TP",
+    photoFile: "IMG_20260429_141226_294 - Tamanna Dilshad.webp"
+  },
+  {
+    slug: "suprokash-chakra",
+    name: "Suprokash Chakra Borty",
+    institution: "Khwaja Yunus Ali University",
+    dept: "Biochemistry & Biotechnology",
+    quote1: "“This mentorship helped me realize the current scenario of the",
+    quote2: "bioinformatics landscape and guided me towards that path through",
+    quote3: "hands-on, skill-based practical learning and real research pipelines.”",
+    skills: ["Global Omics Trends", "Skill-Based Learning", "Pipeline Mastery"],
+    initials: "SC",
+    photoFile: "Screenshot 2025-04-11 152931 - Suprokash Chakra Borty.jpg"
+  }
+];
+
+async function getPhotoDataUri(photoFile) {
+  if (!photoFile) return null;
+  const filePath = path.join(photoDir, photoFile);
+  if (!fs.existsSync(filePath)) return null;
+
+  try {
+    const buffer = await sharp(filePath)
+      .rotate()
+      .resize(400, 400, {
+        fit: "cover",
+        position: "entropy"
+      })
+      .modulate({ brightness: 1.02, saturation: 1.05 })
+      .sharpen({ sigma: 1, m1: 0.5, m2: 2 })
+      .jpeg({ quality: 95 })
+      .toBuffer();
+    return `data:image/jpeg;base64,${buffer.toString("base64")}`;
+  } catch (err) {
+    console.error(`Error processing photo ${photoFile}:`, err);
+    return null;
+  }
+}
+
+function generateSpotlightSVG(m, photoDataUri) {
+  const name = xmlEscape(m.name);
+  const dept = xmlEscape(m.dept);
+  const inst = xmlEscape(m.institution);
+  const q1 = xmlEscape(m.quote1);
+  const q2 = xmlEscape(m.quote2);
+  const q3 = xmlEscape(m.quote3);
+
+  // Avatar circular element
+  const avatarElement = photoDataUri
+    ? `
+    <defs>
+      <clipPath id="avatar-clip-${m.slug}">
+        <circle cx="60" cy="60" r="58"/>
+      </clipPath>
+    </defs>
+    <circle cx="60" cy="60" r="60" fill="#2563EB"/>
+    <image href="${photoDataUri}" clip-path="url(#avatar-clip-${m.slug})" x="2" y="2" width="116" height="116" preserveAspectRatio="xMidYMid slice"/>
+    <circle cx="60" cy="60" r="59" fill="none" stroke="#60A5FA" stroke-width="2.5"/>`
+    : `
+    <circle cx="60" cy="60" r="60" fill="#1E293B"/>
+    <circle cx="60" cy="60" r="59" fill="none" stroke="#60A5FA" stroke-width="2.5"/>
+    <text x="60" y="73" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="40" fill="#FFFFFF">${m.initials}</text>`;
+
+  // Render Skill Tags
+  const skillsPills = m.skills.map((s, idx) => {
+    const xPos = idx * 280;
+    return `
+      <g transform="translate(${xPos}, 0)">
+        <rect width="260" height="38" rx="19" fill="#1E293B" stroke="#334155" stroke-width="1"/>
+        <circle cx="18" cy="19" r="4.5" fill="#10B981"/>
+        <text x="32" y="24" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="13" fill="#E2E8F0">${xmlEscape(s)}</text>
+      </g>`;
+  }).join("");
+
+  return `<svg width="1080" height="1080" viewBox="0 0 1080 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Rich Obsidian Mesh Background -->
+    <linearGradient id="bg-grad" x1="0" y1="0" x2="1080" y2="1080" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#090D1A"/>
+      <stop offset="40%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#050811"/>
+    </linearGradient>
+
+    <!-- Top Card Glass Border -->
+    <linearGradient id="card-rim" x1="0" y1="0" x2="960" y2="800" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.35"/>
+      <stop offset="30%" stop-color="#2563EB" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.06"/>
+    </linearGradient>
+
+    <!-- Soft Radial Light Behind Quote -->
+    <radialGradient id="quote-glow" cx="40%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#2563EB" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#2563EB" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Base Canvas -->
+  <rect width="1080" height="1080" fill="url(#bg-grad)"/>
+
+  <!-- Top Brand Accent -->
+  <rect width="1080" height="5" fill="#2563EB"/>
+
+  <!-- ================= 1. HEADER (y=50) ================= -->
+  <g transform="translate(60, 50)">
+    <!-- DeepBio Emblem -->
+    <rect width="44" height="44" rx="12" fill="#2563EB"/>
+    <path d="M22 12 L10 18 L22 24 L34 18 L22 12Z" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round" fill="none"/>
+    <path d="M14 20 V27 C14 30 17.5 32 22 32 C26.5 32 30 30 30 27 V20" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round" fill="none"/>
+    
+    <text x="56" y="24" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="22" fill="#FFFFFF">DeepBio <tspan fill="#38BDF8">Academy</tspan></text>
+    <text x="56" y="40" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="11" fill="#94A3B8" letter-spacing="1.5">BIOINFORMATICS MENTORSHIP PROGRAM</text>
+
+    <!-- Header Right Pill -->
+    <g transform="translate(690, 0)">
+      <rect width="270" height="44" rx="22" fill="#1E293B" stroke="#334155" stroke-width="1.2"/>
+      <circle cx="24" cy="22" r="5.5" fill="#10B981"/>
+      <text x="144" y="27" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="13" fill="#F1F5F9">Cohort 02 Mentee Spotlight</text>
+    </g>
+  </g>
+
+  <!-- ================= 2. MAIN SPOTLIGHT CARD (y=120) ================= -->
+  <g transform="translate(60, 120)">
+    <!-- Outer Card Background -->
+    <rect width="960" height="790" rx="28" fill="url(#card-rim)"/>
+    <rect x="1.5" y="1.5" width="957" height="787" rx="26.5" fill="#0E1628" fill-opacity="0.96"/>
+    <rect x="1.5" y="1.5" width="957" height="787" rx="26.5" fill="url(#quote-glow)"/>
+
+    <!-- A. MENTEE AUTHOR HEADER ROW (Inside Card, y=50) -->
+    <g transform="translate(50, 45)">
+      ${avatarElement}
+
+      <!-- Author Identity Details -->
+      <g transform="translate(145, 10)">
+        <text x="0" y="32" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="34" fill="#FFFFFF" letter-spacing="-0.3">${name}</text>
+        <text x="0" y="62" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="18" fill="#38BDF8">${dept}</text>
+        <text x="0" y="88" font-family="Arial, Helvetica, sans-serif" font-weight="500" font-size="15" fill="#94A3B8">${inst}</text>
+
+        <!-- Rating Stars & Label -->
+        <g transform="translate(0, 114)">
+          <text font-size="18" fill="#F59E0B" letter-spacing="3">★★★★★</text>
+          <text x="120" y="-3" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="13" fill="#64748B">Mentee Experience</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- Clean Horizontal Divider -->
+    <line x1="50" y1="210" x2="910" y2="210" stroke="#1E293B" stroke-width="1.5"/>
+
+    <!-- B. HERO QUOTE SECTION (y=255) -->
+    <!-- Large Decorative Quote Glyph -->
+    <text x="50" y="270" font-family="Georgia, serif" font-weight="900" font-size="70" fill="#2563EB" opacity="0.6">“</text>
+
+    <g transform="translate(50, 290)">
+      <text x="0" y="20" font-family="Arial, Helvetica, sans-serif" font-weight="600" font-size="27" fill="#FFFFFF" line-height="1.55">${q1}</text>
+      <text x="0" y="70" font-family="Arial, Helvetica, sans-serif" font-weight="600" font-size="27" fill="#FFFFFF" line-height="1.55">${q2}</text>
+      <text x="0" y="120" font-family="Arial, Helvetica, sans-serif" font-weight="600" font-size="27" fill="#FFFFFF" line-height="1.55">${q3}</text>
+    </g>
+
+    <!-- C. RESEARCH SKILLS PILLS (y=500) -->
+    <g transform="translate(50, 480)">
+      <text x="0" y="0" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="12" fill="#64748B" letter-spacing="1.8">KEY RESEARCH SKILLS</text>
+      <g transform="translate(0, 14)">
+        ${skillsPills}
+      </g>
+    </g>
+
+    <!-- D. INTEGRATED COHORT 03 FOOTER STRIP (y=570) -->
+    <g transform="translate(50, 560)">
+      <!-- Smooth Integrated Banner (No Clunky Boxes) -->
+      <rect width="860" height="170" rx="20" fill="#0A101D" stroke="#1E293B" stroke-width="1.5"/>
+
+      <!-- Content Left -->
+      <g transform="translate(35, 45)">
+        <text x="0" y="0" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="24" fill="#FFFFFF">Join BMP Cohort 03</text>
+        <text x="0" y="30" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="15" fill="#38BDF8">Starts October 2, 2026 &#8226; 12-Week Intensive</text>
+        <text x="0" y="58" font-family="Arial, Helvetica, sans-serif" font-weight="500" font-size="14" fill="#94A3B8">Bulk RNA-Seq &#8226; Single-Cell &#8226; Spatial Omics &#8226; Bio-AI Pipelines</text>
+      </g>
+
+      <!-- CTA Button Right -->
+      <g transform="translate(640, 55)">
+        <rect width="180" height="56" rx="28" fill="#2563EB"/>
+        <text x="90" y="34" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="16" fill="#FFFFFF">Apply Now &#8594;</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ================= 3. BOTTOM URL FOOTER (y=935) ================= -->
+  <g transform="translate(540, 950)">
+    <rect x="-320" y="0" width="640" height="52" rx="26" fill="#0F172A" stroke="#1E293B" stroke-width="1.2"/>
+    <text x="0" y="33" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="20" fill="#FFFFFF">deepbioacademy.com/programs/bmp</text>
+    <text x="0" y="80" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="600" font-size="13.5" fill="#64748B">Limited to 20 Participants &#8226; Academic &amp; Research Career Accelerator</text>
+  </g>
+
+  <!-- Bottom Accent Line -->
+  <rect y="1075" width="1080" height="5" fill="#10B981"/>
+</svg>`;
+}
+
+async function run() {
+  console.log("Generating modern, box-free executive testimonial cards (300 DPI)...");
+
+  for (const m of mentees) {
+    const photoDataUri = await getPhotoDataUri(m.photoFile);
+    const svgFilename = `testimonial-${m.slug}.svg`;
+    const pngFilename = `testimonial-${m.slug}.png`;
+
+    const svgPath = path.join(testSvgDir, svgFilename);
+    const pngPath = path.join(testPngDir, pngFilename);
+
+    const svgCode = generateSpotlightSVG(m, photoDataUri);
+    fs.writeFileSync(svgPath, svgCode, "utf-8");
+
+    try {
+      await sharp(Buffer.from(svgCode), { density: 300 })
+        .resize(1080, 1080, { fit: "contain", kernel: "lanczos3" })
+        .png({ quality: 100, compressionLevel: 7 })
+        .toFile(pngPath);
+      console.log(`Rendered Modern Executive Card: ${pngFilename}`);
+    } catch (err) {
+      console.error(`Error rendering ${pngFilename}:`, err);
+    }
+  }
+
+  console.log("All modern executive testimonial cards generated successfully!");
+}
+
+run();

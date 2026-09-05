@@ -17,37 +17,25 @@ for (const file of files) {
   const filePath = path.join(svgDir, file);
   let svgContent = fs.readFileSync(filePath, "utf-8");
 
-  // 1. Update Cohort versions
-  svgContent = svgContent.replace(/Cohort 02/g, "Cohort 03");
-  svgContent = svgContent.replace(/Cohort 01/g, "Cohort 03");
-  svgContent = svgContent.replace(/Cohort 2/g, "Cohort 3");
-  svgContent = svgContent.replace(/Cohort 1/g, "Cohort 3");
+  // 1. Update Domain & URLs to deepbioacademy.com/programs/bmp
+  svgContent = svgContent.replace(/deepbio\.academy\/programs\/bmp/g, "deepbioacademy.com/programs/bmp");
+  svgContent = svgContent.replace(/deepbio\.academy\/bmp/g, "deepbioacademy.com/programs/bmp");
+  svgContent = svgContent.replace(/deepbio\.academy/g, "deepbioacademy.com/programs/bmp");
+  svgContent = svgContent.replace(/mdjubayerhossain\.com\/bmp/g, "deepbioacademy.com/programs/bmp");
+  svgContent = svgContent.replace(/mdjubayerhossain\.com/g, "deepbioacademy.com/programs/bmp");
 
-  // 2. Update Dates
-  svgContent = svgContent.replace(/July[–-]Sept 2026/g, "Oct–Dec 2026");
-  svgContent = svgContent.replace(/July 3/g, "Oct 2");
-  svgContent = svgContent.replace(/July 2/g, "Oct 1");
-  svgContent = svgContent.replace(/July 1/g, "Sept 30");
-  svgContent = svgContent.replace(/June 30/g, "Sept 29");
-  svgContent = svgContent.replace(/Starts Tomorrow, July 3/g, "Starts Oct 2, 2026");
-  svgContent = svgContent.replace(/Starts Tomorrow, Oct 2/g, "Starts Oct 2, 2026");
-  svgContent = svgContent.replace(/Starts July 3/g, "Starts Oct 2");
+  // 2. Adjust font-size if it was too huge for a longer URL
+  // If font-size was 28-32, make it 23-25 so it fits cleanly
+  svgContent = svgContent.replace(/font-size="28"(>deepbioacademy\.com\/programs\/bmp)/g, 'font-size="24"$1');
+  svgContent = svgContent.replace(/font-size="30"(>deepbioacademy\.com\/programs\/bmp)/g, 'font-size="24"$1');
+  svgContent = svgContent.replace(/font-size="26"(>deepbioacademy\.com\/programs\/bmp)/g, 'font-size="23"$1');
 
-  // 3. Update Domain & URLs
-  svgContent = svgContent.replace(/mdjubayerhossain\.com\/bmp/g, "deepbio.academy");
-  svgContent = svgContent.replace(/mdjubayerhossain\.com/g, "deepbio.academy");
-
-  // 4. Update Branding
-  svgContent = svgContent.replace(/CHIRAL Bangladesh/g, "DeepBio Academy");
-  svgContent = svgContent.replace(/CHIRAL/g, "DeepBio");
-
-  // 5. Fix unescaped ampersands in XML text
-  // Replace & that is not already part of &amp;, &lt;, &gt;, &quot;, &#...;
+  // 3. Fix unescaped ampersands in XML text
   svgContent = svgContent.replace(/&(?!(amp|lt|gt|quot|apos|#\d+|#x[0-9a-fA-F]+);)/g, "&amp;");
 
   // Save updated SVG
   fs.writeFileSync(filePath, svgContent, "utf-8");
-  console.log(`Updated SVG: ${file}`);
+  console.log(`Updated SVG URL in: ${file}`);
 }
 
 console.log("All SVGs updated. Starting PNG conversion with sharp...");

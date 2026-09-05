@@ -33,7 +33,7 @@ export default function EnrollCTA() {
         </h2>
 
         <p className="enroll-subtext">
-          This is an intensive, hands-on program for serious researchers. Limited to 20 participants to ensure personalized mentorship and accountability.
+          This is an intensive, hands-on program for serious researchers. Limited to 30 participants to ensure personalized mentorship and accountability.
         </p>
 
         {/* Selection Criteria */}
