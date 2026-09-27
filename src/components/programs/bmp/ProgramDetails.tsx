@@ -29,8 +29,8 @@ const bmpDetails = [
   {
     icon: Clock,
     label: "TIME",
-    value: "9:00 PM – 11:00 PM (BST)",
-    note: "Evening sessions for students & pros",
+    value: "9:00 AM – 11:00 AM (BST)",
+    note: "Morning sessions for students & pros",
   },
   {
     icon: Laptop,
