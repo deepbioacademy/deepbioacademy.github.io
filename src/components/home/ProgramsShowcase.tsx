@@ -129,22 +129,22 @@ export default function ProgramsShowcase() {
                 <div>
                   
                   {/* Top Bar: Icon + Badge + Status */}
-                  <div className="flex items-center justify-between gap-3 mb-6">
-                    <div className="flex items-center gap-3">
+                  <div className="flex flex-col-reverse items-start gap-3 sm:flex-row sm:items-center sm:justify-between mb-6">
+                    <div className="flex items-center gap-3 min-w-0">
                       <div className={`w-12 h-12 rounded-2xl border flex items-center justify-center transition-transform duration-200 group-hover:scale-105 ${getIconBg(prog.id)}`}>
                         {getProgramIcon(prog.id)}
                       </div>
-                      <div>
+                      <div className="min-w-0">
                         <span className="text-xs font-bold text-slate-900 block leading-tight">
                           {prog.category}
                         </span>
-                        <span className="text-[11px] font-semibold text-slate-500">
+                        <span className="text-[11px] font-semibold text-slate-500 block leading-tight mt-0.5">
                           {prog.badge}
                         </span>
                       </div>
                     </div>
 
-                    <span className={`inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-full border flex-shrink-0 ${statusConfig.badgeStyle}`}>
+                    <span className={`inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-full border whitespace-nowrap sm:flex-shrink-0 ${statusConfig.badgeStyle}`}>
                       <span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${statusConfig.dotStyle}`} />
                       <span>{prog.status}</span>
                     </span>
@@ -159,18 +159,18 @@ export default function ProgramsShowcase() {
                   </p>
 
                   {/* Clean Horizontal Metadata Bar */}
-                  <div className="grid grid-cols-3 gap-2 py-3 px-4 rounded-xl bg-slate-50 border border-slate-100 mb-6 text-xs">
+                  <div className="grid grid-cols-3 gap-3 py-3 px-4 rounded-xl bg-slate-50 border border-slate-100 mb-6 text-xs">
                     <div>
                       <span className="text-[10px] uppercase font-bold text-slate-400 block tracking-wider">Duration</span>
-                      <span className="font-bold text-slate-800 text-xs sm:text-[13px]">{prog.duration}</span>
+                      <span className="font-bold text-slate-800 text-xs sm:text-[13px] leading-snug block">{prog.duration}</span>
                     </div>
                     <div>
                       <span className="text-[10px] uppercase font-bold text-slate-400 block tracking-wider">Format</span>
-                      <span className="font-bold text-slate-800 text-xs sm:text-[13px] truncate block">{prog.format.split('+')[0]}</span>
+                      <span className="font-bold text-slate-800 text-xs sm:text-[13px] leading-snug block">{prog.format.split('+')[0].trim()}</span>
                     </div>
                     <div>
                       <span className="text-[10px] uppercase font-bold text-slate-400 block tracking-wider">Level</span>
-                      <span className="font-bold text-slate-800 text-xs sm:text-[13px] truncate block">{prog.level.split('(')[0]}</span>
+                      <span className="font-bold text-slate-800 text-xs sm:text-[13px] leading-snug block">{prog.level.split('(')[0].trim()}</span>
                     </div>
                   </div>
 

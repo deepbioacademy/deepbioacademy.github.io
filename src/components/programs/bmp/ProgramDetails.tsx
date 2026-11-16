@@ -18,25 +18,25 @@ const bmpDetails = [
     icon: Calendar,
     label: "DURATION",
     value: "3 Months (12 Weeks)",
-    note: "24 Live Intensive Lab Sessions",
+    note: "January – March 2027 · Raw Data to Submitted Manuscript",
   },
   {
     icon: ListChecks,
     label: "SCHEDULE",
-    value: "2 Classes per Week",
-    note: "Friday & Saturday live interactive",
+    value: "Friday & Saturday",
+    note: "Orientation: Thu, Dec 31, 2026 · Classes start Fri, Jan 1, 2027",
   },
   {
     icon: Clock,
     label: "TIME",
-    value: "9:00 AM – 11:00 AM (BST)",
-    note: "Morning sessions for students & pros",
+    value: "9:00 AM – 11:00 AM (Bangladesh Time)",
+    note: "50 hrs lectures + 10 hrs project mentoring",
   },
   {
     icon: Laptop,
     label: "MODE",
     value: "Live Interactive on Zoom",
-    note: "Live screen-sharing & code debugging",
+    note: "Project mentoring Zoom link shared before each session",
   },
   {
     icon: Wrench,
@@ -60,13 +60,13 @@ const bmpDetails = [
     icon: Wallet,
     label: "FEE",
     value: "5,100 BDT / month",
-    note: "50% Discount (Regular: 10,200 BDT / month)",
+    note: "Includes bKash charges · Total 15,300 BDT for 3 months",
   },
   {
     icon: CreditCard,
     label: "PAYMENT DUE",
     value: "5th of every month",
-    note: "Flexible monthly installment plan",
+    note: "Required to continue enrollment",
   },
   {
     icon: Terminal,
@@ -83,8 +83,8 @@ const bmpDetails = [
   {
     icon: ClipboardCheck,
     label: "ENROLLMENT PROCESS",
-    value: "Free Apply → Live Q&A → Enroll",
-    note: "Zero fee before Q&A — enroll only when fully informed",
+    value: "Agreement → 510 BDT Seat → Orientation",
+    note: "~40 seats · confirm before sessions start",
   },
 ];
 

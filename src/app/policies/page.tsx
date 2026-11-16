@@ -99,7 +99,9 @@ export default function PoliciesPage() {
       title: 'Tuition & Financial Policies',
       points: [
         'Transparent Program Fees: Tuition fees cover live 1-on-1 mentorship, curriculum access, pipeline code repositories, and computational review.',
-        'Timely Payment Clearance: Monthly tuition must be cleared by the 5th of each calendar month to maintain uninterrupted access to cloud and repo resources.',
+        'Seat Confirmation Fee: A seat confirmation fee (510 BDT for BMP) must be paid before sessions start to secure your spot in the cohort. Seats are limited and confirmed in order of payment.',
+        'Timely Payment Clearance: Monthly tuition must be cleared by the 5th of each calendar month to continue program enrollment and maintain uninterrupted access to cloud and repo resources.',
+        'Charges Included: Published BMP fees (5,100 BDT/month; 15,300 BDT total for 3 months) already include bKash transaction charges.',
         'Non-Refundable Monthly Fee: Once a mentorship month commences, the fee for that month is non-refundable. Mid-month withdrawals do not qualify for prorated refunds.'
       ]
     },

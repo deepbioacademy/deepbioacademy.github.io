@@ -203,7 +203,7 @@ export default function BlogProgramsCTA({ currentAuthor }: BlogProgramsCTAProps)
                         rel={prog.applyUrl.startsWith("http") ? "noopener noreferrer" : undefined}
                         className="w-full py-2 px-3 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-800 font-bold text-xs flex items-center justify-center gap-1 border border-emerald-300 transition-colors"
                       >
-                        <span>Apply for Cohort 03</span>
+                        <span>Apply for Cohort 04</span>
                         <ArrowUpRight className="w-3 h-3 text-emerald-600" />
                       </Link>
                     ) : prog.status === "Running" ? (

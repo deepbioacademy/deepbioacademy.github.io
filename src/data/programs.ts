@@ -23,7 +23,7 @@ export interface Program {
   href: string;
   applyUrl: string;
   isPopular?: boolean;
-  status: "Cohort 03 Admission is Open Now" | "Running" | "Admission Closed" | "Admission Starting Soon" | string;
+  status: "Cohort 04 Enrollment Open" | "Running" | "Admission Closed" | "Admission Starting Soon" | string;
 }
 
 export const ACADEMY_PROGRAMS: Program[] = [
@@ -55,9 +55,9 @@ export const ACADEMY_PROGRAMS: Program[] = [
     ],
     keyTopics: ["Linux CLI & HPC", "Python & R Omics", "Bulk RNA-seq (DESeq2)", "Single-Cell (Seurat v5)", "Spatial Transcriptomics", "AI in Computational Biology"],
     href: "/programs/bmp",
-    applyUrl: "https://forms.gle/zSPBekZdeiBpJURj9",
+    applyUrl: "https://forms.gle/azXaFGdXXNEB93qa7",
     isPopular: true,
-    status: "Cohort 03 Admission is Open Now"
+    status: "Cohort 04 Enrollment Open"
   },
   {
     id: "drug-discovery",

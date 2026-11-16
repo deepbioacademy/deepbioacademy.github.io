@@ -8,9 +8,9 @@ import {
 import Image from "next/image";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
-export const BMP_APPLY_URL = "https://forms.gle/zSPBekZdeiBpJURj9";
+export const BMP_APPLY_URL = "https://forms.gle/azXaFGdXXNEB93qa7";
 export const BMP_CURRICULUM_SHEET_URL =
-  "https://docs.google.com/spreadsheets/d/1oXl4a8N4W8jupClYWJCCwr06Waz8R5bW5Mo63QuGz6k/edit?usp=sharing";
+  "https://docs.google.com/spreadsheets/d/11m1GlJdaUOdEHgTd3iM2kppeqwtfKJiq9cahgBfr4Es/edit?usp=sharing";
 
 const previewModules = [
   {
@@ -81,7 +81,7 @@ export default function Hero() {
               <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3.5 py-1.5 rounded-full bg-white border border-blue-200 shadow-2xs">
                 <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
                 <span className="text-xs font-bold text-slate-800">
-                  Cohort 03 (2026) · Open for Enrollment
+                  Cohort 04 (Jan – Mar 2027) · Open for Enrollment
                 </span>
               </div>
               <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-50 border border-amber-200/90 text-amber-900 text-xs font-bold shadow-2xs">
@@ -127,7 +127,7 @@ export default function Hero() {
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-bold text-sm shadow-md shadow-blue-600/25 hover:shadow-lg transition-all cursor-pointer flex items-center justify-center gap-2 group"
               >
-                <span>Apply for Cohort 03</span>
+                <span>Apply for Cohort 04</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
               </a>
 

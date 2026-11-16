@@ -2,9 +2,9 @@ import Link from "next/link";
 
 const schedule = [
   { label: "Program Duration", value: "12 weeks" },
-  { label: "Monthly Sessions", value: "8 hours total" },
+  { label: "Contact Hours", value: "50 hrs lectures + 10 hrs mentoring" },
   { label: "Independent Work", value: "10–12 hours/week" },
-  { label: "Cohort Size", value: "20 participants max" },
+  { label: "Cohort Size", value: "~40 seats" },
 ];
 
 const criteria = [
@@ -15,11 +15,10 @@ const criteria = [
 ];
 
 const steps = [
-  { n: "1", title: "Register", desc: "Submit application via website form — no payment required" },
-  { n: "2", title: "Review", desc: "Applications evaluated based on career alignment" },
-  { n: "3", title: "Info Session", desc: "Shortlisted applicants invited to 30-min fit check" },
-  { n: "4", title: "Payment", desc: "Payment link sent post-info session to confirmed participants" },
-  { n: "5", title: "Cohort Start", desc: "2 weeks after payment window closes" },
+  { n: "1", title: "Enrollment Agreement", desc: "Review program terms and sign the Cohort 04 enrollment agreement form" },
+  { n: "2", title: "Seat Confirmation", desc: "Pay 510 BDT seat confirmation fee to secure your spot (~40 seats)" },
+  { n: "3", title: "Orientation", desc: "Thursday, December 31, 2026" },
+  { n: "4", title: "Cohort Start", desc: "Friday, January 1, 2027 — Fri & Sat, 9:00–11:00 AM (BD Time)" },
 ];
 
 export default function EnrollCTA() {
@@ -33,7 +32,7 @@ export default function EnrollCTA() {
         </h2>
 
         <p className="enroll-subtext">
-          This is an intensive, hands-on program for serious researchers. Limited to 30 participants to ensure personalized mentorship and accountability.
+          This is an intensive, hands-on program for serious researchers. Limited to approximately 40 participants to ensure personalized mentorship and accountability.
         </p>
 
         {/* Selection Criteria */}
@@ -61,7 +60,7 @@ export default function EnrollCTA() {
         </div>
 
         <p className="enroll-schedule-note">
-          Session times and cohort start dates coordinated based on mentor and participant availability.
+          Cohort 04 runs January – March 2027. Live sessions every Friday &amp; Saturday, 9:00 – 11:00 AM (Bangladesh Time). Project mentoring Zoom links are announced before each session.
         </p>
 
         {/* Pricing */}
@@ -96,7 +95,7 @@ export default function EnrollCTA() {
             </div>
             
             <p className="text-[10px] text-slate-500 font-medium italic">
-              June Flash Offer: Join by June 25
+              Includes bKash charges · Total 15,300 BDT (3 months)
             </p>
           </div>
 
@@ -106,6 +105,9 @@ export default function EnrollCTA() {
               <div className="enroll-commit-title">12-week commitment</div>
               <div className="enroll-commit-sub">
                 A serious investment in your research career
+              </div>
+              <div className="enroll-commit-note">
+                Seat confirmation fee: 510 BDT
               </div>
               <div className="enroll-commit-note">
                 ⚠ Non-refundable once month commences
@@ -138,15 +140,15 @@ export default function EnrollCTA() {
         {/* Main CTA */}
         <div className="enroll-cta-block">
           <p className="enroll-cta-note">
-            Applications reviewed within 7 days. Cohort confirmed 2 weeks before start date.
+            Sign the enrollment agreement and confirm your seat (510 BDT) before the December 31, 2026 orientation.
           </p>
           <a
-            href="https://forms.gle/zSPBekZdeiBpJURj9"
+            href="https://forms.gle/azXaFGdXXNEB93qa7"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-teal-600 hover:from-blue-700 hover:via-indigo-700 hover:to-teal-700 text-white font-bold text-base shadow-md shadow-blue-500/20 hover:shadow-lg transition-all"
           >
-            <span>Apply for BMP Mentorship &rarr;</span>
+            <span>Sign Cohort 04 Enrollment Agreement &rarr;</span>
           </a>
         </div>
       </div>
